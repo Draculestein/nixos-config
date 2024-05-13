@@ -29,9 +29,7 @@
 
           # LVM Partition
           root = {
-            name = "root";
-            start = "1G";
-            end = "100%";
+            size = "100%";
             content = {
               type = "lvm_pv";
               vg = "root_vg";
@@ -40,7 +38,7 @@
 
         };
       };
-
+    };
       # Volume group config
       lvm_vg = {
 
@@ -109,5 +107,4 @@
         };
       };
     };
-  };
 }
