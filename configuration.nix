@@ -11,6 +11,7 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -66,7 +67,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
     services.xserver.libinput.enable = true;
 
-    nixpkgs.config.allowUnfree = true;
     users.users.albertjul = {
      isNormalUser = true;
      uid = 1000;
