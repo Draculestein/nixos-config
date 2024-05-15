@@ -66,6 +66,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
     services.xserver.libinput.enable = true;
 
+    nixpkgs.config.allowUnfree = true;
     users.users.albertjul = {
      isNormalUser = true;
      uid = 1000;
