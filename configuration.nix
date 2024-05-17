@@ -35,7 +35,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  
+
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -56,7 +56,7 @@
       };
     };
   # Enable touchpad support (enabled default in most desktopManager).
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     users.users.albertjul = {
      isNormalUser = true;
@@ -82,8 +82,8 @@
 
     fonts.packages = with pkgs; [
       nerdfonts
-      corefonts
-      vistafonts
+      # corefonts
+      # vistafonts
     ];
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
