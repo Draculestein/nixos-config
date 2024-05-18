@@ -1,5 +1,5 @@
 { config, pkgs, ...}: 
 
 {
-  programs.enable.foot = true;
+  programs.foot.enable = true;
 }
