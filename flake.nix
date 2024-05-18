@@ -35,9 +35,9 @@
           inherit system;
           modules = [ 
             inputs.disko.nixosModules.default
-            (import ./disk_config.nix { device = "/dev/vda"; })
+            (import ./system/FlowX13/disk_config.nix { device = "/dev/vda"; })
 
-            ./configuration.nix
+            ./system/FlowX13/configuration.nix
           ];
         };
       };
@@ -45,7 +45,7 @@
       homeConfigurations = {
         albertjul = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home.nix ];
+          modules = [ ./users/albertjul/home.nix ];
         };
       };
     };
