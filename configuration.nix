@@ -30,11 +30,14 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   
+  # Enable KDE Plasma
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  services.desktopManager.plasma6.enable = true;
 
 
   # Configure keymap in X11
@@ -84,7 +87,7 @@
 
     fonts.packages = with pkgs; [
       nerdfonts
-      # corefonts
+      corefonts
       vistafonts
     ];
   # This option defines the first version of NixOS you have installed on this particular machine,
