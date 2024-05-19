@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix   
+      ./hardware-configuration.nix
+      ./sound.nix
     ];
 
   nix = { 
@@ -22,6 +23,7 @@
       options = "--delete-older-than 30d";
     };
   };
+
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -47,9 +49,7 @@
     enable = true;
     wayland.enable = true;
   };
-
   services.desktopManager.plasma6.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -58,17 +58,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound.
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      pulse.enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-    };
+
   # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
 
@@ -76,10 +66,7 @@
      isNormalUser = true;
      uid = 1000;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       firefox
-       brave
-     ];
+     packages = with pkgs; []; # Apps are handled by home-manager
    };
 
   # List packages installed in system profile. To search, run:
