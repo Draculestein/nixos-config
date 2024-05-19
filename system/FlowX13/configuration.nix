@@ -58,25 +58,24 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   # Enable touchpad support (enabled default in most desktopManager).
-    services.libinput.enable = true;
+  services.libinput.enable = true;
 
-    users.users.albertjul = {
-     isNormalUser = true;
-     uid = 1000;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; []; # Apps are handled by home-manager
+  users.users.albertjul = {
+    isNormalUser = true;
+    uid = 1000;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; []; # Apps are handled by home-manager
    };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
     environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
-     tree
-     btop
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      git
+      tree
+      btop
     ];
 
     environment.shells = with pkgs; [ zsh ];
@@ -88,6 +87,8 @@
       corefonts
       vistafonts
     ];
+
+  
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
