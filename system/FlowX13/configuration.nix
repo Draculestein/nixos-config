@@ -30,6 +30,8 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
 
   networking.hostName = "AlbertFlowX13"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -41,7 +43,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "C.UTF-8/UTF-8"
+  ];
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   
