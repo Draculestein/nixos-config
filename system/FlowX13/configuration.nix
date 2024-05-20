@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./sound.nix
       ../../apps/steam.nix
+      ./logitech.nix
     ];
 
   nix = { 
