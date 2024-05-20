@@ -92,25 +92,26 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-    environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      wget
-      git
-      tree
-      btop
-      pciutils
-      usbutils
-    ];
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+    tree
+    btop
+    pciutils
+    usbutils
+    duplicati
+  ];
 
-    environment.shells = with pkgs; [ zsh ];
-    programs.zsh.enable = true;
-    users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
-    fonts.packages = with pkgs; [
-      nerdfonts
-      corefonts
-      vistafonts
-    ];
+  fonts.packages = with pkgs; [
+    nerdfonts
+    corefonts
+    vistafonts
+  ];
 
   
   # This option defines the first version of NixOS you have installed on this particular machine,
