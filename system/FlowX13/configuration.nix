@@ -31,7 +31,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
 
   networking.hostName = "AlbertFlowX13"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -51,11 +52,16 @@
   services.xserver.enable = true;
   
   # Enable KDE Plasma
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
+  # services.desktopManager.plasma6.enable = true;
+
+  services.xserver = {
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -66,6 +72,15 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+
+  services.supergfxd = {
+    enable = true;
+  };
 
   users.users.albertjul = {
     isNormalUser = true;
@@ -82,6 +97,8 @@
       git
       tree
       btop
+      pciutils
+      usbutils
     ];
 
     environment.shells = with pkgs; [ zsh ];
