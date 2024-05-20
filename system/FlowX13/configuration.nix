@@ -83,6 +83,8 @@
     enable = true;
   };
 
+  services.duplicati.enable = true;
+
   users.users.albertjul = {
     isNormalUser = true;
     uid = 1000;
