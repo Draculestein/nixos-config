@@ -76,7 +76,8 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
+  
+  programs.bash.enable = true;
   targets.genericLinux.enable = true;
   xdg.mime.enable = true;
   
