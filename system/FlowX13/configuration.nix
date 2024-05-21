@@ -109,6 +109,8 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   fonts.packages = with pkgs; [
     nerdfonts
     corefonts
