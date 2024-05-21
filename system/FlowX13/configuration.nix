@@ -106,7 +106,13 @@
   ];
 
   environment.shells = with pkgs; [ zsh ];
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
+  };
   users.defaultUserShell = pkgs.zsh;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
