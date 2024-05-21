@@ -34,6 +34,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
+  hardware.sensor.iio.enable = true;
 
   networking.hostName = "AlbertFlowX13"; # Define your hostname.
   # Pick only one of the below networking options.
