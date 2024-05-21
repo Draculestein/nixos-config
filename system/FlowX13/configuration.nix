@@ -85,6 +85,7 @@
   };
 
   services.duplicati.enable = true;
+  services.flatpak.enable = true;
 
   users.users.albertjul = {
     isNormalUser = true;
