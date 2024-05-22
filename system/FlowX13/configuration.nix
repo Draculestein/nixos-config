@@ -11,6 +11,7 @@
       ./sound.nix
       ../../apps/steam.nix
       ./logitech.nix
+      ./podman.nix
     ];
 
   nix = { 
