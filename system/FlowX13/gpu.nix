@@ -20,13 +20,15 @@
       open = false;
 
       prime = {
-	amdgpuBusId = "PCI:8:0:0";
+	      amdgpuBusId = "PCI:8:0:0";
         nvidiaBusId = "PCI:1:0:0";
 
-	offload = {
-	  enable = true;
-	  enableOffloadCmd = true;
-	};
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
       };
+
+      nvidia-container-toolkit.enable = true;
     };
 }
