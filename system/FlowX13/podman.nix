@@ -12,8 +12,6 @@
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
-
-      enableNvidia = true;
     };
 
     libvirtd.enable = true;
@@ -27,4 +25,9 @@
     # podman-compose  # start group of containers for dev
     qemu
   ];
+
+  services.cockpit = {
+    enable = true;
+    port = 9090;
+  };
 }
