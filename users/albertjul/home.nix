@@ -83,7 +83,14 @@
   programs.bash.enable = true;
   targets.genericLinux.enable = true;
   xdg.mime.enable = true;
+  xdg.systemDirs.data = [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
   
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
+  };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
