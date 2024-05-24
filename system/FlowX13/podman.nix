@@ -12,7 +12,11 @@
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
+
+      enableNvidia = true;
     };
+
+    libvirtd.enable = true;
   };
 
   # Useful other development tools
@@ -21,5 +25,6 @@
     podman-tui      # status of containers in the terminal
     docker-compose # start group of containers for dev
     # podman-compose  # start group of containers for dev
+    qemu
   ];
 }
