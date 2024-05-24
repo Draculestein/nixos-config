@@ -32,7 +32,6 @@
     rnote
     obsidian
     gnome.gnome-software
-    gnome.nautilus
     devenv
     cachix
     vlc
