@@ -23,6 +23,7 @@
   # environment.
   home.packages = with pkgs; [
     brave
+    bottles
     vscode
     gh
     papirus-icon-theme
