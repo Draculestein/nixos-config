@@ -12,6 +12,7 @@
       ../../apps/steam.nix
       ./logitech.nix
       ./podman.nix
+      ./gpu.nix
     ];
 
   nix = { 
