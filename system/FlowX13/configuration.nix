@@ -38,9 +38,15 @@
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "quiet" "udev.log_level=3" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
   hardware.sensor.iio.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   networking.hostName = "AlbertFlowX13"; # Define your hostname.
   # Pick only one of the below networking options.
