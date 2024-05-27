@@ -120,6 +120,8 @@
     pciutils
     usbutils
     duplicati
+    vulkan-tools
+    nvtopPackages.full
   ];
 
   environment.shells = with pkgs; [ zsh ];
