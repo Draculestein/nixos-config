@@ -35,9 +35,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
-  boot.initrd.verbose = false;
+  # boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
-  boot.kernelParams = [ "quiet" "udev.log_level=3" ];
+  # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   
   hardware.enableRedistributableFirmware = true;
