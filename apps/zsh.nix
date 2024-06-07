@@ -3,9 +3,16 @@
 {
   programs.zsh = {
     enable = true;
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
     };
+
+    initExtra = 
+    ''
+    export ANDROID_HOME=$HOME/Android/Sdk
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    '';
   };
 }
