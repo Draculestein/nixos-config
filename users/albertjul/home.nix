@@ -3,6 +3,7 @@
 {
   imports = [
     ../../apps/foot.nix
+    ../../apps/bash.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -85,8 +86,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-  
-  programs.bash.enable = true;
+
   targets.genericLinux.enable = true;
   xdg.mime.enable = true;
   xdg.systemDirs.data = [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
