@@ -39,6 +39,7 @@
     vlc
     firefox
     onlyoffice-bin
+    kdePackages.okular
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -94,6 +95,14 @@
     enable = true;
     platformTheme.name = "adwaita";
     style.name = "adwaita-dark";
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita:dark";
+    };
   };
 
   programs.direnv = {
