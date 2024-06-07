@@ -107,6 +107,7 @@
     uid = 1000;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; []; # Apps are handled by home-manager
+    shell = pkgs.zsh;
    };
 
   # List packages installed in system profile. To search, run:
@@ -124,17 +125,12 @@
     nvtopPackages.full
   ];
 
-  environment.shells = with pkgs; [ zsh ];
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      theme = "robbyrussell";
-    };
-  };
-  users.defaultUserShell = pkgs.zsh;
-  programs.dconf.enable = true;
+  environment.shells = with pkgs; [
+     zsh
+     bash
+  ];
 
+  programs.dconf.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

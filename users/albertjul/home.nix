@@ -4,6 +4,7 @@
   imports = [
     ../../apps/foot.nix
     ../../apps/bash.nix
+    ../../apps/zsh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
