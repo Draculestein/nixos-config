@@ -33,7 +33,6 @@
     zoom-us
     vesktop
     rnote
-    obsidian
     gnome.gnome-software
     gnome.gnome-disk-utility
     devenv
