@@ -1,7 +1,6 @@
-{
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
-  ...
-} : {
+{ device ? throw "Set this to your disk device, e.g. /dev/sda"
+, ...
+}: {
   disko.devices = {
 
     disk.main = {
@@ -21,10 +20,10 @@
             end = "1G";
             type = "EF00";
             content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
+            };
           };
 
           # LVM Partition
@@ -39,72 +38,72 @@
         };
       };
     };
-      # Volume group config
-      lvm_vg = {
+    # Volume group config
+    lvm_vg = {
 
-        root_vg = {
+      root_vg = {
 
-          type = "lvm_vg";
-          lvs = {
+        type = "lvm_vg";
+        lvs = {
 
-            # Swap volume
-            swap = {
+          # Swap volume
+          swap = {
 
-              size = "24G";
-              content = {
+            size = "24G";
+            content = {
 
-                type = "swap";
-                resumeDevice = true;
-              };
-
+              type = "swap";
+              resumeDevice = true;
             };
 
-            # BTRFS volume
-            root = {
+          };
 
-              size = "100%FREE";
-              content = {
+          # BTRFS volume
+          root = {
 
-                type = "btrfs";
-                extraArgs = [ "-f" ];
+            size = "100%FREE";
+            content = {
 
-                subvolumes = {
+              type = "btrfs";
+              extraArgs = [ "-f" ];
 
-                  "@root" = {
-                    mountpoint = "/";
-                  };
+              subvolumes = {
 
-                  "@home" = {
-                    mountpoint = "/home";
-                  };
+                "@root" = {
+                  mountpoint = "/";
+                };
 
-                  "@nix" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/nix";
-                  };
+                "@home" = {
+                  mountpoint = "/home";
+                };
 
-                  "@snapshots" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/snapshots";
-                  };
+                "@nix" = {
+                  mountOptions = [ "compress=zstd" "noatime" ];
+                  mountpoint = "/nix";
+                };
 
-                  "@log" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/var/log";
-                  };
+                "@snapshots" = {
+                  mountOptions = [ "compress=zstd" "noatime" ];
+                  mountpoint = "/snapshots";
+                };
 
-                  "@lib" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/var/lib";
-                  };
+                "@log" = {
+                  mountOptions = [ "compress=zstd" "noatime" ];
+                  mountpoint = "/var/log";
+                };
 
+                "@lib" = {
+                  mountOptions = [ "compress=zstd" "noatime" ];
+                  mountpoint = "/var/lib";
                 };
 
               };
-              
+
             };
+
           };
         };
       };
     };
+  };
 }

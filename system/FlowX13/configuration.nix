@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sound.nix
       ../../apps/steam.nix
@@ -15,13 +16,13 @@
       ./gpu.nix
     ];
 
-  nix = { 
-    settings = { 
+  nix = {
+    settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       trusted-users = [ "root" ];
     };
-    
+
     gc = {
       automatic = true;
       dates = "weekly";
@@ -39,7 +40,7 @@
   boot.consoleLogLevel = 0;
   # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  
+
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
   hardware.sensor.iio.enable = true;
@@ -52,7 +53,7 @@
   networking.hostName = "AlbertFlowX13"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
@@ -68,7 +69,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.wacom.enable = true;
-  
+
   # Enable KDE Plasma
   # services.displayManager.sddm = {
   #   enable = true;
@@ -106,9 +107,9 @@
     isNormalUser = true;
     uid = 1000;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; []; # Apps are handled by home-manager
+    packages = with pkgs; [ ]; # Apps are handled by home-manager
     shell = pkgs.zsh;
-   };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -126,8 +127,8 @@
   ];
 
   environment.shells = with pkgs; [
-     zsh
-     bash
+    zsh
+    bash
   ];
 
   programs.zsh.enable = true;
@@ -150,7 +151,7 @@
     liberation_ttf
   ];
 
-  
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

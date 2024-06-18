@@ -17,23 +17,24 @@
     };
   };
 
-  outputs = {self, nixpkgs, nixpkgs-unstable, ... }@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
     let
       system = "x86_64-linux";
 
       lib = nixpkgs-unstable.lib;
 
-      pkgs = import nixpkgs-unstable { 
-        inherit system; 
-        config.allowUnfree = true; 
+      pkgs = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
       };
 
       home-manager = inputs.home-manager;
-    in {
+    in
+    {
       nixosConfigurations = {
         AlbertFlowX13 = lib.nixosSystem {
           inherit system;
-          modules = [ 
+          modules = [
             inputs.disko.nixosModules.default
             (import ./system/FlowX13/disk_config.nix { device = "/dev/vda"; })
 
