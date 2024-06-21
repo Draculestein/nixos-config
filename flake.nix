@@ -15,6 +15,8 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -36,6 +38,7 @@
           inherit system;
           modules = [
             inputs.disko.nixosModules.default
+            inputs.sops-nix.nixosModules.sops
             (import ./system/FlowX13/disk_config.nix { device = "/dev/vda"; })
 
             ./system/FlowX13/configuration.nix
