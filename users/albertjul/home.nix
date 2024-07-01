@@ -5,6 +5,7 @@
     ../../apps/foot.nix
     ../../apps/bash.nix
     ../../apps/zsh.nix
+    ../../apps/brave.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,13 +25,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (brave.override {
-      commandLineArgs = [
-        "--enable-features=VaapiVideoDecodeLinuxGL"
-        "--ignore-gpu-blocklist"
-        "--enable-zero-copy"
-      ];
-    })
     bottles
     vscode
     gh
