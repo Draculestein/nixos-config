@@ -4,7 +4,7 @@
   imports = [
     ../../apps/foot.nix
     ../../apps/bash.nix
-    ../../apps/zsh.nix
+    ../../apps/zsh
     ../../apps/brave.nix
   ];
 
