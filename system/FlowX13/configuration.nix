@@ -124,12 +124,16 @@
     duplicati
     vulkan-tools
     nvtopPackages.full
+    nix-output-monitor
+    nvd
   ];
 
   environment.shells = with pkgs; [
     zsh
     bash
   ];
+
+  programs.nh.enable = true;
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;
