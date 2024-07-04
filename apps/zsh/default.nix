@@ -8,6 +8,6 @@
       theme = "robbyrussell";
     };
 
-    initExtra = builtins.readFile ./zshrc
+    initExtra = builtins.readFile ./zshrc;
   };
 }
