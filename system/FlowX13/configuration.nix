@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ./sound.nix
       ../../apps/steam.nix
+      ../../apps/nh.nix
       ./logitech.nix
       ./podman.nix
       ./gpu.nix
@@ -133,8 +134,6 @@
     bash
   ];
 
-  programs.nh.enable = true;
-
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
@@ -153,6 +152,8 @@
     textfonts
     freefont_ttf
     liberation_ttf
+    lato
+    carlito
   ];
 
 
