@@ -34,8 +34,7 @@
     zoom-us
     vesktop
     rnote
-    gnome.gnome-software
-    gnome.gnome-disk-utility
+    gnome-disk-utility
     devenv
     cachix
     vlc
@@ -43,7 +42,7 @@
     onlyoffice-bin
     kdePackages.okular
     desktop-file-utils
-    gnome.gnome-tweaks
+    gnome-tweaks
     nil
     nixpkgs-fmt
     helvetica-neue-lt-std
@@ -106,7 +105,7 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
       name = "Adwaita-dark";
     };
   };
