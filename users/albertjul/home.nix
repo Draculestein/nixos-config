@@ -6,6 +6,7 @@
     ../../apps/bash.nix
     ../../apps/zsh
     ../../apps/brave.nix
+    ../../apps/starship
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
