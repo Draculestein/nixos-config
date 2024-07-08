@@ -7,4 +7,9 @@
     enableCompletion = true;
     initExtra = builtins.readFile ./.zshrc;
   };
+
+  programs.lsd = {
+    enable = true;
+    enableAliases = true;
+  };
 }
