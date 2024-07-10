@@ -4,10 +4,11 @@
   programs.brave = {
     enable = true;
     commandLineArgs = [
-      "--enable-features=VaapiVideoDecodeLinuxGL"
-      "--use-gl=angle"
-      "--use-angle=gl"
+      "--enable-features=VaapiVideoDecodeLinuxGL,TouchpadOverscrollHistoryNavigation"
+      "--use-gl=egl"
       "--ozone-platform=wayland"
+      "--ignore-gpu-blocklist"
+      "--enable-zero-copy"
     ];
   };
 }
