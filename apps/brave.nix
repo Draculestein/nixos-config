@@ -4,8 +4,9 @@
   programs.brave = {
     enable = true;
     commandLineArgs = [
-      "--enable-features=VaapiVideoDecodeLinuxGL,TouchpadOverscrollHistoryNavigation"
-      "--use-gl=egl"
+      "--use-gl=angle"
+      "--use-angle=vulkan"
+      "--enable-features=TouchpadOverscrollHistoryNavigation,Vulkan,VulkanFromANGLE,DefaultANGLEVulkan,VaapiIgnoreDriverChecks,VaapiVideoDecoder,UseMultiPlaneFormatForHardwareVideo,VaapiVideoEncoder"
       "--ozone-platform=wayland"
       "--ignore-gpu-blocklist"
       "--enable-zero-copy"
