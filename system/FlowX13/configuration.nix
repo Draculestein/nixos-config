@@ -12,6 +12,7 @@
       ./sound.nix
       ../../apps/steam.nix
       ../../apps/nh.nix
+      ../../apps/sops.nix
       ./logitech.nix
       ./podman.nix
       ./gpu.nix
