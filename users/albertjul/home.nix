@@ -37,7 +37,6 @@
     rnote
     gnome-disk-utility
     devenv
-    cachix
     vlc
     firefox
     onlyoffice-bin
