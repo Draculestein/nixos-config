@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "config-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721026372,
+        "narHash": "sha256-tB2IqwEEYs9pG3JgrKlA0ARNaaICbf1qz2qxLi7SGHY=",
+        "ref": "main",
+        "rev": "c5d53e86cb264ef057f8374b9513870f53f89d32",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/Draculestein/nixos-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/Draculestein/nixos-secrets.git"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -91,6 +109,7 @@
     },
     "root": {
       "inputs": {
+        "config-secrets": "config-secrets",
         "disko": "disko",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
