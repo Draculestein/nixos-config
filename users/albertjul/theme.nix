@@ -14,7 +14,7 @@
     };
 
     iconTheme = {
-      name = "Papirus Icon Theme";
+      name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
   };
