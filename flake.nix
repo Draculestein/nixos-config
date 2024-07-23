@@ -49,7 +49,7 @@
             inputs.sops-nix.nixosModules.sops
             (import ./system/FlowX13/disk_config.nix { device = "/dev/nvme0n1"; })
 
-            ./system/FlowX13/configuration.nix
+            ./system/FlowX13
           ];
         };
       };
