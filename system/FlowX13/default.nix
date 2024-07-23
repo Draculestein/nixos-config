@@ -21,5 +21,5 @@
     ../modules/sops.nix
     ../modules/sound.nix
     ../modules/steam.nix
-  ]
+  ];
 }
