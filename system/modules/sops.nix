@@ -1,12 +1,15 @@
-{ config, pkgs, lib, sops-nix, ... }:
-
+{ config, pkgs, lib, sops-nix, config-secrets, ... }:
+let 
+  secretsDir = builtins.toString config-secrets;
+  secretsPath = "${secretsDir}/secrets.yaml";
+in 
 {
   imports = [
     sops-nix.nixosModules.sops
   ];
 
   sops = {
-    defaultSopsFile = "/home/albertjul/.secrets/secrets.yaml";
+    defaultSopsFile = "${secretsPath}";
     defaultSopsFormat = "yaml";
     validateSopsFiles = false;
 
