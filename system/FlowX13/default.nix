@@ -5,6 +5,7 @@
     # Hardware
     ./gpu.nix
     ../modules/asus.nix
+    ../modules/wacom.nix
 
     # Display Manager and DE
     ../modules/gdm.nix

@@ -46,13 +46,12 @@
     "C.UTF-8/UTF-8"
     "en_GB.UTF-8/UTF-8"
   ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.wacom.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
