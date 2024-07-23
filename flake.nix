@@ -44,10 +44,12 @@
       nixosConfigurations = {
         AlbertFlowX13 = lib.nixosSystem {
           inherit system;
+          specialArgs = with inputs; {
+            inherit disko;
+            inherit sops-nix;
+          };
           modules = [
-            inputs.disko.nixosModules.default
             inputs.sops-nix.nixosModules.sops
-            (import ./system/FlowX13/disk_config.nix { device = "/dev/nvme0n1"; })
 
             ./system/FlowX13
           ];

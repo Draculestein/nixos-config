@@ -4,6 +4,7 @@
 
     # Hardware
     ./gpu.nix
+    ./disk.nix
     ../modules/asus.nix
     ../modules/wacom.nix
 
