@@ -47,6 +47,7 @@
           specialArgs = with inputs; {
             inherit disko;
             inherit sops-nix;
+            inherit config-secrets;
           };
           modules = [
             inputs.sops-nix.nixosModules.sops
