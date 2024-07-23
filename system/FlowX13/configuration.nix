@@ -9,28 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./sound.nix
-      ../../apps/steam.nix
-      ../../apps/nh.nix
-      ../../apps/sops.nix
-      ./logitech.nix
-      ./podman.nix
-      ./gpu.nix
     ];
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = true;
-      trusted-users = [ "root" ];
-    };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
-  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -71,35 +50,12 @@
   services.xserver.enable = true;
   services.xserver.wacom.enable = true;
 
-  # Enable KDE Plasma
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   wayland.enable = true;
-  # };
-  # services.desktopManager.plasma6.enable = true;
-
-  # Enable GNOME and GDM
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  services.asusd = {
-    enable = true;
-    enableUserService = true;
-  };
-
-  services.supergfxd = {
-    enable = true;
-  };
 
   services.flatpak.enable = true;
 
