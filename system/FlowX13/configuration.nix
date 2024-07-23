@@ -56,8 +56,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.flatpak.enable = true;
-
   users.users.albertjul = {
     isNormalUser = true;
     uid = 1000;

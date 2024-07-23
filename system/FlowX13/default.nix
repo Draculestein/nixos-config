@@ -21,5 +21,6 @@
     ../modules/sops.nix
     ../modules/sound.nix
     ../modules/steam.nix
+    ../modules/flatpak.nix
   ];
 }
