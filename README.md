@@ -25,9 +25,9 @@ This is my NixOS configuration which I personally use as a daily driver. Current
     git clone https://github.com/Draculestein/nixos-config
     ```
 4. Navigate into the repo and open `disk_config.nix` to adjust file system (e.g. change the size of the swap partition, change the filesystem).
-5. Run this command. Replace `/path/to/disk_config.nix` to the absolute path of your `disk_config.nix`
+5. Run this command. Replace `/path/to/disk_config.nix` to the absolute path of your `disk_config.nix` and `'"/disk/name"'` with your disk name (e.g. `/dev/vda`, `/dev/nvme0n1`)
     ```
-    sudo nix run github:nix-community/disko -- --mode disko /path/to/disk_config.nix --arg device '"/dev/vda"'
+    sudo nix run github:nix-community/disko -- --mode disko /path/to/disk_config.nix --arg device '"/disk/name"'
     ```
 6. Check if the command run successfully by running:
     ```
