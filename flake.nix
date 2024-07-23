@@ -1,6 +1,6 @@
 {
 
-  description = "Main flake";
+  description = "Main flake for Draculestein's NixOS setup.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
@@ -49,11 +49,7 @@
             inherit sops-nix;
             inherit config-secrets;
           };
-          modules = [
-            inputs.sops-nix.nixosModules.sops
-
-            ./system/FlowX13
-          ];
+          modules = [ ./system/FlowX13 ];
         };
       };
 
@@ -64,7 +60,5 @@
         };
       };
     };
-
-
 }
 

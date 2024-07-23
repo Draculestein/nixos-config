@@ -1,6 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, sops-nix, ... }:
 
 {
+  imports = [
+    sops-nix.nixosModules.sops
+  ];
+
   sops = {
     defaultSopsFile = "/home/albertjul/.secrets/secrets.yaml";
     defaultSopsFormat = "yaml";
@@ -9,9 +13,9 @@
     age.keyFile = "/home/albertjul/.config/sops/age/keys.txt";
 
     secrets = {
-      "restic/environment" = {};
-      "restic/repository" = {};
-      "restic/password" = {};
+      "restic/environment" = { };
+      "restic/repository" = { };
+      "restic/password" = { };
     };
   };
 }
