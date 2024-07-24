@@ -8,7 +8,7 @@ in
     sops-nix.nixosModules.sops
   ];
 
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     sops
   ];
 
