@@ -64,23 +64,6 @@
     shell = pkgs.zsh;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    tree
-    btop
-    pciutils
-    usbutils
-    restic
-    vulkan-tools
-    nvtopPackages.full
-    nix-output-monitor
-    nvd
-  ];
-
   environment.shells = with pkgs; [
     zsh
     bash
@@ -90,23 +73,6 @@
   programs.dconf.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-    corefonts
-    vistafonts
-    noto-fonts
-    open-fonts
-    noto-fonts-emoji
-    noto-fonts-extra
-    noto-fonts-cjk
-    noto-fonts-color-emoji
-    textfonts
-    freefont_ttf
-    liberation_ttf
-    lato
-    carlito
-  ];
 
 
   # This option defines the first version of NixOS you have installed on this particular machine,
