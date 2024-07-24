@@ -74,7 +74,7 @@
     btop
     pciutils
     usbutils
-    duplicati
+    restic
     vulkan-tools
     nvtopPackages.full
     nix-output-monitor
