@@ -15,5 +15,6 @@
     nvtopPackages.full
     nix-output-monitor
     nvd
+    sops
   ];
 }
