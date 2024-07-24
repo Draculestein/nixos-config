@@ -3,10 +3,10 @@
     "config-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1721787379,
-        "narHash": "sha256-RHz64GReY4j1HYP8NS9DlJ2xD3Q4Z9iMZL7USn9hTp0=",
+        "lastModified": 1721794505,
+        "narHash": "sha256-dfVSK1Gw1NUNfV1saib00pIsPZLuYOGdvZQlFMokvcY=",
         "ref": "main",
-        "rev": "b1485b66f100616d3213682173c7af50049f0866",
+        "rev": "99d34a366b32d20610efe12b8fa58ec7e89cd0c4",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/Draculestein/nixos-secrets.git"
