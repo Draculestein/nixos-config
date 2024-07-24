@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 let
-  username = "albertjul";
+  username = config.users.users.albertjul.name;
+  userId = config.users.users.albertjul.uid;
   secretsPath = "/run/secrets/restic";
+  serviceName = "albertjul-FlowX13-B2backup";
 in
 {
   environment.systemPackages = with pkgs; [
@@ -9,7 +11,7 @@ in
     libnotify
   ];
 
-  services.restic.backups.albertjul-FlowX13-B2backup = {
+  services.restic.backups.${serviceName} = {
     initialize = true;
     user = "${username}";
     environmentFile = "${secretsPath}/environment";
@@ -48,20 +50,18 @@ in
     };
   };
 
-  systemd.services.restic-backups-daily.unitConfig.OnFailure = "notify-backup-failed.service";
+  systemd.services.${serviceName}.unitConfig.OnFailure = "notify-backup-failed.service";
 
   systemd.services."notify-backup-failed" = {
     enable = true;
     description = "Notify on failed backup";
     serviceConfig = {
       Type = "oneshot";
-      User = config.users.users.arthur.name;
+      User = username;
     };
 
     # required for notify-send
-    environment.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/${
-            toString config.users.users.arthur.uid
-          }/bus";
+    environment.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/${toString userId}/bus";
 
     script = ''
       ${pkgs.libnotify}/bin/notify-send --urgency=critical \
