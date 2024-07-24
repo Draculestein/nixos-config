@@ -24,8 +24,8 @@ in
 
     exclude = [
       "/home/${username}/.cache"
-      "/home/${userName}/.local/share/Trash"
-      "/home/${userName}/.var/app/*/cache"
+      "/home/${username}/.local/share/Trash"
+      "/home/${username}/.var/app/*/cache"
     ];
 
     extraBackupArgs = [
