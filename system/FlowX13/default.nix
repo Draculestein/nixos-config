@@ -13,6 +13,8 @@
     ../modules/gnome.nix
 
     # Software
+    ./fonts.nix
+    ./packages.nix
     ../modules/printing.nix
     ../modules/logitech.nix
     ../modules/nh.nix
