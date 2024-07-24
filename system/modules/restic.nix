@@ -50,6 +50,7 @@ in
     };
   };
 
+  # Got the script from Arthur Koziel (see https://www.arthurkoziel.com/restic-backups-b2-nixos/)
   systemd.services.${serviceName}.unitConfig.OnFailure = "notify-backup-failed.service";
 
   systemd.services."notify-backup-failed" = {
