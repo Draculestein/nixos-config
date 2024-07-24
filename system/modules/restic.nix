@@ -37,6 +37,7 @@ in
 
     extraBackupArgs = [
       "--exclude-caches"
+      "--verbose=2"
     ];
 
     # Necessary to prevent locks from persisting indefinitely. See more:
