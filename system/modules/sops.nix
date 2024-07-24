@@ -20,9 +20,15 @@ in
     age.keyFile = "/home/albertjul/.config/sops/age/keys.txt";
 
     secrets = {
-      "restic/environment" = { };
-      "restic/repository" = { };
-      "restic/password" = { };
+      "restic/environment" = {
+        owner = config.users.users.albertjul;
+      };
+      "restic/repository" = {
+        owner = config.users.users.albertjul;
+      };
+      "restic/password" = {
+        owner = config.users.users.albertjul;
+      };
     };
   };
 }
