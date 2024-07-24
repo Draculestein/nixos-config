@@ -33,7 +33,7 @@ in
       "/home/${username}/.cache"
       "/home/${username}/.local/share/Trash"
       "/home/${username}/.var/app/*/cache"
-      /home/${username}/.local/share/containers/
+      "/home/${username}/.local/share/containers/"
     ];
 
     extraBackupArgs = [
@@ -69,7 +69,7 @@ in
     script = ''
       ${pkgs.libnotify}/bin/notify-send --urgency=critical \
         "Backup failed" \
-        "$(journalctl -u restic-backups-daily -n 5 -o cat)"
+        "$(journalctl -u ${serviceName} -n 5 -o cat)"
     '';
   };
 
