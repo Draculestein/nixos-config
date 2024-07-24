@@ -3,10 +3,10 @@
     "config-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1721796528,
-        "narHash": "sha256-D/HyT098wzlrbD8xSvgQXWPVaYY+W7fEPrm92jb0si8=",
+        "lastModified": 1721800464,
+        "narHash": "sha256-zCr0z9wi34ySs/BjZJdHc81lhhpspMEFCmrtSec/prA=",
         "ref": "main",
-        "rev": "e34e32683320834710a9e70dbacea8776a917315",
+        "rev": "6d06f1046354e8d67046cf7a8996430b17c5edeb",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/Draculestein/nixos-secrets.git"
@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721714663,
-        "narHash": "sha256-ZDW5+rlROxaOuoEfIQM7Gqhoa+WALEYdYIiZhyJjAu0=",
+        "lastModified": 1721799448,
+        "narHash": "sha256-oh5XwyHB9ExuEW3Jcq7ABAHEYf9LShWn7vddamSYYPY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7560dc942a6fbd37ebd1310b3dbda513de2d4b82",
+        "rev": "465ea1f994a4e2b498b847c35caa205af7b261df",
         "type": "github"
       },
       "original": {
