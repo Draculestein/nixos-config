@@ -21,13 +21,13 @@ in
 
     secrets = {
       "restic/environment" = {
-        owner = config.users.users.albertjul;
+        owner = config.users.users.albertjul.name;
       };
       "restic/repository" = {
-        owner = config.users.users.albertjul;
+        owner = config.users.users.albertjul.name;
       };
       "restic/password" = {
-        owner = config.users.users.albertjul;
+        owner = config.users.users.albertjul.name;
       };
     };
   };
