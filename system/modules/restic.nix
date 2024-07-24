@@ -3,7 +3,8 @@ let
   username = config.users.users.albertjul.name;
   userId = config.users.users.albertjul.uid;
   secretsPath = "/run/secrets/restic";
-  serviceName = "albertjul-FlowX13-B2backup";
+  backupName = "albertjul-FlowX13-B2backup";
+  serviceName = "restic-backups-${backupName}";
 in
 {
   environment.systemPackages = with pkgs; [
@@ -11,7 +12,7 @@ in
     libnotify
   ];
 
-  services.restic.backups.${serviceName} = {
+  services.restic.backups.${backupName} = {
     initialize = true;
     user = "${username}";
     environmentFile = "${secretsPath}/environment";
@@ -63,13 +64,13 @@ in
       User = username;
     };
 
-    # required for notify-send
-    environment.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/${toString userId}/bus";
-
     script = ''
-      ${pkgs.libnotify}/bin/notify-send --urgency=critical \
-        "Backup failed" \
-        "$(journalctl -u ${serviceName} -n 5 -o cat)"
+      sudo -u ${username} \
+      DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/${userId}/bus \
+      ${pkgs.libnotify}/bin/notify-send \
+      --urgency=critical --icon=dialog-error --app-name="Restic Backup albertjul" \
+      "Backup failed" \
+      "$(journalctl -u ${serviceName} -n 5 -o cat)"
     '';
   };
 
