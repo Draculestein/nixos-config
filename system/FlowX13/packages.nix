@@ -10,11 +10,9 @@
     btop
     pciutils
     usbutils
-    restic
     vulkan-tools
     nvtopPackages.full
     nix-output-monitor
     nvd
-    sops
   ];
 }

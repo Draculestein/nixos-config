@@ -1,11 +1,15 @@
 { config, pkgs, lib, sops-nix, config-secrets, ... }:
-let 
+let
   secretsDir = builtins.toString config-secrets;
   secretsPath = "${secretsDir}/secrets.yaml";
-in 
+in
 {
   imports = [
     sops-nix.nixosModules.sops
+  ];
+
+  environment.packages = with pkgs; [
+    sops
   ];
 
   sops = {

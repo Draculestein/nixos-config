@@ -4,6 +4,11 @@ let
   secretsPath = "/run/secrets/restic";
 in
 {
+  environment.systemPackages = with pkgs; [
+    restic
+    libnotify
+  ];
+
   services.restic.backups.albertjul-FlowX13-B2backup = {
     initialize = true;
     user = "${username}";
@@ -41,6 +46,28 @@ in
       Persistent = true;
       RandomizedDelaySec = "1h";
     };
+  };
+
+  systemd.services.restic-backups-daily.unitConfig.OnFailure = "notify-backup-failed.service";
+
+  systemd.services."notify-backup-failed" = {
+    enable = true;
+    description = "Notify on failed backup";
+    serviceConfig = {
+      Type = "oneshot";
+      User = config.users.users.arthur.name;
+    };
+
+    # required for notify-send
+    environment.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/${
+            toString config.users.users.arthur.uid
+          }/bus";
+
+    script = ''
+      ${pkgs.libnotify}/bin/notify-send --urgency=critical \
+        "Backup failed" \
+        "$(journalctl -u restic-backups-daily -n 5 -o cat)"
+    '';
   };
 
 }
