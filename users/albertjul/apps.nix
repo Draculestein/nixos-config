@@ -8,12 +8,12 @@
     ../modules/starship
     ../modules/ssh.nix
     ../modules/direnv.nix
+    ../modules/lutris.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    bottles
     vscode
     gh
     papirus-icon-theme
