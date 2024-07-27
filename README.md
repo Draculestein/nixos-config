@@ -6,7 +6,8 @@ This is my NixOS configuration which I personally use as a daily driver. Current
 
 - Flake-based, allowing for easy version locking of packages.
 - Atomic, each application has its own corresponding file and config.
-- (In Progress) Secret management using sops-nix. 
+- Secrets management using sops-nix. 
+- Automatic backup using restic with failure notification.
 
 ## Installation
 
