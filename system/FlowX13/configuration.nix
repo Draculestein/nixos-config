@@ -21,6 +21,7 @@
   boot.consoleLogLevel = 0;
   # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
