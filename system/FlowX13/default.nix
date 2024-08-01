@@ -9,8 +9,10 @@
     ../modules/wacom.nix
 
     # Display Manager and DE
-    ../modules/gdm.nix
-    ../modules/gnome.nix
+    # ../modules/gdm.nix
+    # ../modules/gnome.nix
+    ../modules/sddm.nix
+    ../modules/plasma6.nix
 
     # Software
     ./fonts.nix
