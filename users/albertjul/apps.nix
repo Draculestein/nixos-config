@@ -22,6 +22,8 @@
     vesktop
     rnote
     gnome-disk-utility
+    supergfxctl-plasmoid
+    nautilus
     devenv
     vlc
     firefox
