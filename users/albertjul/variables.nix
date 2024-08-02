@@ -13,6 +13,5 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-    GIT_ASKPASS = "${pkgs.kdePackages.ksshaskpass}";
   };
 }
