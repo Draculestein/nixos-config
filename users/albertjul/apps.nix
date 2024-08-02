@@ -22,7 +22,7 @@
     vesktop
     rnote
     gnome-disk-utility
-    supergfxctl-plasmoid
+    # supergfxctl-plasmoid
     nautilus
     sushi
     devenv
