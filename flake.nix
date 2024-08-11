@@ -56,6 +56,7 @@
       homeConfigurations = {
         albertjul = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [ ./users/albertjul/home.nix ];
         };
       };
