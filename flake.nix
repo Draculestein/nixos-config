@@ -16,6 +16,7 @@
     };
 
     ags.url = "github:Aylur/ags";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -49,6 +50,7 @@
             inherit disko;
             inherit sops-nix;
             inherit config-secrets;
+            inherit hyprland;
           };
           modules = [ ./system/FlowX13 ];
         };

@@ -13,6 +13,7 @@
     ../modules/gnome.nix
     # ../modules/sddm.nix
     # ../modules/plasma6.nix
+    ../modules/hyprland.nix
 
     # Software
     ./fonts.nix
