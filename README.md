@@ -44,3 +44,7 @@ This is my NixOS configuration which I personally use as a daily driver. Current
     sudo nixos-rebuild switch --flake .#AlbertFlowX13
     ```
 
+## Project Structure
+- `flake.nix`: entry point for Nix flake.
+- `system`: OS-level Nix modules.
+- `users`: user-level Home-manager modules.
