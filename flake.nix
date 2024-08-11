@@ -1,5 +1,4 @@
 {
-
   description = "Main flake for Draculestein's NixOS setup.";
 
   inputs = {
@@ -15,6 +14,8 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    ags.url = "github:Aylur/ags";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
