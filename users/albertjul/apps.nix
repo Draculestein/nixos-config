@@ -10,6 +10,7 @@
     ../modules/direnv.nix
     ../modules/lutris.nix
     ../modules/ags.nix
+    ../modules/fastfetch.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
