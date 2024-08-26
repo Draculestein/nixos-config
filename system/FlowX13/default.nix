@@ -22,7 +22,7 @@
     ../modules/logitech.nix
     ../modules/nh.nix
     ../modules/nixSettings.nix
-    ../modules/podman.nix
+    ../modules/virtualization.nix
     ../modules/restic.nix
     ../modules/sops.nix
     ../modules/sound.nix
