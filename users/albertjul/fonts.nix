@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     helvetica-neue-lt-std
+    roboto
   ];
 
 }
