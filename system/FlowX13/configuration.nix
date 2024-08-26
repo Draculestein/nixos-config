@@ -38,7 +38,9 @@
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   # Set your time zone.
-  time.timeZone = "America/Denver";
+  time.timeZone = lib.mkDefault "America/Denver";
+  services.automatic-timezoned.enable = true;
+
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
