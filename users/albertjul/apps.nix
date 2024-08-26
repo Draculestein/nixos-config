@@ -19,7 +19,8 @@
     vscode
     gh
     papirus-icon-theme
-    betterbird
+    # betterbird-unwrapped
+    thunderbird
     zoom-us
     vesktop
     rnote
