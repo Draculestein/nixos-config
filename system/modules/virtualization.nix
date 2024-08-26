@@ -24,7 +24,7 @@
     docker-compose # start group of containers for dev
     # podman-compose  # start group of containers for dev
     qemu
-    gnome.gnome-boxes # UI for QEMU
+    gnome-boxes # UI for QEMU
   ];
 
 
