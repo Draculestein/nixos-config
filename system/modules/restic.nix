@@ -65,7 +65,6 @@ in
     };
 
     script = ''
-      sudo -u ${username} \
       DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/${toString userId}/bus \
       ${pkgs.libnotify}/bin/notify-send \
       --urgency=critical --icon=dialog-error --app-name="Restic Backup albertjul" \
