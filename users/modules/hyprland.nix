@@ -1,7 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   windows.windowsManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     settings = {
 
       # ======== Monitor ========
@@ -18,6 +19,10 @@
         "$mod, "
       ];
 
+      bindm = [
+        "SUPER, mouse:273, resizewindow"
+        "SUPER, mouse:272, movewindow"
+      ];
     };
   };
 }
