@@ -129,10 +129,8 @@
             (i:
               let ws_number = i + 1;
               in [
-                ws
-                (toString ws_number)
-                move_to_ws
-                (toString ws_number)
+                ws (toString ws_number)
+                move_to_ws (toString ws_number)
               ]
             )
             ws_capacity;
