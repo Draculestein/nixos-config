@@ -3,8 +3,8 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.vimix-cursor-theme;
-    name = "Vimix Cursors";
-    size = 16;
+    name = "Vimix-Cursors";
+    size = 12;
   };
 
   qt = {
