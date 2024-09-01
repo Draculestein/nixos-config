@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  windows.windowsManager.hyprland = {
+  wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     systemd.enable = true;
@@ -27,7 +27,7 @@
       # ======== Monitor ========
       monitor = [
         "eDP-1, 1920x1200@60, 0x0, 1"
-        "DP-1, 1920x1080@164.92, -1920x01"
+        "DP-1, 1920x1080@164.92, -1920x0, 1"
       ];
 
       # ======== Look and Feel ========
@@ -122,15 +122,15 @@
 
       bind =
         let
-          ws = ws_number: "$mod, ${number}, workspace, ${number}";
-          move_to_ws = ws_number: "$mod SHIFT, ${number}, movetoworkspace, ${number}";
+          ws = number: "$mod, ${number}, workspace, ${number}";
+          move_to_ws = number: "$mod SHIFT, ${number}, movetoworkspace, ${number}";
           ws_capacity = 10;
           ws_bindings = builtins.genList
             (i:
               let ws_number = i + 1;
               in [
-                ws (toString ws_number)
-                move_to_ws (toString ws_number)
+                "${ws (toString ws_number)}"
+                "${move_to_ws (toString ws_number)}"
               ]
             )
             ws_capacity;
