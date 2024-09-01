@@ -5,6 +5,8 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     systemd.enable = true;
 
+    systemd.variables = [ "--all" ];
+
     settings = {
       # ======== Environment ========
       env = [
@@ -16,7 +18,6 @@
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "XCURSOR_SIZE, 24"
-        "HYPRCURSOR_SIZE, 24"
       ];
 
       # ======== Autostart ========
