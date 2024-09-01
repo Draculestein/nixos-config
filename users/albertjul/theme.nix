@@ -1,28 +1,40 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.vimix-cursor-theme;
-    name = "Vimix-Cursors";
-    size = 12;
-  };
+  imports = [
+    inputs.stylix.homeManagerModules.stylix
+  ];
 
-  qt = {
+  stylix = {
     enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
-  };
+    image = ./desktop.png;
+    polarity = "dark";
 
-  gtk = {
-    enable = true;
-    theme = {
-      package = pkgs.gnome-themes-extra;
-      name = "Adwaita-dark";
-    };
-
-    iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
+    cursor = {
+      package = pkgs.vimix-cursor-theme;
+      name = "Vimix-Cursors";
+      size = 12;
     };
   };
+
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "adwaita";
+  #   style.name = "adwaita-dark";
+  # };
+
+  # gtk = {
+  #   enable = true;
+  #   gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+  #   theme = {
+  #     package = pkgs.gnome-themes-extra;
+  #     name = "Adwaita-dark";
+  #   };
+
+  #   iconTheme = {
+  #     name = "Papirus";
+  #     package = pkgs.papirus-icon-theme;
+  #   };
+  # };
+
+
 }
