@@ -30,23 +30,141 @@
         "DP-1, 1920x1080@164.92, -1920x01"
       ];
 
+      # ======== Look and Feel ========
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+
+        border_size = 2;
+
+        # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+
+        # Set to true enable resizing windows by clicking and dragging on borders and gaps
+        resize_on_border = false;
+
+        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        allow_tearing = false;
+
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 10;
+
+        # Change transparency of focused and unfocused windows
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+
+        drop_shadow = true;
+        shadow_range = 4;
+        shadow_render_power = 3;
+        "col.shadow" = "rgba(1a1a1aee)";
+
+        # https://wiki.hyprland.org/Configuring/Variables/#blur
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+
+          vibrancy = 0.1696;
+        };
+      };
+
+      animations = {
+        enabled = true;
+
+        # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
+      };
+
+      dwindle = {
+        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        preserve_split = true; # You probably want this
+      };
+
+      master = {
+        new_status = "master";
+      };
+
+      # ======== Input ========
+
+      input = {
+        kb_layout = "us";
+        follow_mouse = 1;
+        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+        touchpad = {
+          natural_scroll = true;
+          disable_while_typing = true;
+        };
+      };
+
+      # https://wiki.hyprland.org/Configuring/Variables/#gestures
+      gestures = {
+        workspace_swipe = true;
+      };
+
       # ======== Binds ========
       "$mod" = "SUPER";
       "$terminal" = "foot";
       "$fileManager" = "nautilus";
       "$browser" = "brave";
 
-      bind = [
-        "$mod, B, exec, $browser"
-        "$mod, T, exec, $terminal"
-        "$mod, E, exec, $fileManager"
-        "$mod, Q, killactive"
-      ];
+      bind =
+        let
+          ws = ws_number: "$mod, ${number}, workspace, ${number}";
+          move_to_ws = ws_number: "$mod SHIFT, ${number}, movetoworkspace, ${number}";
+          ws_capacity = 10;
+          ws_bindings = builtins.genList
+            (i:
+              let ws_number = i + 1;
+              in [
+                ws
+                (toString ws_number)
+                move_to_ws
+                (toString ws_number)
+              ]
+            )
+            ws_capacity;
+        in
+        [
+          "$mod, B, exec, $browser"
+          "$mod, T, exec, $terminal"
+          "$mod, E, exec, $fileManager"
+          "$mod, Q, killactive"
+          "$mod ALT SHIFT, Delete, exit"
+          "$mod, V, togglefloating"
+          "$mod, P, pseudo"
+          "$mod, J, togglesplit"
+          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e-1"
+          "$mod, left, movefocus, l"
+          "$mod, right, movefocus, r"
+          "$mod, up, movefocus, u"
+          "$mod, down, movefocus, d"
+        ]
+        ++ builtins.concatLists (ws_bindings);
 
       bindm = [
         "SUPER, mouse:273, resizewindow"
         "SUPER, mouse:272, movewindow"
       ];
+
+      # ======== Windowrules ========
+      windowrulev2 = [
+        "suppressevent maximize, class:.*" # You'll probably like this.
+      ];
+
     };
   };
 }
