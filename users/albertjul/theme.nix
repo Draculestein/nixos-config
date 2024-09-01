@@ -1,5 +1,12 @@
 { config, lib, pkgs, ... }:
 {
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.vimix-cursor-theme;
+    name = "Vimix Cursors";
+    size = 16;
+  };
+
   qt = {
     enable = true;
     platformTheme.name = "adwaita";
