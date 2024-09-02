@@ -14,6 +14,11 @@
       name = "Vimix-Cursors";
       size = 12;
     };
+
+    targets = {
+      hyprland.enable = true;
+      hyprpaper.enable = true;
+    };
   };
 
   # qt = {
