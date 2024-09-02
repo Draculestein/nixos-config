@@ -10,7 +10,7 @@
     noto-fonts-extra
     noto-fonts-cjk
     noto-fonts-color-emoji
-    textfonts
+    # textfonts
     freefont_ttf
     liberation_ttf
     lato
