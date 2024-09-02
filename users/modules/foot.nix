@@ -8,8 +8,8 @@
       main = {
         title = "foot";
         pad = "25x25";
-        font = "Hasklug Nerd Font:size=12";
-        dpi-aware = false;
+        # font = "Hasklug Nerd Font:size=12";
+        dpi-aware = "no";
         bold-text-in-bright = false;
       };
 
