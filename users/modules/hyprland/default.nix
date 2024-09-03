@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 {
-  services.hyprpaper.package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
+  # services.hyprpaper.package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
 
   wayland.windowManager.hyprland = {
     enable = true;

@@ -20,7 +20,6 @@
     vscode
     gh
     papirus-icon-theme
-    # betterbird-unwrapped
     thunderbird
     zoom-us
     vesktop
@@ -41,6 +40,7 @@
     nixd
     path-of-building
     bitwarden-desktop
+    zed-editor
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
