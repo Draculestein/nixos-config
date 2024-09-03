@@ -8,6 +8,7 @@
     enable = true;
     image = ./desktop.png;
     polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
     cursor = {
       package = pkgs.vimix-cursor-theme;
@@ -15,31 +16,26 @@
       size = 12;
     };
 
+    fonts = {
+      monospace = {
+        name = "Hasklug Nerd Font";
+        package = pkgs.nerdfonts.override { fonts = [ "Hasklig" ]; };
+      };
+    };
+
     targets = {
-      hyprland.enable = true;
-      hyprpaper.enable = true;
+      vscode.enable = false;
     };
   };
 
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "adwaita";
-  #   style.name = "adwaita-dark";
-  # };
+  gtk = {
+    enable = true;
 
-  # gtk = {
-  #   enable = true;
-  #   gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-  #   theme = {
-  #     package = pkgs.gnome-themes-extra;
-  #     name = "Adwaita-dark";
-  #   };
-
-  #   iconTheme = {
-  #     name = "Papirus";
-  #     package = pkgs.papirus-icon-theme;
-  #   };
-  # };
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
 
 
 }
