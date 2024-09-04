@@ -35,7 +35,6 @@
     kdePackages.okular
     desktop-file-utils
     gnome-tweaks
-    nil
     nixpkgs-fmt
     nixd
     path-of-building

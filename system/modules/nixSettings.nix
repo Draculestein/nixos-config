@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }: 
 { 
-    nix = {
+
+  nix = {
+    nixPath = [ "nixpkgs=${pkgs}" ];
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
