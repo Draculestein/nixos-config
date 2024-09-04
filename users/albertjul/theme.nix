@@ -25,6 +25,7 @@
 
     targets = {
       vscode.enable = false;
+      hyprpaper.enable = false;
     };
   };
 
