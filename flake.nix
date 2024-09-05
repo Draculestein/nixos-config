@@ -19,7 +19,9 @@
 
     ags.url = "github:Aylur/ags";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    # hyprpaper.url = "git+https://github.com/hyprwm/hyprpaper";
+    hyprpaper.url = "git+https://github.com/hyprwm/hyprpaper";
+
+    stylix.url = "github:danth/stylix";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
