@@ -17,7 +17,7 @@
 
     ags.url = "github:Aylur/ags";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprpaper.url = "git+https://github.com/hyprwm/hyprpaper";
+    # hyprpaper.url = "git+https://github.com/hyprwm/hyprpaper";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -47,11 +47,8 @@
       nixosConfigurations = {
         AlbertFlowX13 = lib.nixosSystem {
           inherit system;
-          specialArgs = with inputs; {
-            inherit disko;
-            inherit sops-nix;
-            inherit config-secrets;
-            inherit hyprland;
+          specialArgs = {
+            inherit inputs;
           };
           modules = [ ./system/FlowX13 ];
         };

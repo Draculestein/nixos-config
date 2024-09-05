@@ -1,7 +1,7 @@
-{ config, lib, pkgs, disko, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   imports = [
-    disko.nixosModules.default
+    inputs.disko.nixosModules.default
     (import ./disk_config.nix { device = "/dev/nvme0n1"; })
 
   ];

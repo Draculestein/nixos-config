@@ -1,4 +1,4 @@
-{ config, lib, pkgs, hyprland, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
@@ -7,7 +7,7 @@
 
   programs.hyprland = {
     enable = true;
-    package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     xwayland.enable = true;
   };
 }
