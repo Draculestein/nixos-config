@@ -9,7 +9,7 @@
     ../modules/ssh.nix
     ../modules/direnv.nix
     ../modules/lutris.nix
-    ../modules/ags.nix
+    # ../modules/ags.nix
     ../modules/fastfetch.nix
     ../modules/hyprland
   ];
