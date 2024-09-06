@@ -14,7 +14,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    "~/.config/eww" = {
+    ".config/eww" = {
       enable = true;
       source = ../modules/eww;
     };
