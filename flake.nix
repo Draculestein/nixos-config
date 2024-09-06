@@ -4,8 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-unstable-small.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-
+    # nixos-unstable-small.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
     disko = {
       url = "github:nix-community/disko";
@@ -40,14 +39,14 @@
 
       lib = nixpkgs-unstable.lib;
 
-      unstable-small-pkgs = import inputs.nixos-unstable-small { inherit system; };
-      xdphOverlay = final: prev: {
-        inherit (unstable-small-pkgs) xdg-desktop-portal-hyprland;
-      };
+      # unstable-small-pkgs = import inputs.nixos-unstable-small { inherit system; };
+      # xdphOverlay = final: prev: {
+      #   inherit (unstable-small-pkgs) xdg-desktop-portal-hyprland;
+      # };
 
       pkgs = import nixpkgs-unstable {
         inherit system;
-        overlays = [ xdphOverlay ];
+        # overlays = [ xdphOverlay ];
         config.allowUnfree = true;
       };
 
