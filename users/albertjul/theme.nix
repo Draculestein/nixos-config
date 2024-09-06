@@ -43,7 +43,7 @@
     };
 
     targets = {
-      vscode.enable = false;
+      vscode.enable = true;
     };
   };
 
