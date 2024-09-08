@@ -7,6 +7,7 @@
     ./disk.nix
     ../modules/asus.nix
     ../modules/wacom.nix
+    ../modules/xboxController.nix
 
     # Display Manager and DE
     ../modules/gdm.nix
