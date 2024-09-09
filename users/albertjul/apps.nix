@@ -9,7 +9,8 @@
     ../modules/ssh.nix
     ../modules/direnv.nix
     ../modules/lutris.nix
-    # ../modules/ags.nix
+    ../modules/ags
+    # ../modules/eww
     ../modules/fastfetch.nix
     ../modules/hyprland
   ];
@@ -39,7 +40,6 @@
     nixd
     path-of-building
     bitwarden-desktop
-    eww
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

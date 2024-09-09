@@ -13,10 +13,5 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-
-    ".config/eww" = {
-      enable = true;
-      source = ../modules/eww;
-    };
   };
 }
