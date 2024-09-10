@@ -6,6 +6,7 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     systemd.enable = true;
+    systemd.enableXdgAutostart = true;
 
     systemd.variables = [ "--all" ];
 
@@ -125,15 +126,18 @@
 
       bind =
         let
-          ws = number: "$mod, ${number}, workspace, ${number}";
-          move_to_ws = number: "$mod SHIFT, ${number}, movetoworkspace, ${number}";
+          ws = number: ws_number: "$mod, ${number}, workspace, ${ws_number}";
+          move_to_ws = number: ws_number: "$mod SHIFT, ${number}, movetoworkspace, ${ws_number}";
           ws_capacity = 10;
           ws_bindings = builtins.genList
             (i:
-              let ws_number = i + 1;
-              in [
-                "${ws (toString ws_number)}"
-                "${move_to_ws (toString ws_number)}"
+              let
+                ws_number = i + 1;
+                key = if ws_number == 10 then 0 else ws_number;
+              in
+              [
+                "${ws (toString key)(toString ws_number)}"
+                "${move_to_ws (toString key)(toString ws_number)}"
               ]
             )
             ws_capacity;
@@ -154,7 +158,7 @@
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
         ]
-        ++ builtins.concatLists (ws_bindings);
+        ++ builtins.concatLists ws_bindings;
 
       bindm = [
         "SUPER, mouse:273, resizewindow"
