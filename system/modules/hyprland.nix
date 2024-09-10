@@ -10,4 +10,6 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     xwayland.enable = true;
   };
+
+  programs.iio-hyprland.enable = true;
 }
