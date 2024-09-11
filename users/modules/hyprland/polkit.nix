@@ -22,7 +22,7 @@
 
       Service = {
         Type = "exec";
-        ExecStart = "gnome-keyring-daemon --start";
+        ExecStart = "gnome-keyring-daemon -r -d";
         Restart = "on-failure";
         RestartSec = 3;
         Environment = [
