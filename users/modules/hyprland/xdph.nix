@@ -12,7 +12,7 @@
       # Portal for hyprland
       hyprland = {
         default = [
-          "xdph"
+          "hyprland"
           "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
