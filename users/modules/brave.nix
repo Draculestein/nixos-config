@@ -4,6 +4,7 @@
   programs.brave = {
     enable = true;
     commandLineArgs = [
+      "--password-store=detect"
       "--use-gl=angle"
       "--use-angle=vulkan"
       "--enable-features=TouchpadOverscrollHistoryNavigation,Vulkan,VulkanFromANGLE,DefaultANGLEVulkan,VaapiIgnoreDriverChecks,VaapiVideoDecoder,UseMultiPlaneFormatForHardwareVideo,VaapiVideoEncoder"
