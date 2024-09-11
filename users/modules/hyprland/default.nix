@@ -26,6 +26,7 @@
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
         "XCURSOR_SIZE, 24"
+        "SSH_AUTH_SOCK, $XDG_RUNTIME_DIR/keyring/ssh"
       ];
 
       # ======== Autostart ========
