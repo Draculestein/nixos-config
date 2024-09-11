@@ -1,5 +1,9 @@
 { config, pkgs, lib, inputs, ... }:
 {
+  imports = [
+    ./polkit.nix
+  ];
+
   services.hyprpaper.package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
 
   wayland.windowManager.hyprland = {
@@ -25,7 +29,7 @@
 
       # ======== Autostart ========
       exec-once = [
-        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
+        "systemctl start --user my-polkit-gnome-authentication-agent-1 &"
         "ags"
       ];
 
