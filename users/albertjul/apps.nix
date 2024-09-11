@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
+    ../modules/gh.nix
     ../modules/foot.nix
     ../modules/bash.nix
     ../modules/zsh
@@ -19,7 +20,6 @@
   # environment.
   home.packages = with pkgs; [
     vscode
-    gh
     papirus-icon-theme
     thunderbird
     zoom-us
