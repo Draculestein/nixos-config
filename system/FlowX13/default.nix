@@ -15,6 +15,7 @@
     # ../modules/sddm.nix
     # ../modules/plasma6.nix
     ../modules/hyprland.nix
+    ../modules/gnome-polkit.nix
 
     # Software
     ./fonts.nix
