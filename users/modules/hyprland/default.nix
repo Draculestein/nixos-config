@@ -2,6 +2,7 @@
 {
   imports = [
     ./polkit.nix
+    ./xdph.nix
   ];
 
   services.hyprpaper.package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
