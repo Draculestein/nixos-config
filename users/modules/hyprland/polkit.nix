@@ -22,11 +22,9 @@
 
       Service = {
         Type = "exec";
-        ExecStart = "gnome-keyring-daemon -r -d";
-        Restart = "on-failure";
-        RestartSec = 3;
+        ExecStart = "/run/wrappers/bin/gnome-keyring-daemon -s";
         Environment = [
-          "SSH_AUTH_SOCK=%t/ssh-agent.socket"
+          "SSH_AUTH_SOCK=%t/keyring/ssh"
           "DISPLAY=:0"
         ];
       };
