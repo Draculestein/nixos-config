@@ -3,9 +3,9 @@
   imports = [
     ./polkit.nix
     ./xdph.nix
+    ./hyprpaper.nix
   ];
 
-  services.hyprpaper.package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -33,6 +33,7 @@
       exec-once = [
         "systemctl start --user my-polkit-gnome-authentication-agent-1 &"
         "systemctl start --user start-gnome-keyring-daemon &"
+        "hyprpaper &"
         "ags"
       ];
 
