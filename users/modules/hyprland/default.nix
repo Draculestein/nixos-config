@@ -31,7 +31,7 @@
       # ======== Autostart ========
       exec-once = [
         "systemctl start --user my-polkit-gnome-authentication-agent-1 &"
-        "gnome-keyring-daemon --start --components=secrets"
+        "gnome-keyring-daemon --start --components=secrets &"
         "ags"
       ];
 
