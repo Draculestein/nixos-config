@@ -7,7 +7,7 @@
 
   stylix = {
     enable = true;
-    image = ./desktop.png;
+    image = ./desktop.jpg;
 
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";

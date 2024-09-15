@@ -6,13 +6,13 @@
       ipc = "on";
       splash = false;
 
-      preload = [
-        "/home/albertjul/Pictures/Saved Pictures/desktop.png"
-      ];
+      # preload = [
+      #   "/home/albertjul/Pictures/Saved\ Pictures/desktop.jpg"
+      # ];
 
-      wallpaper = [
-        ", /home/albertjul/Pictures/Saved Pictures/desktop.png"
-      ];
+      # wallpaper = [
+      #   ",/home/albertjul/Pictures/Saved\ Pictures/desktop.jpg"
+      # ];
     };
   };
 }
