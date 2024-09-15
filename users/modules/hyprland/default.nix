@@ -6,6 +6,9 @@
     ./hyprpaper.nix
   ];
 
+  home.packages = with pkgs; [
+    brightnessctl
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -166,6 +169,11 @@
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+          ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
+          ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
+          ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+          ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+
         ]
         ++ builtins.concatLists ws_bindings;
 
