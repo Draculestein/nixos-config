@@ -8,7 +8,7 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
     config = {
-      
+
       # Portal for hyprland
       hyprland = {
         default = [
@@ -16,6 +16,7 @@
           "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        "org.freedesktop.portal.OpenURI" = [ "xdg-desktop-portal-gtk" ];
         "org.freedesktop.portal.FileChooser" = [ "xdg-desktop-portal-gtk" ];
       };
 
