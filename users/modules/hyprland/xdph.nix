@@ -16,8 +16,8 @@
           "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-        "org.freedesktop.portal.OpenURI" = [ "xdg-desktop-portal-gtk" ];
-        "org.freedesktop.portal.FileChooser" = [ "xdg-desktop-portal-gtk" ];
+        "org.freedesktop.portal.OpenURI" = [ "gtk" ];
+        "org.freedesktop.portal.FileChooser" = [ "gtk" ];
       };
 
     };
