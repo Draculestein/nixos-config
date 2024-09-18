@@ -44,8 +44,8 @@
         }
       ];
 
-      # Date
       label = [
+        # Date
         {
           monitor = "";
           text = "cmd[update:18000000] echo \"<b> \"$(date +'%A, %-d %B %Y')\" </b>\"";
