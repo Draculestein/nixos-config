@@ -20,8 +20,8 @@
         # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
         {
           timeout = 150; # 2.5min.
-          on-timeout = "brightnessctl -sd asus:kbd_backlight set 0"; # turn off keyboard backlight.
-          on-resume = "brightnessctl -rd asus:kbd_backlight"; # turn on keyboard backlight.
+          on-timeout = "brightnessctl -sd asus::kbd_backlight set 0"; # turn off keyboard backlight.
+          on-resume = "brightnessctl -rd asus::kbd_backlight"; # turn on keyboard backlight.
         }
 
         {
