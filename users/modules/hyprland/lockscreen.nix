@@ -13,13 +13,13 @@
       # $Scripts = $HOME/.config/hypr/scripts
 
       general = {
-        grace = 5;
+        grace = 2;
       };
 
       background = [
         {
           monitor = "";
-          path = "$HOME/Pictures/Saved\ Pictures/desktop.png"; # NOTE only png supported for now
+          path = "$HOME/.dotfiles/users/albertjul/desktop.jpg";
         }
       ];
 
@@ -31,9 +31,9 @@
           dots_size = 0.33; # Scale of input-field height, 0.2 - 0.8
           dots_spacing = 0.15; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
-          outer_color = "$color5";
-          inner_color = "$color0";
-          font_color = "$color12";
+          outer_color = "rgb(${config.lib.stylix.colors.base05})";
+          inner_color = "rgb(${config.lib.stylix.colors.base00})";
+          font_color = "rgb(${config.lib.stylix.colors.base0C})";
           fade_on_empty = true;
           placeholder_text = "<i>Password...</i>"; # Text rendered in the input box when it's empty.
           hide_input = false;
@@ -49,7 +49,7 @@
         {
           monitor = "";
           text = "cmd[update:18000000] echo \"<b> \"$(date +'%A, %-d %B %Y')\" </b>\"";
-          color = "$color12";
+          color = "rgb(${config.lib.stylix.colors.base0C})";
           font_size = 34;
           font_family = "JetBrains Mono Nerd Font 10";
           position = "0, -80";
@@ -61,7 +61,7 @@
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +\"%H\")\"";
           #    text = cmd[update:1000] echo "$(date +"%I")" #AM/PM
-          color = "rgba(255, 185, 0, .6)";
+          color = "rgb(${config.lib.stylix.colors.base05})";
           font_size = 150;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
           position = "0, -200";
@@ -72,7 +72,7 @@
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +\"%M\")\"";
-          color = "rgba(255, 255, 255, .6)";
+          color = "rgb(${config.lib.stylix.colors.base06})";
           font_size = 150;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
           position = "0, -450";
@@ -85,7 +85,7 @@
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +\"%S\")\"";
           #    text = cmd[update:1000] echo "$(date +"%S %p")" #AM/PM
-          color = "$color12";
+          color = "rgb(${config.lib.stylix.colors.base0C})";
           font_size = 20;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
           position = "0, -450";
@@ -97,7 +97,7 @@
         {
           monitor = "";
           text = "   $USER";
-          color = "$color10";
+          color = "rgb(${config.lib.stylix.colors.base0A})";
           font_size = 18;
           font_family = "Inter Display Medium";
 
@@ -106,7 +106,7 @@
           valign = "bottom";
         }
       ];
-      
+
     };
   };
 }
