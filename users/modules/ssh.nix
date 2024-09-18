@@ -13,6 +13,12 @@
           "~/.ssh/github_draculestein"
         ];
       };
+      "novHaku" = {
+        host = "haku.cs.utah.edu";
+        user = "novellaalvina";
+        port = 5522;
+        forwardAgent = true;
+      };
     };
   };
 

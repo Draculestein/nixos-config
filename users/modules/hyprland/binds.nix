@@ -7,6 +7,7 @@
       "$terminal" = "foot";
       "$fileManager" = "nautilus";
       "$browser" = "brave";
+      "$editor" = "code";
 
       bind =
         let
@@ -32,6 +33,7 @@
           "$mod, E, exec, $fileManager"
           "$mod, Q, killactive"
           "$mod ALT SHIFT, Delete, exit"
+          "$mod, C, exec, $editor"
           "$mod, V, togglefloating"
           "$mod, P, pseudo"
           "$mod, J, togglesplit"

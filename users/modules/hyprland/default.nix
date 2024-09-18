@@ -1,6 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 {
   imports = [
+    ./lockscreen.nix
     ./config.nix
     ./env.nix
     ./autostart.nix
