@@ -1,8 +1,14 @@
 { config, lib, pkgs, ... }:
 {
   home.file = {
-    ".config/hypr/scripts/increase_volume.sh".source = ../scripts/increase_volume.sh;
-    ".config/hypr/scripts/decrease_volume.sh".source = ../scripts/decrease_volume.sh;
+    ".config/hypr/scripts/increase_volume.sh" = {
+      source = ../scripts/increase_volume.sh;
+      executable = true;
+    };
+    ".config/hypr/scripts/decrease_volume.sh" = {
+      source = ../scripts/decrease_volume.sh;
+      executable = true;
+    };
   };
 
   wayland.windowManager.hyprland = {
@@ -52,8 +58,8 @@
           ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
           ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
           ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-          ", XF86AudioRaiseVolume, exec, ./scripts/increase_volume.sh"
-          ", XF86AudioLowerVolume, exec, ./scripts/decrease_volume.sh"
+          ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
+          ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
