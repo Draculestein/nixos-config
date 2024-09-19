@@ -10,7 +10,6 @@
     ./xdph.nix
     ./hyprpaper.nix
 
-    ../flameshot.nix
   ];
 
   home.packages = with pkgs; [
