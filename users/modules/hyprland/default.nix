@@ -9,6 +9,7 @@
     ./polkit.nix
     ./xdph.nix
     ./hyprpaper.nix
+    ./windowrules.nix
 
   ];
 
