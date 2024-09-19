@@ -2,7 +2,7 @@
 {
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
+    xdgOpenUsePortal = false;
 
     # Fallback portal
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
