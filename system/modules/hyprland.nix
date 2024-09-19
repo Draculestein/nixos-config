@@ -11,6 +11,10 @@
     xwayland.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    xdg-utils
+  ];
+
   programs.iio-hyprland.enable = true;
 
   security.polkit.enable = true;
