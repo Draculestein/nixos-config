@@ -54,12 +54,6 @@
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
-          ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
-          ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
-          ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
-          ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-          ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
-          ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
@@ -70,6 +64,15 @@
       bindm = [
         "SUPER, mouse:273, resizewindow"
         "SUPER, mouse:272, movewindow"
+      ];
+
+      binde = [
+        ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
+        ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+        ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
+        ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
       ];
 
       # ======== Windowrules ========
