@@ -34,14 +34,14 @@
       active_opacity = 1.0;
       inactive_opacity = 1.0;
 
-      drop_shadow = true;
+      drop_shadow = false;
       shadow_range = 4;
       shadow_render_power = 3;
       # "col.shadow" = "rgba(1a1a1aee)";
 
       # https://wiki.hyprland.org/Configuring/Variables/#blur
       blur = {
-        enabled = true;
+        enabled = false;
         size = 3;
         passes = 1;
 
@@ -89,6 +89,10 @@
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures = {
       workspace_swipe = true;
+    };
+
+    misc = {
+      vfr = true;
     };
   };
 }
