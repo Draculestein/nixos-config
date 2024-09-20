@@ -11,6 +11,8 @@
     ./hyprpaper.nix
     ./windowrules.nix
 
+    ../flameshot.nix
+
   ];
 
   home.packages = with pkgs; [
