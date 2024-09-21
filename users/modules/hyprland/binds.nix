@@ -55,6 +55,7 @@
         "$mod, down, movefocus, d"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "CTRL_SHIFT, S, exec, flameshot gui"
       ]
       ++ builtins.concatLists ws_bindings;
 
