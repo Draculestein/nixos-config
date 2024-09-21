@@ -12,7 +12,6 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    # ======== Binds ========
     "$mod" = "SUPER";
     "$terminal" = "foot";
     "$fileManager" = "nautilus";
@@ -37,6 +36,7 @@
           )
           ws_capacity;
       in
+      # Workspace
       [
         "$mod, B, exec, $browser"
         "$mod, T, exec, $terminal"
@@ -53,26 +53,33 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+      ]
+      ++ builtins.concatLists ws_bindings
 
-        # Media
+      # Media
+      ++ [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-
-        # Flameshot
-        "CTRL_SHIFT, S, exec, flameshot gui"
-
-        # Clipse
-        "bind = SUPER, V, exec, $terminal --class clipse -e 'clipse'"
-
       ]
-      ++ builtins.concatLists ws_bindings;
+
+      # Flameshot
+      ++ [
+        "CTRL_SHIFT, S, exec, flameshot gui"
+      ]
+
+      # Clipse
+      ++ [
+        "bind = SUPER, V, exec, $terminal --class clipse -e 'clipse'"
+      ];
 
     bindm = [
       "SUPER, mouse:273, resizewindow"
       "SUPER, mouse:272, movewindow"
     ];
 
-    binde = [
+    binde = 
+    # Media
+    [
       ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
       ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
       ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
