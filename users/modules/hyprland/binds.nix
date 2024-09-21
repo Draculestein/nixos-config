@@ -44,7 +44,7 @@
         "$mod, Q, killactive"
         "$mod ALT SHIFT, Delete, exit"
         "$mod, C, exec, $editor"
-        "$mod, V, togglefloating"
+        "$mod SHIFT, V, togglefloating"
         "$mod, P, pseudo"
         "$mod, J, togglesplit"
         "$mod, mouse_down, workspace, e+1"
@@ -69,7 +69,7 @@
 
       # Clipse
       ++ [
-        "bind = SUPER, V, exec, $terminal --class clipse -e 'clipse'"
+        "bind = $mod, V, exec, foot --app-id=clipse clipse"
       ];
 
     bindm = [
