@@ -7,6 +7,8 @@
       "float, class:(xdg-desktop-portal-)(.*)"
       "float, class:(org.gnome.NautilusPreviewer)"
       "float, class:(flameshot)"
+      "float, class:(clipse)"
+      "size 622 652, class:(clipse)"
     ];
   };
 }
