@@ -53,9 +53,17 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+        # Media
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+        # Flameshot
         "CTRL_SHIFT, S, exec, flameshot gui"
+
+        # Clipse
+        "bind = SUPER, V, exec, $terminal --class clipse -e 'clipse'"
+
       ]
       ++ builtins.concatLists ws_bindings;
 
