@@ -6,6 +6,7 @@
       "suppressevent maximize, class:.*" # You'll probably like this.
       "float, class:(xdg-desktop-portal-)(.*)"
       "float, class:(org.gnome.NautilusPreviewer)"
+      "float, class:(flameshot)"
     ];
   };
 }
