@@ -18,6 +18,7 @@
   home.packages = with pkgs; [
     brightnessctl
     playerctl
+    clipse
   ];
 
   wayland.windowManager.hyprland = {
