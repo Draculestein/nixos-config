@@ -20,8 +20,7 @@
     playerctl
     wl-clipboard
     clipse
-    wl-screenrec
-    slurp
+    kooha
   ];
 
   wayland.windowManager.hyprland = {
