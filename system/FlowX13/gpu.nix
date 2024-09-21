@@ -14,6 +14,9 @@
     ];
   };
 
+  environment.variables.AMD_VULKAN_ICD = "RADV";
+
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
