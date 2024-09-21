@@ -69,7 +69,12 @@
 
       # Clipse
       ++ [
-        "bind = $mod, V, exec, foot --app-id=clipse clipse"
+        "$mod, V, exec, foot --app-id=clipse clipse"
+      ]
+
+      # Screen record
+      ++ [
+        "CTRL ALT SHIFT, R, exec, kooha"
       ];
 
     bindm = [
