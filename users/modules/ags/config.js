@@ -130,12 +130,12 @@ function BatteryLabel() {
         class_name: "battery",
         visible: battery.bind("available"),
         children: [
-            Widget.Icon({ icon }),
-            Widget.LevelBar({
-                widthRequest: 140,
-                vpack: "center",
-                value,
+            Widget.Label({
+                label: value.as(num => {
+                    return `${num * 100}% `;
+                })
             }),
+            Widget.Icon({ icon }),
         ],
     })
 }
