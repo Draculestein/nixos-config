@@ -132,7 +132,7 @@ function BatteryLabel() {
         children: [
             Widget.Label({
                 label: value.as(num => {
-                    return `${num * 100}% `;
+                    return `${(num * 100).toFixed(0)}% `;
                 })
             }),
             Widget.Icon({ icon }),
