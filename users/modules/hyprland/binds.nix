@@ -53,6 +53,7 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        "$mod, L, exec, logintcl lock-session"
       ]
       ++ builtins.concatLists ws_bindings
 
