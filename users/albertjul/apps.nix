@@ -10,6 +10,7 @@
     ../modules/ssh.nix
     ../modules/direnv.nix
     ../modules/lutris.nix
+    ../modules/devenv.nix
     ../modules/ags
     # ../modules/eww
     ../modules/fastfetch.nix
@@ -29,7 +30,6 @@
     # supergfxctl-plasmoid
     nautilus
     sushi
-    devenv
     vlc
     firefox
     onlyoffice-bin
