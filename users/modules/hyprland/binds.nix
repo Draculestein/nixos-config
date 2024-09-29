@@ -94,5 +94,12 @@
       ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
     ];
 
+    # Hyprgrass
+    "plugin:touch_gestures" = {
+      hyprgrass-bind = [
+        ", swipe:4:d, killactive"
+      ];
+    };
+
   };
 }
