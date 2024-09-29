@@ -42,10 +42,6 @@
       # https://wiki.hyprland.org/Configuring/Variables/#blur
       blur = {
         enabled = false;
-        size = 3;
-        passes = 1;
-
-        vibrancy = 0.1696;
       };
     };
 
@@ -106,6 +102,22 @@
       # must be >= 3
       workspace_swipe_fingers = 3;
       long_press_delay = 400;
+    };
+
+    "plugin:hyprbars" = {
+      # example config
+      bar_height = 35;
+      bar_padding = 10;
+      bar_button_padding = 8;
+      bar_precedence_over_border = true;
+      bar_text_font = "Cantarell";
+      "col.text" = "rgb(${config.lib.stylix.colors.base05})";
+
+      # example buttons (R -> L)
+      # hyprbars-button = color, size, on-click
+      hyprbars-button = [
+        "rgb(${config.lib.stylix.colors.base08}), 14, 󰖭, hyprctl dispatch killactive"
+      ];
     };
   };
 }
