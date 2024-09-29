@@ -18,7 +18,7 @@
 (defvar time_rev false)
 (deflisten workspace "scripts/workspace")
 
-(defvar eww "$HOME/.local/bin/eww/eww -c $HOME/.config/eww/bar")
+(defvar eww "eww -c $HOME/.config/eww/bar")
 
 
 (defpoll COL_WLAN :interval "1m" "~/.config/eww/bar/scripts/wifi --COL")
@@ -52,7 +52,7 @@
 
 
 (defwidget workspaces []
-  (literal :content workspace))
+  (literal :content "Workspace"))
 
 
 (defwidget bat []
@@ -201,6 +201,7 @@
                        :anchor "top center")
           :stacking "fg"
           :windowtype "dock"
+          :window 0
   (bar_1))
   
 (defwidget system []

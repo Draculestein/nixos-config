@@ -8,6 +8,7 @@
     ".config/eww" = {
       enable = true;
       source = ../eww;
+      executable = true;
     };
   };
 }
