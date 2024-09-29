@@ -278,6 +278,7 @@
                         :anchor "top right"
 						:width "270px" 
 						:height "60px")
+    :window 0
 (cal))
 
 
@@ -316,6 +317,7 @@
                         :anchor "top right"
 						:width "280px" 
 						:height "60px")
+    :window 0
 (audio))
 
 
@@ -325,6 +327,8 @@
                         :anchor "top right"
 						:width "290px" 
 						:height "120px")
+    :window 0
+
 (system))
 
 
