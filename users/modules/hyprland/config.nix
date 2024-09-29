@@ -107,6 +107,7 @@
     "plugin:hyprbars" = {
       # example config
       bar_height = 35;
+      bar_color = "rgb(${config.lib.stylix.colors.base00})";
       bar_padding = 10;
       bar_button_padding = 8;
       bar_precedence_over_border = true;
