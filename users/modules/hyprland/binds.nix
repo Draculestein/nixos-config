@@ -2,11 +2,11 @@
 {
   home.file = {
     ".config/hypr/scripts/increase_volume.sh" = {
-      source = ../scripts/increase_volume.sh;
+      source = ./scripts/increase_volume.sh;
       executable = true;
     };
     ".config/hypr/scripts/decrease_volume.sh" = {
-      source = ../scripts/decrease_volume.sh;
+      source = ./scripts/decrease_volume.sh;
       executable = true;
     };
   };
