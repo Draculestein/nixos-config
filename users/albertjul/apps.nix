@@ -11,8 +11,8 @@
     ../modules/direnv.nix
     ../modules/lutris.nix
     ../modules/devenv.nix
-    ../modules/ags
-    # ../modules/eww
+    # ../modules/ags
+    ../modules/eww
     ../modules/fastfetch.nix
     ../modules/hyprland
   ];

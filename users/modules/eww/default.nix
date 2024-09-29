@@ -7,7 +7,7 @@
   home.file = {
     ".config/eww" = {
       enable = true;
-      source = ../modules/eww;
+      source = ../eww;
     };
   };
 }
