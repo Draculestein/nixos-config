@@ -54,6 +54,7 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, L, exec, logintcl lock-session"
+        "$mod, grave, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable"
       ]
       ++ builtins.concatLists ws_bindings
 
