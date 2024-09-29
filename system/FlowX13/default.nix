@@ -8,7 +8,7 @@
     ../modules/asus.nix
     ../modules/wacom.nix
     ../modules/xboxController.nix
-    ../modules/tlp.nix
+    ../modules/powertop.nix
 
     # Display Manager and DE
     ../modules/gdm.nix
