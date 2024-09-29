@@ -6,4 +6,9 @@
     configDir = ../eww;
     package = pkgs.eww;
   };
+
+  # Import scripts for eww
+  home.file = {
+    
+  };
 }

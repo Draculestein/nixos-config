@@ -11,6 +11,8 @@
     ./hyprpaper.nix
     ./windowrules.nix
 
+    ../ags
+    ../eww
     ../flameshot.nix
 
   ];
