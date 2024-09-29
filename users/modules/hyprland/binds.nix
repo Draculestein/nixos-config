@@ -83,21 +83,24 @@
       "SUPER, mouse:272, movewindow"
     ];
 
-    binde = 
-    # Media
-    [
-      ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
-      ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
-      ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
-      ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-      ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
-      ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
-    ];
+    binde =
+      # Media
+      [
+        ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
+        ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+        ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
+        ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
+      ];
 
     # Hyprgrass
     "plugin:touch_gestures" = {
       hyprgrass-bind = [
         ", swipe:4:d, killactive"
+        ", swipe:3:l, workspace, e+1"
+        ", swipe:3:r, workspace, e-1"
+
       ];
     };
 
