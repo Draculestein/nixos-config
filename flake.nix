@@ -18,6 +18,16 @@
 
     ags.url = "github:Aylur/ags";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
 
     stylix.url = "github:danth/stylix";
 
