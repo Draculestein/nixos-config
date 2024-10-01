@@ -9,6 +9,7 @@
     ../modules/wacom.nix
     ../modules/xboxController.nix
     ../modules/powertop.nix
+    ../modules/blueman.nix
 
     # Display Manager and DE
     ../modules/gdm.nix
