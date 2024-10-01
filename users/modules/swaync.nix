@@ -31,6 +31,7 @@
         "title"
         "dnd"
         "volume"
+        "mpris"
         "backlight"
         "notifications"
       ];
