@@ -21,7 +21,7 @@
   home.packages = with pkgs; [
     brightnessctl
     playerctl
-    playerctl
+    blueman
     wl-clipboard
     clipse
     kooha
