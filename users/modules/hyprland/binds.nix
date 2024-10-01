@@ -77,6 +77,11 @@
       # Screen record
       ++ [
         "CTRL ALT SHIFT, R, exec, kooha"
+      ]
+
+      # Control Center
+      ++ [
+        "$mod SHIFT, N, swaync-client -t -sw"
       ];
 
     bindm = [
