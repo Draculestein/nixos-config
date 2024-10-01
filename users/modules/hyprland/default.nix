@@ -14,6 +14,7 @@
     ../ags
     ../eww
     ../flameshot.nix
+    ../swaync.nix
 
   ];
 
