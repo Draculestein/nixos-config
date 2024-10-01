@@ -81,7 +81,7 @@
 
       # Control Center
       ++ [
-        "$mod SHIFT, N, swaync-client -t -sw"
+        "$mod SHIFT, N, exec, swaync-client -t -sw"
       ];
 
     bindm = [
