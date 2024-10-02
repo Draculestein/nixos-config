@@ -12,4 +12,6 @@
     enable = true;
     enableAliases = true;
   };
+
+  programs.bat.enable = true;
 }
