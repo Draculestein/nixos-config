@@ -45,6 +45,7 @@
     targets = {
       vscode.enable = true;
       hyprpaper.enable = true;
+      rofi.enable = false;
     };
   };
 
