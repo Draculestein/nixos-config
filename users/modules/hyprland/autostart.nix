@@ -10,7 +10,8 @@
       "systemctl start --user my-polkit-gnome-authentication-agent-1 &"
       "systemctl start --user start-gnome-keyring-daemon &"
       "clipse -listen &"
-      "swaync"
+      "swaync &"
+      "swayosd-server &"
       "$HOME/.nix-profile/bin/eww daemon"
     ];
   };
