@@ -11,6 +11,6 @@
     };
 
     terminal = "${pkgs.foot}/bin/foot";
-    theme =  ./launcher.rasi;
+    theme =  ./launcher_style.rasi;
   };
 }
