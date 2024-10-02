@@ -15,6 +15,8 @@
 
       "plugin:hyprbars:nobar, class:(brave-browser)"
       "plugin:hyprbars:nobar, class:(thunderbird)"
+      "plugin:hyprbars:nobar, class:(org.gnome.Nautilus)"
+      "plugin:hyprbars:nobar, class:(url-code-handler)"
 
     ];
   };

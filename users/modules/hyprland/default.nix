@@ -15,6 +15,7 @@
     ../eww
     ../flameshot.nix
     ../swaync.nix
+    ../rofi
 
   ];
 
