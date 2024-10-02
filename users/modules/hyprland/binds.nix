@@ -61,8 +61,10 @@
 
       # Media
       ++ [
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        # ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
       ]
 
       # Flameshot
@@ -95,8 +97,10 @@
       [
         ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set 33%+"
         ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 33%-"
-        ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
-        ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+        # ", XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+        # ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+        ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+        ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
         ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/increase_volume.sh"
         ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/decrease_volume.sh"
       ];
