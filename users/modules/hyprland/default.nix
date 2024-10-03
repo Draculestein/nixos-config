@@ -13,7 +13,7 @@
 
     ../eww
     ../flameshot.nix
-    ../swaync.nix
+    ../swaync
     ../rofi
     ../swayosd.nix
     ../waybar.nix
