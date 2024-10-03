@@ -16,6 +16,7 @@
     ../swaync.nix
     ../rofi
     ../swayosd.nix
+    ../waybar.nix
 
   ];
 

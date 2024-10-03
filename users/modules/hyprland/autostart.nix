@@ -12,6 +12,7 @@
       "clipse -listen &"
       "swaync &"
       "swayosd-server &"
+      "waybar"
       "$HOME/.nix-profile/bin/eww daemon"
     ];
   };
