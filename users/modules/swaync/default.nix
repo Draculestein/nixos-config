@@ -5,7 +5,7 @@
     settings = {
       positionX = "right";
       positionY = "top";
-      layer = "overlay";
+      layer = "top";
       layer-shell = true;
       cssPriority = "application";
       control-center-layer = "top";
@@ -14,14 +14,13 @@
       control-center-margin-right = 1;
       control-center-margin-left = 0;
       control-center-width = 450;
-      control-center-height = 1200;
       notification-2fa-action = true;
       notification-inline-replies = true;
       notification-icon-size = 32;
       notification-body-image-height = 140;
       notification-body-image-width = 180;
       notification-window-width = 350;
-      fit-to-screen = false;
+      fit-to-screen = true;
 
       timeout = 4;
       timeout-low = 2;
@@ -37,7 +36,7 @@
       ];
       "widget-config" = {
         "title" = {
-          "text" = "󰂚       Notifications";
+          "text" = "";
           "clear-all-button" = true;
           "button-text" = " Clear all ";
         };
@@ -53,11 +52,11 @@
           "image-radius" = 10;
         };
         "volume" = {
-          "label" = "󰕾 ";
+          "label" = "  󰕾";
           "show-per-app" = true;
         };
         "backlight" = {
-          "label" = "󰃟 ";
+          "label" = "  󰃟";
           "subsystem" = "backlight";
           "device" = "amdgpu_bl2";
         };

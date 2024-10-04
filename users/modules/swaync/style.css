@@ -36,7 +36,7 @@
     font-size: initial;
     color: @color7;
     text-shadow: none;
-    background: alpha(@background, 0.0);
+    background: alpha(@background, 1);
     border: 1px solid alpha(@color7, 0.5);
     box-shadow: none;
     border-radius: 12px;
@@ -129,7 +129,7 @@
 /* Buttons widget */
 .widget-buttons-grid {
     font-size: 15px;
-    background: alpha(@background, 0.9);
+    background: alpha(@background, 0.1);
     font-family: "JetBrains Mono Nerd Font";
     padding-left: 5px;
     margin-left: 10px;
@@ -137,7 +137,7 @@
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: alpha(@background, 0.9);
+    background-color: alpha(@background, 1);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
@@ -195,7 +195,7 @@ trough slider:hover {
 }
 
 .widget-volume {
-    background-color: alpha(@background, 0.0);
+    background-color: alpha(@background, 1);
     border-radius: 20px 20px 0px 0px;
     font-size: 15px;
     margin-left: 10px;
@@ -206,7 +206,7 @@ trough slider:hover {
 
 .widget-backlight {
     padding-left: 5px;
-    background-color: alpha(@background, 0.0);
+    background-color: alpha(@background, 1);
     font-size: 15px;
     margin-top: -8px;
     margin-left: 10px;
@@ -241,7 +241,7 @@ trough slider:hover {
 
 .notification-row:focus,
 .notification-row:hover {
-    background: alpha(@color14, 0.5);
+    background: alpha(@color14, 1);
     /* @noti-bg-focus */
 }
 
@@ -251,7 +251,7 @@ trough slider:hover {
 
 .notification-row .notification-background .close-button {
     /* The notification Close Button */
-    background: alpha(@color4, 0.5);
+    background: alpha(@color4, 1);
     /* @noti-close-bg */
     color: alpha(@color15, 1.0);
     /* @text-color */
@@ -267,7 +267,7 @@ trough slider:hover {
 }
 
 .notification-row .notification-background .close-button:hover {
-    background: alpha(@color12, 0.5);
+    background: alpha(@color12, 1);
     /* @noti-close-bg-hover */
     transition: background 0.15s ease-in-out;
 }
@@ -279,7 +279,7 @@ trough slider:hover {
     /* @border */
     padding: 0;
     transition: background 0.15s ease-in-out;
-    background: alpha(@color0, 0.5);
+    background: alpha(@color0, 1);
     /* @noti-bg */
 }
 
@@ -309,7 +309,7 @@ trough slider:hover {
 
 .notification-row .notification-background .notification .notification-action:hover,
 .notification-row .notification-background .notification .notification-default-action:hover {
-    background: alpha(@color13, 0.5);
+    background: alpha(@color13, 1);
     /* @noti-bg-hover */
 }
 
@@ -382,7 +382,7 @@ trough slider:hover {
 .notification-row .notification-background .notification .notification-default-action .notification-content .body-image {
     /* The "extra" optional bottom notification image */
     margin-top: 4px;
-    background-color: alpha(@color15, 0.5);
+    background-color: alpha(@color15, 1);
     border-radius: 12px;
 }
 
@@ -392,7 +392,7 @@ trough slider:hover {
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-entry {
-    background: alpha(@color1, 0.5);
+    background: alpha(@color1, 1);
     /* @noti-bg-darker */
     color: alpha(@color15, 1.0);
     /* @text-color */
@@ -405,7 +405,7 @@ trough slider:hover {
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button {
     margin-left: 4px;
-    background: alpha(@color0, 0.5);
+    background: alpha(@color0, 1);
     /* @noti-bg */
     border: 1px solid alpha(@color8, 0.5);
     /* @border */
@@ -424,7 +424,7 @@ trough slider:hover {
 }
 
 .notification-row .notification-background .notification .notification-default-action .inline-reply .inline-reply-button:hover {
-    background: alpha(@color13, 0.5);
+    background: alpha(@color13, 1);
     /* @noti-bg-hover */
 }
 
@@ -489,7 +489,7 @@ trough slider:hover {
 }
 
 .notification-group.collapsed .notification-row .notification {
-    background-color: alpha(@color0, 0.5);
+    background-color: alpha(@color0, 1);
     /* @noti-bg-opaque */
 }
 
@@ -504,6 +504,6 @@ trough slider:hover {
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-    background-color: alpha(@color13, 0.5);
+    background-color: alpha(@color13, 1);
     /* @noti-bg-hover-opaque */
 }
