@@ -9,11 +9,12 @@
     ../modules/wacom.nix
     ../modules/xboxController.nix
     ../modules/powertop.nix
+    ../modules/autocpu-freq.nix
     ../modules/blueman.nix
 
     # Display Manager and DE
     ../modules/gdm.nix
-    ../modules/gnome.nix
+    # ../modules/gnome.nix
     # ../modules/sddm.nix
     # ../modules/plasma6.nix
     ../modules/hyprland.nix
