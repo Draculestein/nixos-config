@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   fonts.packages = with pkgs; [
+    cantarell-fonts
     nerdfonts
     corefonts
     vistafonts
