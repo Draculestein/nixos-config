@@ -27,6 +27,8 @@
     libvirtd.enable = true;
   };
 
+  users.extraGroups.docker.members = [ "albertjul" ];
+
   # Useful other development tools
   environment.systemPackages = with pkgs; [
     dive # look into docker image layers
@@ -36,7 +38,5 @@
     qemu
     gnome-boxes # UI for QEMU
   ];
-
-
 
 }
