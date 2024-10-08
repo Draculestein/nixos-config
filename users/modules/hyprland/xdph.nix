@@ -5,7 +5,10 @@
     xdgOpenUsePortal = false;
 
     # Fallback portal
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk 
+      xdg-desktop-portal-kde
+    ];
 
     config = {
 
@@ -14,6 +17,7 @@
         default = [
           "hyprland"
           "gtk"
+          "kde"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         "org.freedesktop.portal.OpenURI" = [ "gtk" ];
