@@ -13,6 +13,10 @@
         RestartSec = 3;
         TimeoutStopSec = 10;
       };
+
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
     };
 
     start-gnome-keyring-daemon = {
