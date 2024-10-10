@@ -13,6 +13,7 @@
     ../modules/devenv.nix
     ../modules/fastfetch.nix
     ../modules/hyprland
+    ../modules/fzf.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
