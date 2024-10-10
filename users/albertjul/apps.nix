@@ -28,7 +28,6 @@
     # supergfxctl-plasmoid
     nautilus
     sushi
-    gnome.gvfs
     vlc
     firefox
     onlyoffice-bin

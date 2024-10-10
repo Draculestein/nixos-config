@@ -31,6 +31,7 @@ in
     ];
 
     exclude = [
+      "/home/${username}/Android"
       "/home/${username}/.cache"
       "/home/${username}/.local/share/Trash"
       "/home/${username}/.var/app/*/cache"

@@ -75,6 +75,9 @@
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
+  services.gvfs.enable = true;
+  services.gnome.tracker-miners.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 
