@@ -29,6 +29,7 @@
     # supergfxctl-plasmoid
     nautilus
     sushi
+    image-roll
     vlc
     firefox
     onlyoffice-bin
