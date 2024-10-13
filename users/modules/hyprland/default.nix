@@ -11,7 +11,8 @@
     ./hyprpaper.nix
     ./windowrules.nix
 
-    ../eww
+    ../ags
+    # ../eww
     ../flameshot.nix
     ../swaync
     ../rofi
