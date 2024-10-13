@@ -29,6 +29,8 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     stylix.url = "github:danth/stylix";
 
     sops-nix = {
@@ -60,7 +62,7 @@
 
       pkgs = import nixpkgs-unstable {
         inherit system;
-        # overlays = [ xdphOverlay ];
+        overlays = [ inputs.hyprpanel.overlay ];
         config.allowUnfree = true;
       };
 
