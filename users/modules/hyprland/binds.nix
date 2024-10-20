@@ -106,14 +106,14 @@
       ];
 
     # Hyprgrass
-    "plugin:touch_gestures" = {
-      hyprgrass-bind = [
-        ", swipe:4:d, killactive"
-        ", swipe:3:l, workspace, e+1"
-        ", swipe:3:r, workspace, e-1"
+    # "plugin:touch_gestures" = {
+    #   hyprgrass-bind = [
+    #     ", swipe:4:d, killactive"
+    #     ", swipe:3:l, workspace, e+1"
+    #     ", swipe:3:r, workspace, e-1"
 
-      ];
-    };
+    #   ];
+    # };
 
   };
 }
