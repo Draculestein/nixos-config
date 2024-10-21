@@ -39,7 +39,7 @@
 
   # Set your time zone.
   time.timeZone = lib.mkDefault "America/Denver";
-  services.automatic-timezoned.enable = true;
+  # services.automatic-timezoned.enable = true;
 
 
   # Select internationalisation properties.
