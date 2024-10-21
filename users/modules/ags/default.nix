@@ -4,7 +4,7 @@
   imports = [ inputs.ags.homeManagerModules.default ];
 
   programs.ags = {
-    enable = false;
+    enable = true;
 
     # null or path, leave as null if you don't want hm to manage the config
     configDir = null; # Using the default ags path ($XDG_HOME/.config/ags)
