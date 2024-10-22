@@ -9,7 +9,8 @@
     open-fonts
     noto-fonts-emoji
     noto-fonts-extra
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-color-emoji
     # textfonts
     freefont_ttf
