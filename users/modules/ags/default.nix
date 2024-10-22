@@ -3,6 +3,16 @@
   # add the home manager module
   imports = [ inputs.ags.homeManagerModules.default ];
 
+  home.packages = with pkgs; [
+    pywal
+    sassc
+    (python311.withPackages (p: [
+      p.material-color-utilities
+      p.pywayland
+    ]))
+    ydotool
+  ];
+
   programs.ags = {
     enable = true;
 
@@ -14,6 +24,13 @@
       gtksourceview
       webkitgtk_6_0
       accountsservice
+      gtksourceview4
+      python311Packages.material-color-utilities
+      python311Packages.pywayland
+      pywal
+      sassc
+      webp-pixbuf-loader
+      ydotool
     ];
   };
 }
