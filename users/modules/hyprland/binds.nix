@@ -53,7 +53,7 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
-        "$mod, L, exec, logintcl lock-session"
+        "$mod, L, exec, loginctl lock-session"
         # "$mod, grave, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enable"
         "$mod, SPACE, exec, rofi -show drun"
       ]
