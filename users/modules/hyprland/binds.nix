@@ -69,7 +69,7 @@
 
       # Flameshot
       ++ [
-        "CTRL_SHIFT, S, exec, flameshot gui"
+        "$mod SHIFT, S, exec, flameshot gui"
       ]
 
       # Clipse
@@ -79,7 +79,7 @@
 
       # Screen record
       ++ [
-        "CTRL ALT SHIFT, R, exec, kooha"
+        "$mod ALT SHIFT, R, exec, kooha"
       ]
 
       # Control Center
