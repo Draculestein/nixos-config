@@ -104,22 +104,22 @@
       long_press_delay = 400;
     };
 
-    # "plugin:hyprbars" = {
-    #   # example config
-    #   bar_height = 35;
-    #   bar_color = "rgb(${config.lib.stylix.colors.base00})";
-    #   bar_padding = 10;
-    #   bar_button_padding = 8;
-    #   bar_precedence_over_border = true;
-    #   bar_text_font = "Cantarell";
-    #   "col.text" = "rgb(${config.lib.stylix.colors.base05})";
+    "plugin:hyprbars" = {
+      # example config
+      bar_height = 35;
+      bar_color = "rgb(${config.lib.stylix.colors.base00})";
+      bar_padding = 10;
+      bar_button_padding = 8;
+      bar_precedence_over_border = true;
+      bar_text_font = "Cantarell";
+      "col.text" = "rgb(${config.lib.stylix.colors.base05})";
 
-    #   # example buttons (R -> L)
-    #   # hyprbars-button = color, size, on-click
-    #   hyprbars-button = [
-    #     "rgb(${config.lib.stylix.colors.base08}), 14, 󰖭, hyprctl dispatch killactive"
-    #   ];
-    # };
+      # example buttons (R -> L)
+      # hyprbars-button = color, size, on-click
+      hyprbars-button = [
+        "rgb(${config.lib.stylix.colors.base08}), 14, 󰖭, hyprctl dispatch killactive"
+      ];
+    };
 
   };
 }
