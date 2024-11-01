@@ -16,12 +16,12 @@
       hyprland = {
         default = [
           "hyprland"
-          "gtk"
           "kde"
+          "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         "org.freedesktop.portal.OpenURI" = [ "gtk" ];
-        "org.freedesktop.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.portal.FileChooser" = [ "kde" "gtk" ];
       };
 
     };
