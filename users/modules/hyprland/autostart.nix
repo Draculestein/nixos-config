@@ -3,8 +3,11 @@
   wayland.windowManager.hyprland.settings = {
     # ======== Autostart ========
     exec-once = [
-      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+      "dbus-update-activation-environment --systemd --all &"
       "systemctl --user import-environment PATH &"
+      "systemctl --user restart xdg-desktop-portal-gtk &"
+      "systemctl --user restart xdg-desktop-portal-hyprland &"
+      "systemctl --user restart xdg-desktop-portal &"
       "hypridle &"
       "hyprpaper &"
       "iio-hyprland &"
