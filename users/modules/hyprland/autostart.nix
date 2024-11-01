@@ -4,7 +4,7 @@
     # ======== Autostart ========
     exec-once = [
       "dbus-update-activation-environment --systemd --all &"
-      "systemctl --user import-environment PATH &"
+      # "systemctl --user import-environment PATH &"
       "systemctl --user restart xdg-desktop-portal-gtk &"
       "systemctl --user restart xdg-desktop-portal-hyprland &"
       "systemctl --user restart xdg-desktop-portal &"
