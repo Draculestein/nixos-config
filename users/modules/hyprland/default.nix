@@ -37,6 +37,13 @@
     systemd.enable = true;
     systemd.enableXdgAutostart = true;
 
+    systemd.extraCommands = [
+      "dbus-update-activation-environment --systemd --all &"
+      "systemctl --user import-environment PATH &"
+      "systemctl --user restart xdg-desktop-portal-gtk &"
+      "systemctl --user restart xdg-desktop-portal-hyprland &"
+      "systemctl --user restart xdg-desktop-portal &"
+    ];
     systemd.variables = [ "--all" ];
 
     plugins = [
