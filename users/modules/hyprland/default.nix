@@ -41,7 +41,7 @@
 
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-      inputs.hyprgrass.packages.${pkgs.system}.default
+      # inputs.hyprgrass.packages.${pkgs.system}.default
     ];
   };
 }

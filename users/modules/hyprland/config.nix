@@ -94,15 +94,15 @@
       disable_splash_rendering = true;
     };
 
-    "plugin:touch_gestures" = {
-      # The default sensitivity is probably too low on tablet screens,
-      # I recommend turning it up to 4.0
-      sensitivity = 4.0;
+    # "plugin:touch_gestures" = {
+    #   # The default sensitivity is probably too low on tablet screens,
+    #   # I recommend turning it up to 4.0
+    #   sensitivity = 4.0;
 
-      # must be >= 3
-      workspace_swipe_fingers = 3;
-      long_press_delay = 400;
-    };
+    #   # must be >= 3
+    #   workspace_swipe_fingers = 3;
+    #   long_press_delay = 400;
+    # };
 
     # "plugin:hyprbars" = {
     #   # example config
