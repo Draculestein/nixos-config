@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ catppuccin-sddm-corners ];
+  environment.systemPackages = with pkgs; [ sddm-sugar-dark ];
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "catppuccin-sddm-corners";
+    theme = "sugar-dark";
   };
 }
