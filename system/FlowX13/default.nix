@@ -3,6 +3,7 @@
     ./configuration.nix
 
     # Hardware
+    ../modules/zswap.nix
     ./gpu.nix
     ./disk.nix
     ../modules/asus.nix
