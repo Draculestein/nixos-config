@@ -58,7 +58,7 @@
         "backlight" = {
           "label" = "  󰃟";
           "subsystem" = "backlight";
-          "device" = "amdgpu_bl2";
+          "device" = "amdgpu_bl1";
         };
 
         "buttons-grid" = {
