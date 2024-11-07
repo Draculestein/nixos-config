@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, inputs, ... }:
+let
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+
+    package = pkgs-unstable.mesa.drivers;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
 
     extraPackages = with pkgs; [
       amdvlk
