@@ -7,7 +7,6 @@
     # Fallback portal
     extraPortals = with pkgs; [ 
       xdg-desktop-portal-gtk 
-      xdg-desktop-portal-kde
     ];
 
     config = {
@@ -16,12 +15,12 @@
       hyprland = {
         default = [
           "hyprland"
-          "kde"
           "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         "org.freedesktop.portal.OpenURI" = [ "gtk" ];
-        "org.freedesktop.portal.FileChooser" = [ "kde" "gtk" ];
+        "org.freedesktop.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.portal.ScreenCast" = [ "hyprland" ];
       };
 
     };
