@@ -31,11 +31,6 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
-    hyprscroller = {
-      url = "github:dawsers/hyprscroller/";
-      inputs.hyprland.follows = "hyprland"; # IMPORTANT
-    };
-
     stylix.url = "github:danth/stylix";
 
     sops-nix = {

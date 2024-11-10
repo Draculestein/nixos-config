@@ -18,9 +18,9 @@
           "gtk"
         ];
         "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-        "org.freedesktop.portal.OpenURI" = [ "gtk" ];
+        # "org.freedesktop.portal.OpenURI" = [ "gtk" ];
         "org.freedesktop.portal.FileChooser" = [ "gtk" ];
-        "org.freedesktop.portal.ScreenCast" = [ "hyprland" ];
+        # "org.freedesktop.portal.ScreenCast" = [ "hyprland" ];
       };
 
     };
