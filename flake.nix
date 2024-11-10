@@ -31,6 +31,8 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
+    niri.url = "github:sodiboo/niri-flake";
+
     stylix.url = "github:danth/stylix";
 
     sops-nix = {
