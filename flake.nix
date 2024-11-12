@@ -78,17 +78,26 @@
             inherit inputs;
             inherit pkgs;
           };
-          modules = [ ./system/FlowX13 ];
+          modules = [
+            ./system/FlowX13
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.albertjul = import ./users/albertjul/home.nix;
+            }
+
+          ];
         };
       };
 
-      homeConfigurations = {
-        albertjul = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
-          modules = [ ./users/albertjul/home.nix ];
-        };
-      };
+      # homeConfigurations = {
+      #   albertjul = home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     extraSpecialArgs = { inherit inputs; };
+      #     modules = [ ./users/albertjul/home.nix ];
+      #   };
+      # };
     };
 }
 
