@@ -49,7 +49,7 @@
           # Swap volume
           swap = {
 
-            size = "24G";
+            size = "32G";
             content = {
 
               type = "swap";
