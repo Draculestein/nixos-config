@@ -90,6 +90,25 @@
 
           ];
         };
+
+        AlbertProP16 = lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+            inherit pkgs;
+          };
+
+          modules = [
+            ./system/ProArtP16
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.albertjul = import ./users/albertjul/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+        };
       };
 
       homeConfigurations = {
