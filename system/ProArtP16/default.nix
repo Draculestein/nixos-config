@@ -9,19 +9,12 @@
     ../modules/asus.nix
     ../modules/wacom.nix
     ../modules/xboxController.nix
-    # ../modules/powertop.nix
-    # ../modules/autocpu-freq.nix
     ../modules/tlp.nix
     ../modules/blueman.nix
 
     # Display Manager and DE
-    # ../modules/gdm.nix
-    # ../modules/gnome.nix
     ../modules/sddm.nix
     ../modules/plasma6.nix
-    # ../modules/hyprland.nix
-    # ../modules/gnome-polkit.nix
-    ../modules/niri.nix
 
     # Software
     ./fonts.nix
@@ -36,6 +29,6 @@
     ../modules/sound.nix
     ../modules/steam.nix
     ../modules/flatpak.nix
-    # ../modules/ollama.nix
+    ../modules/stylix
   ];
 }
