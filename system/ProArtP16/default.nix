@@ -1,5 +1,7 @@
-{ config, lib, pkgs, ... } : {
+{ config, modulesPath, lib, pkgs, ... } : {
   imports = [
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+
     ./configuration.nix
 
     # Hardware
