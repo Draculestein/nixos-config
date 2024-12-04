@@ -5,6 +5,9 @@
   stylix = {
     enable = true;
     image = ./default_wp.png;
+    polarity = "dark";
+
+    homeManagerIntegration.followSystem = false;
   };
 
   home-manager.sharedModules = [
