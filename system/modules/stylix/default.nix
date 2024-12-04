@@ -1,4 +1,4 @@
-{config, lib, pkgs, inputs, ...}:
+{ config, lib, pkgs, inputs, ... }:
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
 
@@ -6,4 +6,10 @@
     enable = true;
     image = ./default_wp.png;
   };
+
+  home-manager.sharedModules = [
+    {
+      stylix.enable = true;
+    }
+  ];
 }
