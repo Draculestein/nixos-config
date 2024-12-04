@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 {
+  services.power-profiles-daemon.enable = lib.mkForce false;
   services.tlp.enable = true;
   services.tlp.settings = {
     DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
