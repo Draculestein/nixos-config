@@ -19,7 +19,7 @@
     ../modules/plasma6.nix
 
     # Software
-    ./fonts.nix
+    ../modules/fonts.nix
     ./packages.nix
     ../modules/printing.nix
     ../modules/logitech.nix
