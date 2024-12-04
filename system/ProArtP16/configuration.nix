@@ -16,12 +16,15 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
+  # boot.loader.timeout = 0;
   # boot.initrd.verbose = false;
-  boot.consoleLogLevel = 0;
+  # boot.consoleLogLevel = 0;
   # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
   boot.kernelPackages = pkgs.linuxPackages_6_11;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = {
+    ntfs = true;
+    zfs = lib.mkForce false;
+  };
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
@@ -34,7 +37,7 @@
 
   networking.hostName = "AlbertProP16";
   networking.networkmanager.enable = true;
-
+  networking.wireless.enable = lib.mkForce false;
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   # Set your time zone.
