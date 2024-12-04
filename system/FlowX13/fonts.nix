@@ -2,7 +2,8 @@
 {
   fonts.packages = with pkgs; [
     cantarell-fonts
-    nerdfonts
+    nerd-fonts.hasklug
+    nerd-fonts.fira-code
     corefonts
     vistafonts
     noto-fonts
