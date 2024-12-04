@@ -4,6 +4,7 @@
 
   stylix = {
     enable = true;
+    autoEnable = false;
     image = ./default_wp.png;
     polarity = "dark";
 
