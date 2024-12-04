@@ -20,7 +20,7 @@
   # boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
   # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.supportedFilesystems = [ "ntfs" ];
 
   hardware.enableRedistributableFirmware = true;
@@ -36,6 +36,13 @@
   networking.networkmanager.enable = true;
 
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.extraHosts = ''
+    127.0.0.1 localexample.com
+    127.0.0.1 api.localexample.com
+    127.0.0.1 labs.localexample.com
+    127.0.0.1 navapi.localexample.com
+    127.0.0.1 internal.localexample.com
+  '';
 
   # Set your time zone.
   time.timeZone = lib.mkDefault "America/Denver";

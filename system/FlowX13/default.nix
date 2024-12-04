@@ -36,6 +36,7 @@
     ../modules/sound.nix
     ../modules/steam.nix
     ../modules/flatpak.nix
+    ../modules/stylix
     # ../modules/ollama.nix
   ];
 }
