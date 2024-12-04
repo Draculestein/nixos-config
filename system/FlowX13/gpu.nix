@@ -28,7 +28,7 @@
     powerManagement.enable = true;
     powerManagement.finegrained = true;
 
-    open = true;
+    open = false;
 
     prime = {
       amdgpuBusId = "PCI:8:0:0";
