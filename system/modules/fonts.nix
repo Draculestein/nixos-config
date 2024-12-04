@@ -4,6 +4,11 @@
     cantarell-fonts
     nerd-fonts.hasklug
     nerd-fonts.fira-code
+    nerd-fonts.roboto-mono
+    nerd-fonts.fira-mono
+    nerd-fonts.noto
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.ubuntu-mono
     corefonts
     vistafonts
     noto-fonts
