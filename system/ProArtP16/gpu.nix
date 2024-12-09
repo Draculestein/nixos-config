@@ -25,8 +25,8 @@
     open = true;
 
     prime = {
-      amdgpuBusId = "PCI:8:0:0";
-      nvidiaBusId = "PCI:1:0:0";
+      amdgpuBusId = "PCI:65:0:0";
+      nvidiaBusId = "PCI:64:0:0";
 
       offload = {
         enable = true;

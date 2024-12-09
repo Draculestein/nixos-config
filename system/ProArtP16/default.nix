@@ -1,6 +1,5 @@
-{ config, modulesPath, lib, pkgs, ... } : {
+{ config, lib, pkgs, ... } : {
   imports = [
-    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
 
     ./configuration.nix
 
