@@ -14,6 +14,7 @@
     nvtopPackages.full
     nix-output-monitor
     nvd
+    libsForQt5.qtstyleplugin-kvantum
   ];
 
   programs.nix-ld.enable = true;
