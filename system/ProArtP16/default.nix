@@ -30,6 +30,7 @@
     ../modules/sound.nix
     ../modules/steam.nix
     ../modules/flatpak.nix
+    ../modules/ssh.nix
     ../modules/stylix
   ];
 }
