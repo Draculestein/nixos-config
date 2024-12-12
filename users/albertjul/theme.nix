@@ -7,11 +7,11 @@
     polarity = "dark";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
-    # cursor = {
-    #  name = "Vimix-Cursors";
-    #  package = pkgs.vimix-cursor-theme;
-    #  size = 12;
-    # };
+    cursor = {
+     name = "Vimix-Cursors";
+     package = pkgs.vimix-cursor-theme;
+     size = 12;
+    };
 
     fonts = { 
       monospace = {
@@ -44,13 +44,13 @@
     };
   };
 
-  # gtk = {
-  #   enable = true;
-  #   iconTheme = {
-  #     name = "Papirus";
-  #     package = pkgs.papirus-icon-theme;
-  #   };
-  # };
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
 
   # home.pointerCursor = {
   #    gtk.enable = true;
