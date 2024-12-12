@@ -22,7 +22,7 @@
 
   programs.lsd = {
     enable = true;
-    enableAliases = true;
+    # enableAliases = true;
   };
 
   programs.bat.enable = true;
