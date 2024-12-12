@@ -10,7 +10,7 @@
     ../modules/asus.nix
     ../modules/wacom.nix
     ../modules/xboxController.nix
-    ../modules/tlp.nix
+    ../modules/powerprofilesdaemon.nix
     ../modules/blueman.nix
 
     # Display Manager and DE
@@ -30,6 +30,7 @@
     ../modules/sound.nix
     ../modules/steam.nix
     ../modules/flatpak.nix
+    ../modules/ssh.nix
     ../modules/stylix
   ];
 }

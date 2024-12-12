@@ -8,6 +8,7 @@
     cantarell-fonts
     source-code-pro
     source-sans
+    hasklig
   ];
 
 }
