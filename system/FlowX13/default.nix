@@ -15,9 +15,9 @@
     ../modules/blueman.nix
 
     # Display Manager and DE
-    # ../modules/gdm.nix
+    ../modules/gdm.nix
     ../modules/gnome.nix
-    ../modules/sddm.nix
+    # ../modules/sddm.nix
     # ../modules/plasma6.nix
     # ../modules/hyprland.nix
     ../modules/gnome-polkit.nix
