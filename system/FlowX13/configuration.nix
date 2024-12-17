@@ -42,6 +42,7 @@
     127.0.0.1 labs.localexample.com
     127.0.0.1 navapi.localexample.com
     127.0.0.1 internal.localexample.com
+    127.0.0.1 admin.localexample.com
   '';
 
   # Set your time zone.
