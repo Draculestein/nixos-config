@@ -14,8 +14,8 @@
     ../modules/blueman.nix
 
     # Display Manager and DE
-    ../modules/sddm.nix
-    ../modules/plasma6.nix
+    ../modules/gdm.nix
+    ../modules/gnome.nix
 
     # Software
     ../modules/fonts.nix
