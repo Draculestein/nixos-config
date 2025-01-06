@@ -16,14 +16,11 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.timeout = 0;
-  # boot.initrd.verbose = false;
-  # boot.consoleLogLevel = 0;
-  # boot.kernelParams = [ "quiet" "udev.log_level=3" ];
+  boot.loader.timeout = 0;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = {
     ntfs = true;
-    zfs = lib.mkForce false;
   };
 
   hardware.enableRedistributableFirmware = true;
