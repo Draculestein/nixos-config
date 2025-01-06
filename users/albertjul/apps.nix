@@ -40,7 +40,7 @@
     nixd
     path-of-building
     bitwarden-desktop
-    mysql-workbench
+    # mysql-workbench
     gnome-software
     gnome-font-viewer
     gnome-disk-utility
