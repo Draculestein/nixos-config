@@ -22,7 +22,7 @@
     vscode
     papirus-icon-theme
     thunderbird
-    zoom-us
+    # zoom-us
     vesktop
     rnote
     gnome-disk-utility
