@@ -49,6 +49,8 @@
       url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
+
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -57,14 +59,8 @@
 
       lib = nixpkgs-unstable.lib;
 
-      # unstable-small-pkgs = import inputs.nixos-unstable-small { inherit system; };
-      # xdphOverlay = final: prev: {
-      #   inherit (unstable-small-pkgs) xdg-desktop-portal-hyprland;
-      # };
-
       pkgs = import nixpkgs-unstable {
         inherit system;
-        # overlays = [ inputs.hyprpanel.overlay ];
         config.allowUnfree = true;
       };
 
@@ -109,14 +105,6 @@
           ];
         };
       };
-
-      # homeConfigurations = {
-      #   albertjul = home-manager.lib.homeManagerConfiguration {
-      #     inherit pkgs;
-      #     extraSpecialArgs = { inherit inputs; };
-      #     modules = [ ./users/albertjul/home.nix ];
-      #   };
-      # };
     };
 }
 
