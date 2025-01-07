@@ -14,6 +14,7 @@
     ../modules/fastfetch.nix
     # ../modules/hyprland
     ../modules/fzf.nix
+    ../modules/ghostty.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
