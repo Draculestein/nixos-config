@@ -24,7 +24,7 @@
     papirus-icon-theme
     thunderbird
     # zoom-us
-    vesktop
+    # vesktop
     rnote
     gnome-disk-utility
     # supergfxctl-plasmoid
