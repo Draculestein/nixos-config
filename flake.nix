@@ -72,7 +72,7 @@
           inherit system;
           specialArgs = {
             inherit inputs;
-            inherit pkgs;
+            # inherit pkgs;
           };
           modules = [
             ./system/FlowX13
@@ -90,7 +90,7 @@
           inherit system;
           specialArgs = {
             inherit inputs;
-            inherit pkgs;
+            # inherit pkgs;
           };
 
           modules = [
