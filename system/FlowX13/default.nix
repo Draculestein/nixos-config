@@ -21,7 +21,7 @@
     # ../modules/plasma6.nix
     # ../modules/hyprland.nix
     ../modules/gnome-polkit.nix
-    ../modules/niri.nix
+    # ../modules/niri.nix
 
     # Software
     ../modules/fonts.nix
