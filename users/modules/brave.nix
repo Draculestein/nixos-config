@@ -5,9 +5,9 @@
     enable = true;
     commandLineArgs = [
       "--password-store=detect"
-      "--use-gl=angle"
-      "--use-angle=vulkan"
-      "--enable-features=TouchpadOverscrollHistoryNavigation,Vulkan,VulkanFromANGLE,DefaultANGLEVulkan,VaapiIgnoreDriverChecks,VaapiVideoDecoder,UseMultiPlaneFormatForHardwareVideo,VaapiVideoEncoder"
+      "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
+      "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
+      "--enable-features=UseMultiPlaneFormatForHardwareVideo"
       "--ozone-platform=wayland"
       "--ignore-gpu-blocklist"
       "--enable-zero-copy"
