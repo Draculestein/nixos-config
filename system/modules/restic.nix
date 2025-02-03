@@ -36,6 +36,7 @@ in
       "/home/${username}/.aws"
       "/home/${username}/.bash_history"
       "/home/${username}/.fonts"
+      "/home/${username}/.local/share/fonts"
       "/home/${username}/.secrets"
       "/home/${username}/.ssh"
       "/home/${username}/.vscode"
