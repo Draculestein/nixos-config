@@ -27,7 +27,19 @@ in
     ];
 
     paths = [
-      "/home/${username}"
+      "/home/${username}/Desktop"
+      "/home/${username}/Documents"
+      "/home/${username}/Downloads"
+      "/home/${username}/Music"
+      "/home/${username}/Pictures"
+      "/home/${username}/Videos"
+      "/home/${username}/.aws"
+      "/home/${username}/.bash_history"
+      "/home/${username}/.fonts"
+      "/home/${username}/.secrets"
+      "/home/${username}/.ssh"
+      "/home/${username}/.vscode"
+      "/home/${username}/.zsh_history"
     ];
 
     exclude = [
@@ -69,7 +81,7 @@ in
     script = ''
       DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/${toString userId}/bus \
       ${pkgs.libnotify}/bin/notify-send \
-      --urgency=critical --icon=dialog-error --app-name="Restic Backup albertjul" \
+      --urgency=critical --icon=dialog-error --app-name="Restic Backup ${backupName}" \
       "Backup failed" \
       "$(journalctl -u ${serviceName} -n 5 -o cat)"
     '';
