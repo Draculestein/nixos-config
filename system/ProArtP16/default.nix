@@ -14,10 +14,10 @@
     ../modules/blueman.nix
 
     # Display Manager and DE
-    # ../modules/gdm.nix
-    # ../modules/gnome.nix
+    ../modules/gdm.nix
+    ../modules/gnome.nix
     ../modules/hyprland.nix
-    ../modules/sddm.nix
+    # ../modules/sddm.nix
 
     # Software
     ../modules/fonts.nix
@@ -36,10 +36,10 @@
     ../modules/stylix
   ];
 
-  environment.systemPackages = with pkgs; [ 
-    sddm-sugar-dark 
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
+  # environment.systemPackages = with pkgs; [ 
+  #   sddm-sugar-dark 
+  #   libsForQt5.qt5.qtgraphicaleffects
+  # ];
 
-  services.displayManager.sddm.theme = "sugar-dark";
+  # services.displayManager.sddm.theme = "sugar-dark";
 }
