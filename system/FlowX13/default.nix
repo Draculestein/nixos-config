@@ -19,8 +19,8 @@
     ../modules/gnome.nix
     # ../modules/sddm.nix
     # ../modules/plasma6.nix
-    ../modules/hyprland.nix
-    ../modules/gnome-polkit.nix
+    # ../modules/hyprland.nix
+    # ../modules/gnome-polkit.nix
     # ../modules/niri.nix
 
     # Software
