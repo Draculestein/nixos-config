@@ -7,7 +7,6 @@
     ./autostart.nix
     ./binds.nix
     ./polkit.nix
-    ./xdph.nix
     ./hyprpaper.nix
     ./windowrules.nix
 
