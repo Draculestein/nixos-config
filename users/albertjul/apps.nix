@@ -12,7 +12,9 @@
     ../modules/lutris.nix
     ../modules/devenv.nix
     ../modules/fastfetch.nix
+    ../modules/xdg-desktop-portal.nix
     ../modules/hyprland
+    ../modules/gnome
     ../modules/fzf.nix
     ../modules/ghostty.nix
   ];
