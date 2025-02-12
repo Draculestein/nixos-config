@@ -7,6 +7,7 @@
 
     extraPackages = with pkgs; [
       amdvlk
+      nvidia-vaapi-driver
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       amdvlk
@@ -15,7 +16,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     modesetting.enable = true;
     nvidiaSettings = true;
 
