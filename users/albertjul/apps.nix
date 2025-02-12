@@ -12,15 +12,15 @@
     ../modules/lutris.nix
     ../modules/devenv.nix
     ../modules/fastfetch.nix
-    ../modules/hyprland
+    #../modules/hyprland
     ../modules/fzf.nix
     ../modules/ghostty.nix
+    ../modules/vscode.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    vscode
     papirus-icon-theme
     thunderbird
     # zoom-us
