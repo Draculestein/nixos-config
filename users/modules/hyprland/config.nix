@@ -5,6 +5,7 @@
     monitor = [
       "desc:Sharp Corporation LQ134N1JW52, 1920x1200@60, 0x0, 1"
       "desc:ASUSTek COMPUTER INC VG278 M3LMQS154329, 1920x1080@164.92, -1920x0, 1"
+      "desc:Samsung Displat Corp. 0x415D, 3840x2400@60, 0x0, 2"
     ];
 
     # ======== Look and Feel ========
