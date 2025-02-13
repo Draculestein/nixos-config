@@ -38,7 +38,7 @@
     };
 
     targets = {
-      vscode.enable = true;
+      vscode.enable = false;
       hyprpaper.enable = true;
       rofi.enable = false;
     };
