@@ -5,11 +5,11 @@
 { config, lib, pkgs, ... }:
 
 {
-   imports =
-   [
-     # Include the results of the hardware scan.
-     ./hardware-configuration.nix
-   ];
+  imports =
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -62,7 +62,7 @@
   users.users.albertjul = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [ ]; # Apps are handled by home-manager
     shell = pkgs.zsh;
   };
@@ -77,6 +77,17 @@
 
   services.gvfs.enable = true;
   services.gnome.localsearch.enable = true;
+
+  services.udev.extraRules = ''
+    ENV{DMI_FAMILY}=="*ProArt*", GOTO="asusd_start"
+    GOTO="asusd_end"
+
+    LABEL="asusd_start"
+    ACTION=="add|change", DRIVER=="asus-nb-wmi", TAG+="systemd", ENV{SYSTEMD_WANTS}="asusd.service"
+
+    LABEL="asusd_end"
+  '';
+
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
