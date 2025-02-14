@@ -8,4 +8,9 @@
   services.supergfxd = {
     enable = true;
   };
+
+  programs.rog-control-center = {
+    enable = true;
+    autoStart = true;
+  };
 }
