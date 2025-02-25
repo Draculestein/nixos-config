@@ -24,7 +24,17 @@
       defaultNetwork.settings.dns_enabled = true;
     };
 
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        swtpm.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+
+    spiceUSBRedirection.enable = true;
+
   };
 
   users.extraGroups.docker.members = [ "albertjul" ];
