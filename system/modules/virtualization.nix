@@ -49,4 +49,6 @@
     gnome-boxes # UI for QEMU
   ];
 
+  programs.virt-manager.enable = true;
+
 }
