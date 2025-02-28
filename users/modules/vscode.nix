@@ -2,10 +2,10 @@
 {
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
+    profiles.default.enableUpdateCheck = false;
     mutableExtensionsDir = true;
 
-    userSettings = {
+    profiles.default.userSettings = {
       "editor.fontFamily" = "'Hasklug Nerd Font', 'monospace', monospace";
       "git.confirmSync" = false;
       "git.autofetch" = true;
