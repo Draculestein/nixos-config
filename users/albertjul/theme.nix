@@ -10,7 +10,7 @@
     cursor = {
      name = "Vimix-Cursors";
      package = pkgs.vimix-cursor-theme;
-     size = 12;
+     size = 16;
     };
 
     fonts = { 
@@ -37,6 +37,13 @@
       };
     };
 
+    iconTheme = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus";
+      light = "Papirus";
+    };
+
     targets = {
       vscode.enable = false;
       hyprpaper.enable = true;
@@ -44,13 +51,13 @@
     };
   };
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
+  # gtk = {
+  #   enable = true;
+  #   iconTheme = {
+  #     name = "Papirus";
+  #     package = pkgs.papirus-icon-theme;
+  #   };
+  # };
 
   # home.pointerCursor = {
   #    gtk.enable = true;
