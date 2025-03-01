@@ -37,12 +37,12 @@
 
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   networking.extraHosts = ''
-    127.0.0.1 localexample.com
-    127.0.0.1 api.localexample.com
-    127.0.0.1 labs.localexample.com
-    127.0.0.1 navapi.localexample.com
-    127.0.0.1 internal.localexample.com
-    127.0.0.1 admin.localexample.com
+    127.0.0.1 api.cyrano.localhost
+    127.0.0.1 labs.localhost
+    127.0.0.1 navapi.localhost
+    127.0.0.1 internal.localhost
+    127.0.0.1 admin.localhost
+    127.0.0.1 app.cyrano.localhost
   '';
 
   # Set your time zone.
