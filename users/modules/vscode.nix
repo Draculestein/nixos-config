@@ -57,6 +57,8 @@
       "yaml.format.enable" = false;
       "explorer.confirmDelete" = false;
       "typescript.updateImportsOnFileMove.enabled" = "always";
+      "chat.commandCenter.enabled" = false;
+
     };
   };
 }
