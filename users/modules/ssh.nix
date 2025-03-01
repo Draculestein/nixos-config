@@ -19,6 +19,13 @@
         port = 5522;
         forwardAgent = true;
       };
+
+      "cyrano_production" = {
+        host = "98.189.233.116";
+        user = "devuser";
+        port = 4422;
+        identityFile = [ "~/.ssh/cyrano_prod_server" ];
+      };
     };
   };
 
