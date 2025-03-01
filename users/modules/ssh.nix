@@ -25,6 +25,7 @@
         user = "devuser";
         port = 4422;
         identityFile = [ "~/.ssh/cyrano_prod_server" ];
+        forwardAgent = true;
       };
     };
   };
