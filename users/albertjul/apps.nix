@@ -49,6 +49,7 @@
     file-roller
     seahorse
     d-spy
+    google-chrome
   ];
 
 }
