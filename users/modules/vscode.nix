@@ -39,6 +39,12 @@
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[typescriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[javascriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "prettier.printWidth" = 100;
       "prettier.singleQuote" = true;
       "prettier.tabWidth" = 4;
