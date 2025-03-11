@@ -19,10 +19,10 @@
           };
           "options" = {
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/\").nixosConfigurations.AlbertFlowX13.options";
+              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertFlowX13.options";
             };
             "home-manager" = {
-              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/\").homeConfigurations.albertjul.options";
+              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").homeConfigurations.albertjul.options";
             };
           };
         };
