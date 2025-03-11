@@ -23,11 +23,11 @@
     powerManagement.enable = true;
     powerManagement.finegrained = true;
 
-    open = true;
+    open = false;
 
     prime = {
-      amdgpuBusId = "PCI:65:0:0";
-      nvidiaBusId = "PCI:64:0:0";
+      amdgpuBusId = "PCI:101:0:0";
+      nvidiaBusId = "PCI:100:0:0";
 
       offload = {
         enable = true;
