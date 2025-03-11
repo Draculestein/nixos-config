@@ -8,8 +8,8 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
     cursor = {
-     name = "Vimix-Cursors";
-     package = pkgs.vimix-cursor-theme;
+     name = "Capitaine Cursors (Palenight)";
+     package = pkgs.capitaine-cursors-themed;
      size = 16;
     };
 
