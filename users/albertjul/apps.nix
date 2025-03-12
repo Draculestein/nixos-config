@@ -50,7 +50,11 @@
     seahorse
     d-spy
     google-chrome
-    heroic
+(heroic.override {
+  extraPkgs = pkgs: [
+    pkgs.gamescope
+    pkgs.gamemode
   ];
+})  ];
 
 }
