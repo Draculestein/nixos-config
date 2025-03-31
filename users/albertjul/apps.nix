@@ -56,6 +56,7 @@
         pkgs.gamemode
       ];
     })
+    libinklevel
   ];
 
 }
