@@ -30,6 +30,8 @@
       "git.enableSmartCommit" = true;
       "workbench.iconTheme" = "catppuccin-macchiato";
       "redhat.telemetry.enabled" = false;
+
+      # Language formatter settings
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
@@ -45,18 +47,16 @@
       "[javascriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[css]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[json]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "prettier.printWidth" = 100;
       "prettier.singleQuote" = true;
       "prettier.tabWidth" = 4;
       "prettier.useTabs" = true;
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "codium.codeCompletion.enable" = false;
-      "codeium.enableConfig" = {
-        "*" = true;
-        "nix" = true;
-      };
       "editor.inlineSuggest.suppressSuggestions" = true;
       "cody.commandCodeLenses" = true;
       "cody.autocomplete.enabled" = false;
@@ -65,7 +65,6 @@
       "typescript.updateImportsOnFileMove.enabled" = "always";
       "chat.commandCenter.enabled" = false;
       "cody.suggestions.mode" = "off";
-
     };
   };
 }
