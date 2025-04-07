@@ -23,7 +23,7 @@
     ntfs = true;
   };
 
-  # boot.blacklistedKernelModules = ["ucsi_acpi"];
+  boot.blacklistedKernelModules = ["ucsi_acpi"];
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
