@@ -18,10 +18,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_13;
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
   boot.supportedFilesystems = {
     ntfs = true;
   };
+
+  # boot.blacklistedKernelModules = ["ucsi_acpi"];
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
@@ -92,7 +94,6 @@
     substituters = [ "https://devenv.cachix.org" ];
     trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw= nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU=" ];
   };
-
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
