@@ -5,10 +5,8 @@
     enable = true;
     commandLineArgs = [
       "--password-store=detect"
-      "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
-      "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
-      "--enable-features=UseMultiPlaneFormatForHardwareVideo,TouchpadOverscrollHistoryNavigation"
-      "--ozone-platform=wayland"
+      "--enable-features=AcceleratedVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation"
+      "--ozone-platform-hint=auto"
       "--ignore-gpu-blocklist"
       "--enable-zero-copy"
     ];
