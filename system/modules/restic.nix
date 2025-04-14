@@ -49,6 +49,7 @@ in
       "/home/${username}/.local/share/Trash"
       "/home/${username}/.var/app/*/cache"
       "/home/${username}/.local/share/containers/"
+      "/home/${username}/Documents/File/Cyrano/data_dir"
     ];
 
     extraBackupArgs = [
