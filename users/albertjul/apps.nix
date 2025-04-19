@@ -16,6 +16,7 @@
     ../modules/fzf.nix
     ../modules/ghostty.nix
     ../modules/vscode.nix
+    ../modules/distrobox.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
