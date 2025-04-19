@@ -23,7 +23,7 @@
     ntfs = true;
   };
 
-  boot.blacklistedKernelModules = ["ucsi_acpi"];
+  boot.blacklistedKernelModules = [ "ucsi_acpi" ];
 
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
@@ -35,8 +35,14 @@
   };
 
   networking.hostName = "AlbertProP16";
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = lib.mkForce false;
+  networking.networkmanager = {
+    enable = true;
+    wifi = {
+      powersave = false;
+    };
+  };
+  networking.wireless.enable = false;
+
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   # Set your time zone.
