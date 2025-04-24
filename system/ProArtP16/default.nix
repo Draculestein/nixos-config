@@ -16,7 +16,7 @@
     # Display Manager and DE
     ../modules/gdm.nix
     ../modules/gnome.nix
-    ../modules/hyprland.nix
+    # ../modules/hyprland.nix
     # ../modules/sddm.nix
 
     # Software
