@@ -50,6 +50,7 @@
     file-roller
     seahorse
     d-spy
+    obsidian
     google-chrome
     (heroic.override {
       extraPkgs = pkgs: [
