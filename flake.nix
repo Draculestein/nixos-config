@@ -19,18 +19,6 @@
     ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
 
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    hyprgrass = {
-      url = "github:horriblename/hyprgrass";
-      inputs.hyprland.follows = "hyprland"; # IMPORTANT
-    };
-
-    niri.url = "github:sodiboo/niri-flake";
-
     stylix.url = "github:danth/stylix";
 
     sops-nix = {

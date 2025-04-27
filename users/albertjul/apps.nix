@@ -59,6 +59,7 @@
       ];
     })
     libinklevel
+    uv
   ];
 
 }
