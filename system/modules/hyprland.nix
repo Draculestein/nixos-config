@@ -11,10 +11,13 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
+
+    withUWSM = true;
   };
 
   environment.systemPackages = with pkgs; [
     xdg-utils
+    kitty
   ];
 
   programs.iio-hyprland.enable = true;
@@ -30,6 +33,7 @@
     # Fallback portal
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
     ];
 
     config = {

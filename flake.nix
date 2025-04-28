@@ -17,7 +17,7 @@
     };
 
     ags.url = "github:Aylur/ags";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland?ref=refs/tags/v0.48.1";
 
     stylix.url = "github:danth/stylix";
 
