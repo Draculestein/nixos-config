@@ -68,6 +68,8 @@
       "typescript.updateImportsOnFileMove.enabled" = "always";
       "chat.commandCenter.enabled" = false;
       "cody.suggestions.mode" = "off";
+      "editor.accessibilitySupport" = "off";
+
     };
   };
 }
