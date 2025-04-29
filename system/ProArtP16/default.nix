@@ -8,7 +8,7 @@
     ./gpu.nix
     ./disk.nix
     ../modules/asus.nix
-    ../modules/wacom.nix
+    # ../modules/wacom.nix
     ../modules/xboxController.nix
     ../modules/powerprofilesdaemon.nix
     ../modules/blueman.nix
