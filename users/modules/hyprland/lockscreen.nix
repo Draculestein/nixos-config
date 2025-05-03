@@ -1,6 +1,12 @@
 { config, lib, pkgs, ... }:
 {
 
+  systemd.user.services.hypridle = {
+    Unit = {
+      ConditionEnvironment = lib.mkForce [ "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=Hyprland" ];
+    };
+  };
+
   services.hypridle = {
     enable = true;
     settings = {
