@@ -13,7 +13,7 @@
 
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$terminal" = "foot";
+    "$terminal" = "ghostty";
     "$fileManager" = "nautilus";
     "$browser" = "brave";
     "$editor" = "code";
