@@ -27,4 +27,6 @@
 
     xwayland.enable = true;
   };
+
+  wayland.systemd.target = "wayland-wm@hyprland\\x2duwsm.desktop.service";
 }
