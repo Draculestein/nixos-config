@@ -26,7 +26,12 @@
     portalPackage = null;
 
     xwayland.enable = true;
+
+    systemd = {
+      enable = true;
+      enableXdgAutostart = true;
+      variables = [ "-all" ];
+    };
   };
 
-  wayland.systemd.target = "wayland-wm@hyprland\\x2duwsm.desktop.service";
 }
