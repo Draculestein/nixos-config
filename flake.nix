@@ -17,8 +17,7 @@
     };
 
     ags.url = "github:Aylur/ags";
-    # hyprland.url = "github:hyprwm/Hyprland?ref=refs/tags/v0.48.1";
-
+    niri.url = "github:sodiboo/niri-flake";
     stylix.url = "github:danth/stylix";
 
     sops-nix = {
