@@ -12,7 +12,6 @@
     ../modules/lutris.nix
     ../modules/devenv.nix
     ../modules/fastfetch.nix
-    ../modules/hyprland
     ../modules/fzf.nix
     ../modules/ghostty.nix
     ../modules/vscode.nix
