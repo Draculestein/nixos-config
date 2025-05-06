@@ -23,6 +23,7 @@
 
     powerManagement.enable = true;
     powerManagement.finegrained = true;
+    dynamicBoost.enable = true;
 
     open = true;
 
