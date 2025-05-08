@@ -15,7 +15,7 @@
   };
 
   services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-  
+
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
@@ -37,4 +37,6 @@
       };
     };
   };
+
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
 }
