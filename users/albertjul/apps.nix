@@ -45,6 +45,7 @@
     gnome-software
     gnome-font-viewer
     gnome-disk-utility
+    gnomeExtensions.system-monitor
     baobab
     file-roller
     seahorse
