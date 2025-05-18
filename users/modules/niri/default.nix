@@ -2,8 +2,10 @@
 
   home.packages = [ pkgs.xwayland-satellite-unstable ];
 
+  services.swww.enable = true;
   programs.swaylock.enable = true;
 
+  
   # programs.niri.enable = true;
 
   # programs.niri.settings =
