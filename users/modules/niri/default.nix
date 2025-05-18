@@ -1,6 +1,8 @@
 { config, lib, pkgs, inputs, ... }: {
 
-  home.packages = [ pkgs.xwayland-satellite-unstable ];
+  imports = [
+    ./xwayland.nix
+  ];
 
   services.swww.enable = true;
   programs.swaylock.enable = true;
