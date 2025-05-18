@@ -1,4 +1,7 @@
 { config, lib, pkgs, inputs, ... }: {
+
+  home.packages = [ pkgs.xwayland-satellite-unstable ];
+
   programs.swaylock.enable = true;
 
   # programs.niri.enable = true;
