@@ -10,12 +10,10 @@
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
   
-  # programs.niri.enable = true;
-
+  # Commented due to missing niri module
   # programs.niri.settings =
-  #   with config.lib.niri.actions;
   #   {
-  #     binds = {
+  #     binds = with config.lib.niri.actions;{
   #       "Mod+Shift+Slash".action = show-hotkey-overlay;
   #     };
   #   };
