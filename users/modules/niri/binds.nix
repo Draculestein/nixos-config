@@ -153,6 +153,8 @@ in
 
     "Mod+Ctrl+Up".action = focus-workspace-up;
     "Mod+Ctrl+Down".action = focus-workspace-down;
+    "Mod+Shift+Ctrl+Up".action = move-column-to-workspace-up;
+    "Mod+Shift+Ctrl+Down".action = move-column-to-workspace-down;
 
     # Audio
     "XF86AudioRaiseVolume" = {
