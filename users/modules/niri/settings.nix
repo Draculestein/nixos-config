@@ -11,6 +11,12 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     };
 
+    spawn-at-startup = let image = ../../albertjul/desktop.jpg; in [
+      {
+        command = [ "sww" "img" "--resize=\"fit\"" "${image}" "--transition-type" "simple" ];
+      }
+    ];
+
     input = {
       keyboard = {
         xkb.layout = "us";
