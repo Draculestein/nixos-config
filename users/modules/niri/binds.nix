@@ -27,7 +27,7 @@
       hotkey-overlay.title = "Lock the Screen: swaylock";
     };
 
-    "Mod+Q" = close-window;
+    "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
       action = toggle-overview;
