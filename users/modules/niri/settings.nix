@@ -13,7 +13,7 @@
 
     spawn-at-startup = let image = ../../albertjul/desktop.jpg; in [
       {
-        command = [ "sww" "img" "--resize=\"fit\"" "${image}" "--transition-type" "simple" ];
+        command = [ "sww" "img" "--transition-type" "random" "${image}" ];
       }
     ];
 
