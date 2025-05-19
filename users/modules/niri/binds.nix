@@ -78,6 +78,8 @@ in
 
     "Mod+BracketLeft".action = consume-or-expel-window-left;
     "Mod+BracketRight".action = consume-or-expel-window-right;
+    "Mod+Comma".action = consume-window-into-column;
+    "Mod+Period".action = expel-window-from-column;
 
     "Mod+R".action = switch-preset-column-width;
     "Mod+Shift+R".action = switch-preset-window-height;
