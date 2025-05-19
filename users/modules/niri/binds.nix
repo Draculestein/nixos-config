@@ -151,6 +151,9 @@ in
       action = focus-workspace-down;
     };
 
+    "Mod+Ctrl+Up".action = focus-workspace-up;
+    "Mod+Ctrl+Down".action = focus-workspace-down;
+
     # Audio
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
