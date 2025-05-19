@@ -7,6 +7,10 @@
     ./window-rules.nix
   ];
 
+  home.packages = with pkgs; [
+    brightnessctl
+  ];
+
   services.swww.enable = true;
   services.mako.enable = true;
   programs.swaylock.enable = true;
