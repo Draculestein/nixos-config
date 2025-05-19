@@ -1,4 +1,28 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+let
+  cycle-keyboard-backlight = pkgs.writeShellApplication {
+    name = "cycle-kbd-backlight";
+    runtimeInputs = [
+      pkgs.brightnessctl
+    ];
+    text = ''
+      # Get the current keyboard backlight level
+      current=$(brightnessctl -d asus::kbd_backlight get)
+      max=$(brightnessctl -d asus::kbd_backlight max)
+
+      # Calculate the next level (cycle from 0 to 3)
+      next=$(( (current + 1) % (max + 1) ))
+
+      # Set the new backlight level
+      brightnessctl -d asus::kbd_backlight set "$next"
+    '';
+  };
+in
+{
+  home.packages = [
+    cycle-keyboard-backlight
+  ];
+
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
 
@@ -70,7 +94,7 @@
     "Mod+V".action = toggle-window-floating;
     "Mod+W".action = toggle-column-tabbed-display;
 
-    "Mod+Shift+S".action = screenshot {show-pointer = true; };
+    "Mod+Shift+S".action = screenshot { show-pointer = true; };
     # "Ctrl+Mod+Shift+S".action = screenshot-screen;
     "Alt+Mod+Shift+S".action = screenshot-window { write-to-disk = true; };
 
@@ -144,28 +168,35 @@
     "XF86AudioMicMute" = {
       allow-when-locked = true;
       action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
-    };    
+    };
 
     # Screen brightness
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "+5%"];
+      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "+5%" ];
     };
 
-     "XF86MonBrightnessDown" = {
+    "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "5%-"];
+      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "5%-" ];
     };
 
     # Keyboard backlight
     "XF86KbdBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "+1"];
+      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "+1" ];
     };
 
-     "XF86KbdBrightnessDown" = {
+    "XF86KbdBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "1-"];
+      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "1-" ];
     };
+
+    "XF86KbdLightOnOff" =
+      {
+        allow-when-locked = true;
+        action.spawn = "${cycle-keyboard-backlight}/bin/cycle-kbd-backlight";
+
+      };
   };
 }
