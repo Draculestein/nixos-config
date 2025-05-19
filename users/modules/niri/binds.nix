@@ -146,5 +146,26 @@
       action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
     };    
 
+    # Screen brightness
+    "XF86MonBrightnessUp" = {
+      allow-when-locked = true;
+      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "+5%"];
+    };
+
+     "XF86MonBrightnessDown" = {
+      allow-when-locked = true;
+      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "5%-"];
+    };
+
+    # Keyboard backlight
+    "XF86KbdBrightnessUp" = {
+      allow-when-locked = true;
+      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "+1"];
+    };
+
+     "XF86KbdBrightnessDown" = {
+      allow-when-locked = true;
+      action.spawn = [ "brightnessctl" "-d" "asus::kbd_backlight" "set" "1-"];
+    };
   };
 }
