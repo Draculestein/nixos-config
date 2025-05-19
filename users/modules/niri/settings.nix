@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}: {
+{ config, lib, pkgs, ... }: {
   programs.niri.settings = {
     environment = {
       DISPLAY = ":0";
@@ -73,34 +73,34 @@
       };
     };
 
-      layout = {
-        gaps = 10;
+    layout = {
+      gaps = 10;
 
-        focus-ring = {
-          enable = true;
-          width = 2;
-        };
-
-        border = {
-          enable = true;
-          width = 2;
-        };
-
-        struts = {
-          left = 32;
-          right = 32;
-          top = 8;
-          bottom = 8;
-        };
-      };
-
-      animations = {
+      focus-ring = {
         enable = true;
-        slowdown = 0.9;
+        width = 2;
       };
 
-      clipboard.disable-primary = true;
+      border = {
+        enable = true;
+        width = 2;
+      };
 
-      hotkey-overlay.skip-at-startup = true;
+      struts = {
+        left = 32;
+        right = 32;
+        top = 8;
+        bottom = 8;
+      };
+    };
+
+    animations = {
+      enable = true;
+      slowdown = 0.9;
+    };
+
+    clipboard.disable-primary = true;
+
+    hotkey-overlay.skip-at-startup = true;
   };
 }
