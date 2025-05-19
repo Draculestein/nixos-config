@@ -1,6 +1,7 @@
 { config, lib, pkgs, inputs, ... }: {
 
   imports = [
+    ../swww # For wallpaper
     ./xwayland.nix
     ./binds.nix
     ./settings.nix
@@ -11,7 +12,6 @@
     brightnessctl
   ];
 
-  services.swww.enable = true;
   services.mako.enable = true;
   programs.swaylock.enable = true;
   programs.waybar.enable = true;

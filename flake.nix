@@ -20,6 +20,7 @@
     ags.url = "github:Aylur/ags";
     niri.url = "github:sodiboo/niri-flake";
     stylix.url = "github:nix-community/stylix";
+    swww.url = "github:LGFae/swww";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
