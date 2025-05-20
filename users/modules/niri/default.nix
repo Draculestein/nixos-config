@@ -2,6 +2,7 @@
 
   imports = [
     ../swww # For wallpaper
+    ./lockscreen.nix
     ./xwayland.nix
     ./binds.nix
     ./settings.nix
@@ -13,7 +14,6 @@
   ];
 
   services.mako.enable = true;
-  programs.swaylock.enable = true;
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
 }
