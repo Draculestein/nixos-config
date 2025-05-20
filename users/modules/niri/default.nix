@@ -16,4 +16,5 @@
   services.mako.enable = true;
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
+  programs.fuzzel.enable = true;
 }

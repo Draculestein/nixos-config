@@ -52,6 +52,7 @@ in
     };
 
     "Mod+L".action.spawn = "hyprlock";
+    "Mod+Space".action.spawn = "fuzzel";
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
