@@ -51,6 +51,7 @@ in
       hotkey-overlay.title = "Lock the Screen: swaylock";
     };
 
+    "Mod+L".action.spawn = "hyprlock";
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
