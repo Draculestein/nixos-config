@@ -65,6 +65,7 @@
 
       "ASUSTek COMPUTER INC VG278 M3LMQS154329" = {
         enable = true;
+        variable-refresh-rate = "on-demand";
         scale = 1.0;
         mode = {
           width = 1920;
