@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  home.packages = [ pkgs.xwayland-satellite-unstable ];
+  home.packages = [ pkgs.xwayland-satellite-unstable pkgs.xwayland-run ];
 
   # XWayland
   systemd.user.services.xwayland-satellite = {
