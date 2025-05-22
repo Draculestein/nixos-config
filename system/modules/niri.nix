@@ -8,6 +8,6 @@
     enable = true;
     package = pkgs.niri-unstable;
   };
-  security.pam.services.swaylock = { };
+  security.pam.services.hyprlock = { };
 }
 
