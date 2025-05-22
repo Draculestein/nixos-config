@@ -51,7 +51,7 @@ in
       hotkey-overlay.title = "Lock the Screen: swaylock";
     };
 
-    "Mod+L".action.spawn = "hyprlock";
+    "Mod+L".action.spawn = "loginctl lock-session";
     "Mod+Space".action.spawn = "fuzzel";
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
