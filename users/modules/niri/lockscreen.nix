@@ -6,7 +6,15 @@
   home.packages = [
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.inter
+    pkgs.hypridle
   ];
+
+  home.file = {
+    ".config/hypr/hypridle.conf" = {
+      enable = true;
+      source = ./hypridle.conf;
+    };
+  };
 
   programs.hyprlock = {
     enable = true;
