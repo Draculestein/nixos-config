@@ -16,7 +16,7 @@
         command = [ "sww" "img" "--transition-type" "random" "${image}" ];
       }
       {
-        command = "hypridle";
+        command = [ "hypridle" ];
       }
     ];
 
