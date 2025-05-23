@@ -20,8 +20,9 @@
           keyutils
           gamemode
         ];
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+
   };
 
   programs.gamescope = {
