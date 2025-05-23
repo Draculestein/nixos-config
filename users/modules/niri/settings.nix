@@ -110,7 +110,7 @@
     };
 
     clipboard.disable-primary = true;
-
+    cursor.hide-when-typing = true;
     hotkey-overlay.skip-at-startup = true;
   };
 }
