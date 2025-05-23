@@ -25,6 +25,24 @@
       {
         matches = [
           {
+            title = "^Meet - [a-z]{3}-[a-z]{4}-[a-z]{3}$";
+          }
+          {
+            title = "^(Picture in picture)$";
+          }
+        ];
+
+        open-floating = true;
+        default-floating-position = {
+          x = 0;
+          y = 0;
+          relative-to = "top-right";
+        };
+      }
+
+      {
+        matches = [
+          {
             app-id = "steam";
             title = "r#\"^notificationtoasts_\\d+_desktop$\"#";
           }
