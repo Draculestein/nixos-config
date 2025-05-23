@@ -102,6 +102,10 @@
         top = 8;
         bottom = 8;
       };
+
+      tab-indicator = {
+        place-within-column = true;
+      };
     };
 
     animations = {
