@@ -89,10 +89,10 @@ in
     "Mod+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
 
-    "Mod+Plus".action = set-column-width "+10%";
+    "Mod+Equal".action = set-column-width "+10%";
     "Mod+Minus".action = set-column-width "-10%";
 
-    # "Mod+Shift+Plus".action = set-column-height "+10%";
+    # "Mod+Shift+Equal".action = set-column-height "+10%";
     # "Mod+Shift+Minus".action = set-column-height "-10%";
 
     "Mod+V".action = toggle-window-floating;
