@@ -51,7 +51,7 @@ in
       hotkey-overlay.title = "Lock the Screen: swaylock";
     };
 
-    "Mod+L".action.spawn = ["loginctl" "lock-session"];
+    "Mod+L".action.spawn = [ "loginctl" "lock-session" ];
     "Mod+Space".action.spawn = "fuzzel";
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
@@ -161,17 +161,17 @@ in
     # Audio
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "-l" "1.1" "@DEFAULT_AUDIO_SINK@" "5%+" "&&" "ignis" "open-window" "OnScreenDisplay"];
+      action.spawn = [ "sh" "-c" "wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+ && ignis open-window OnScreenDisplay" ];
     };
 
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "-l" "0" "@DEFAULT_AUDIO_SINK@" "5%-" "&&" "ignis" "open-window" "OnScreenDisplay"];
+      action.spawn = [ "sh" "-c" "wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 5%- && ignis open-window OnScreenDisplay" ];
     };
 
     "XF86AudioMute" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" "&&" "ignis" "open-window" "OnScreenDisplay"];
+      action.spawn = [ "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ignis open-window OnScreenDisplay" ];
     };
 
     "XF86AudioMicMute" = {
