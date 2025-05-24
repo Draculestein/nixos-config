@@ -56,6 +56,9 @@
       "[vue]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[scss]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "prettier.printWidth" = 100;
       "prettier.singleQuote" = true;
       "prettier.tabWidth" = 4;
