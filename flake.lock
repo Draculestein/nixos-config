@@ -267,6 +267,27 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": [
+          "ignis",
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -371,6 +392,22 @@
         "type": "github"
       }
     },
+    "gvc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1735384240,
+        "narHash": "sha256-ikF9EzFlsRH8i4+SVUHETF4Jk1ob2JX1RLsuMdzrQOQ=",
+        "owner": "linkfrg",
+        "repo": "libgnome-volume-control-wheel",
+        "rev": "2d1cb33dacdae43127bb843a48b159ea7b8925d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "linkfrg",
+        "repo": "libgnome-volume-control-wheel",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -410,6 +447,29 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "ignis": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "gvc": "gvc",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1747852781,
+        "narHash": "sha256-hHnkGFbn0AokiSzm5iIx9JQT1LUHo1eKSz/ZD/NKMoE=",
+        "owner": "linkfrg",
+        "repo": "ignis",
+        "rev": "8a49ce83889dc9ceeea4a371130a824dd6ec0e3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "linkfrg",
+        "repo": "ignis",
         "type": "github"
       }
     },
@@ -663,6 +723,7 @@
         "disko": "disko",
         "ghostty": "ghostty",
         "home-manager": "home-manager",
+        "ignis": "ignis",
         "niri": "niri",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
@@ -706,7 +767,7 @@
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_4",
         "nur": "nur",
-        "systems": "systems_2",
+        "systems": "systems_3",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -764,6 +825,21 @@
     },
     "systems_2": {
       "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "systems_3": {
+      "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
         "owner": "nix-systems",
@@ -777,7 +853,7 @@
         "type": "github"
       }
     },
-    "systems_3": {
+    "systems_4": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -897,7 +973,7 @@
     },
     "utils": {
       "inputs": {
-        "systems": "systems_3"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1731533236,

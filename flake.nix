@@ -21,6 +21,10 @@
     niri.url = "github:sodiboo/niri-flake";
     stylix.url = "github:nix-community/stylix";
     swww.url = "github:LGFae/swww";
+    ignis = {
+      url = "github:linkfrg/ignis";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     sops-nix = {
       url = "github:Mic92/sops-nix";

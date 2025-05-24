@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     brightnessctl
+    inputs.ignis.packages.${system}.ignis
   ];
 
   services.mako.enable = true;

@@ -161,17 +161,17 @@ in
     # Audio
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "-l" "1.1" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+      action.spawn = [ "wpctl" "set-volume" "-l" "1.1" "@DEFAULT_AUDIO_SINK@" "5%+" "&&" "ignis" "open-window" "OnScreenDisplay"];
     };
 
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "-l" "0" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+      action.spawn = [ "wpctl" "set-volume" "-l" "0" "@DEFAULT_AUDIO_SINK@" "5%-" "&&" "ignis" "open-window" "OnScreenDisplay"];
     };
 
     "XF86AudioMute" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+      action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" "&&" "ignis" "open-window" "OnScreenDisplay"];
     };
 
     "XF86AudioMicMute" = {
