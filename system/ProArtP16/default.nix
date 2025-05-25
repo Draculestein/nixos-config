@@ -33,6 +33,7 @@
     ../modules/steam.nix
     ../modules/flatpak.nix
     ../modules/ssh.nix
+    ../modules/zoom-us.nix
     ../modules/stylix
   ];
 
