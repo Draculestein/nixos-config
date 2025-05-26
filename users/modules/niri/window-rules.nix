@@ -54,6 +54,16 @@
           relative-to = "bottom-right";
         };
       }
+
+      {
+        matches = [
+          {
+            app-id = "zoom";
+          }
+        ];
+
+        open-floating = true;
+      }
     ];
 
   };
