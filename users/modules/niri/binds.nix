@@ -96,6 +96,7 @@ in
     "Mod+Shift+Minus".action = set-window-height "-10%";
 
     "Mod+V".action = toggle-window-floating;
+    "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
     "Mod+W".action = toggle-column-tabbed-display;
 
     "Mod+Shift+S".action = screenshot { show-pointer = true; };
