@@ -51,6 +51,8 @@
         enable = true;
         map-to-output = "eDP-1";
       };
+
+      focus-follows-mouse.enable = true;
     };
 
     outputs = {
