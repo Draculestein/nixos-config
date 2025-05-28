@@ -60,6 +60,9 @@
           {
             app-id = "zoom";
           }
+          {
+            app-id = "XEyes";
+          }
         ];
 
         open-floating = true;
