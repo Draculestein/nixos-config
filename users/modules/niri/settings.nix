@@ -52,7 +52,7 @@
         map-to-output = "eDP-1";
       };
 
-      focus-follows-mouse.enable = true;
+      # focus-follows-mouse.enable = true;
     };
 
     outputs = {
