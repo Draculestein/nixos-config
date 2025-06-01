@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... } : {
   imports = [
     ./configuration.nix
+    ../modules/common.nix
 
     # Hardware
     ../modules/zswap.nix
