@@ -5,7 +5,7 @@
     bash
   ];
 
-  environmnent.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     killall
   ];
 
