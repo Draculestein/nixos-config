@@ -102,10 +102,10 @@
       };
 
       struts = {
-        left = 32;
-        right = 32;
-        top = 8;
-        bottom = 8;
+        left = 24;
+        right = 24;
+        top = 2;
+        bottom = 2;
       };
 
       tab-indicator = {
