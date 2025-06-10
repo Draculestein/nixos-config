@@ -35,6 +35,7 @@
     vlc
     firefox
     onlyoffice-bin
+    libreoffice
     kdePackages.okular
     desktop-file-utils
     gnome-tweaks
