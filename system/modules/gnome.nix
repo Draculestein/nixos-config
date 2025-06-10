@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   xdg.portal = {
     enable = true;
