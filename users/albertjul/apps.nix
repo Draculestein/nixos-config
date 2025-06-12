@@ -63,4 +63,6 @@
     libinklevel
   ];
 
+  programs.zed-editor.enable = true;
+
 }
