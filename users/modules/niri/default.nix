@@ -2,6 +2,7 @@
 
   imports = [
     ../swww # For wallpaper
+    ../clipse.nix
     ./lockscreen.nix
     ./xwayland.nix
     ./binds.nix
