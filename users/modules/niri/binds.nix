@@ -95,7 +95,8 @@ in
     "Mod+Shift+Equal".action = set-window-height "+10%";
     "Mod+Shift+Minus".action = set-window-height "-10%";
 
-    "Mod+V".action = toggle-window-floating;
+    "Mod+V".action.spawn = ["ghostty" "--class=com.savedra1.clipse" "--window-decoration=none" "-e" "clipse"];
+    "Mod+Shift+V".action = toggle-window-floating;
     "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
     "Mod+W".action = toggle-column-tabbed-display;
 
