@@ -67,6 +67,16 @@
 
         open-floating = true;
       }
+
+      {
+        matches = [
+          {
+            app-id = "com.savedra1.clipse";
+          }
+        ];
+
+        open-floating = true;
+      }
     ];
 
   };

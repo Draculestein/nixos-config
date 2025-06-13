@@ -1,4 +1,8 @@
 { config, lib, pkgs, ... }: {
+  home.packages = [
+    pkgs.wl-clipboard
+  ];
+
   services.clipse = {
     enable = true;
     keyBindings = {
@@ -9,9 +13,9 @@
       "filter" = "/";
       "home" = "home";
       "more" = "?";
-      "nextPage" = "r;ght";
+      "nextPage" = "right";
       "prevPage" = "left";
-      "preview" = "t";
+      "preview" = "space";
       "quit" = "q";
       "remove" = "x";
       "selectDown" = "ctrl+down";
