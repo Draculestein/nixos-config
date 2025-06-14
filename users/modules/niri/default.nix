@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     brightnessctl
     inputs.ignis.packages.${system}.ignis
+    xwayland-satellite-unstable
   ];
 
   services.mako.enable = true;
