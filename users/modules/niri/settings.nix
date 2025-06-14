@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }: {
   programs.niri.settings = {
     environment = {
-      DISPLAY = ":0";
       GDK_BACKEND = "wayland,x11,*";
       SDL_VIDEODRIVER = "wayland";
       CLUTTER_BACKEND = "wayland";

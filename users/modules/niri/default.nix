@@ -4,7 +4,7 @@
     ../swww # For wallpaper
     ../clipse.nix
     ./lockscreen.nix
-    ./xwayland.nix
+    # ./xwayland.nix
     ./binds.nix
     ./settings.nix
     ./window-rules.nix
