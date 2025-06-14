@@ -48,6 +48,7 @@
       vscode.enable = false;
       hyprpaper.enable = true;
       rofi.enable = false;
+      waybar.enable = false;
     };
   };
 

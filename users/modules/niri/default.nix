@@ -12,12 +12,14 @@
   home.packages = with pkgs; [
     brightnessctl
     xwayland-satellite-unstable
+    waybar
+    lm_sensors
+    rofi-wayland
   ] ++ [
     inputs.ignis.packages.${system}.ignis
   ];
 
   services.mako.enable = true;
-  programs.waybar.enable = true;
-  programs.waybar.systemd.enable = true;
+  services.playerctld.enable = true;
   programs.fuzzel.enable = true;
 }

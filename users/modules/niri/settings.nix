@@ -12,6 +12,9 @@
 
     spawn-at-startup = let image = ../../albertjul/desktop.jpg; in [
       {
+        command = [ "waybar" ];
+      }
+      {
         command = [ "sww" "img" "--transition-type" "random" "${image}" ];
       }
       {
