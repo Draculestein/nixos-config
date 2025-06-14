@@ -63,13 +63,9 @@
           {
             app-id = "XEyes";
           }
-        ];
-
-        open-floating = true;
-      }
-
-      {
-        matches = [
+          {
+            app-id = "org.kde.polkit-kde-authentication-agent-1";
+          }
           {
             app-id = "com.savedra1.clipse";
           }
