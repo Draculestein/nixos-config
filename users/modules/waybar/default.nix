@@ -15,65 +15,65 @@
     };
 
     settings = {
-      layer = "top";
-      position = "top";
-      mode = "dock";
-      gtk-layer-shell = "true";
+      mainbar = {
+        layer = "top";
+        position = "top";
+        mode = "dock";
+        gtk-layer-shell = true;
 
-      modules-left = [
-        "custom/left1"
-        "niri/workspaces"
-        "custom/right1"
-        "custom/paddw"
-        "niri/window"
-      ];
+        modules-left = [
+          "custom/left1"
+          "niri/workspaces"
+          "custom/right1"
+          "custom/paddw"
+          "niri/window"
+        ];
 
-      modules-center = [
-        "custom/paddc"
-        "custom/left2"
-        "custom/temparature"
+        modules-center = [
+          "custom/paddc"
+          "custom/left2"
+          "custom/temparature"
 
-        "custom/left3"
-        "memory"
+          "custom/left3"
+          "memory"
 
-        "custom/left4"
-        "cpu"
-        "custom/leftin1"
+          "custom/left4"
+          "cpu"
+          "custom/leftin1"
 
-        "custom/left5"
-        "custom/distro"
-        "custom/right2"
+          "custom/left5"
+          "custom/distro"
+          "custom/right2"
 
-        "custom/rightin1"
-        "idle_inhibitor"
-        "clock#time"
-        "custom/right3"
+          "custom/rightin1"
+          "idle_inhibitor"
+          "clock#time"
+          "custom/right3"
 
-        "clock#date"
-        "custom/right4"
+          "clock#date"
+          "custom/right4"
 
-        "custom/wifi"
-        "bluetooth"
-        "custom/right5"
-      ];
+          "custom/wifi"
+          "bluetooth"
+          "custom/right5"
+        ];
 
-      modules-right = [
-        "mpris"
+        modules-right = [
+          "mpris"
 
-        "custom/left6"
-        "wireplumber"
+          "custom/left6"
+          "wireplumber"
 
-        "custom/left7"
-        "backlight"
+          "custom/left7"
+          "backlight"
 
-        "custom/left8"
-        "battery"
+          "custom/left8"
+          "battery"
 
-        "custom/leftin2"
-        "custom/power"
-      ];
+          "custom/leftin2"
+          "custom/power"
+        ];
 
-      modules = {
         "niri/window" = {
           "format" = "{}";
           "tooltip" = false;
@@ -284,7 +284,7 @@
             "== {device_alias}= 󱊣 {device_battery_percentage}%";
 
           "on-click" = "~/.config/waybar/scripts/bluetooth-menu.sh";
-          "on-click-right" = "ghostty --title '󰂯  Bluetooth TUI' bluetui";
+          "on-click-right" = "ghostty --title '󰂯  Bluetooth TUI' -e bluetui";
           "interval" = 1;
           "min-length" = 1;
           "max-length" = 1;
