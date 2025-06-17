@@ -10,9 +10,9 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     };
 
-    spawn-at-startup = let image = ../../albertjul/desktop.jpg; in [
+    spawn-at-startup = [
       {
-        command = [ "sww" "img" "--transition-type" "random" "${image}" ];
+        command = [ "swww" "restore" ];
       }
       {
         command = [ "hypridle" ];
