@@ -73,6 +73,16 @@
 
         open-floating = true;
       }
+
+      {
+        matches = [
+          {
+            app-id = "code";
+          }
+        ];
+
+        default-column-width.proportion = 1.0;
+      }
     ];
 
   };
