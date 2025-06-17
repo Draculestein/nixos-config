@@ -6,11 +6,11 @@
     enable32Bit = true;
 
     extraPackages = with pkgs; [
-      amdvlk
+      # amdvlk
       nvidia-vaapi-driver
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
-      amdvlk
+      # amdvlk
     ];
   };
 
