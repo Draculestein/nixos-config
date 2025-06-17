@@ -223,6 +223,7 @@
         "clock#time" = {
           "format" = "{:%H:%M:%S}";
           "tooltip" = false;
+          "interval" = 1;
           "min-length" = 6;
           "max-length" = 10;
         };
@@ -300,7 +301,7 @@
             "firefox" = "<span foreground='#f38ba8'>󰗃 </span>";
           };
           "status-icons" = {
-            "paused" = "<span color='#b4befe'>\u200A\u200A󰏤\u2009\u2009</span>";
+            "paused" = ''<span color='#b4befe'>  󰏤  </span>'';
           };
 
           "tooltip-format" = "Playing: {title} - {artist}";
