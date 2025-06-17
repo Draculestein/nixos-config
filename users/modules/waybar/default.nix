@@ -221,14 +221,14 @@
         };
 
         "clock#time" = {
-          "format" = "{=%H=%M=%S}";
+          "format" = "{:%H:%M:%S}";
           "tooltip" = false;
           "min-length" = 6;
           "max-length" = 10;
         };
 
         "clock#date" = {
-          "format" = "󰸗 {=%m-%d}";
+          "format" = "󰸗 {:%b %d}";
           "tooltip-format" = "<tt>{calendar}</tt>";
 
           "calendar" = {
@@ -252,7 +252,7 @@
           };
 
           "min-length" = 8;
-          "max-length" = 8;
+          "max-length" = 12;
         };
 
         "custom/wifi" = {
