@@ -4,6 +4,7 @@
     ../swww # For wallpaper
     ../clipse.nix
     ../waybar
+    ../gammastep.nix
     ./lockscreen.nix
     ./binds.nix
     ./settings.nix
@@ -14,7 +15,7 @@
     brightnessctl
     xwayland-satellite-unstable
     waybar
-    
+
   ] ++ [
     inputs.ignis.packages.${system}.ignis
   ];
