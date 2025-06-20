@@ -63,7 +63,10 @@
   time.timeZone = lib.mkDefault "America/Denver";
   services.automatic-timezoned.enable = true;
 
-  services.geoclue2.enable = true;
+  services.geoclue2 = {
+    enable = true;
+    enableDemoAgent = lib.mkForce true;
+  };
 
 
   # Select internationalisation properties.
