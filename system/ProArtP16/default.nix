@@ -10,8 +10,9 @@
     ../modules/asus.nix
     # ../modules/wacom.nix
     ../modules/xboxController.nix
-    ../modules/autocpu-freq.nix
+    # ../modules/autocpu-freq.nix
     # ../modules/powerprofilesdaemon.nix
+    ../modules/tlp.nix
     ../modules/blueman.nix
 
     # Display Manager and DE
