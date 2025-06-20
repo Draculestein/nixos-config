@@ -36,7 +36,7 @@
 
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = true;
+    powerOnBoot = false;
   };
 
   networking.hostName = "AlbertProP16";
