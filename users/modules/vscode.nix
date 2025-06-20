@@ -72,7 +72,8 @@
       "chat.commandCenter.enabled" = false;
       "cody.suggestions.mode" = "off";
       "editor.accessibilitySupport" = "off";
-
+      "workbench.startupEditor" = "welcomePage";
+      "window.restoreWindows" = "none";
     };
   };
 }
