@@ -12,6 +12,7 @@
     enable = true;
     systemd = {
       enable = true;
+      enableDebug = true;
     };
 
     settings = {
@@ -32,7 +33,7 @@
         modules-center = [
           "custom/paddc"
           "custom/left2"
-          "custom/temparature"
+          "custom/temperature"
 
           "custom/left3"
           "memory"
