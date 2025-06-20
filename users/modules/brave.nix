@@ -3,6 +3,8 @@
 {
   programs.brave = {
     enable = true;
+    package = pkgs.brave;
+    
     commandLineArgs = [
       "--password-store=detect"
       "--enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,TouchpadOverscrollHistoryNavigation"
