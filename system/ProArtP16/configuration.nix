@@ -42,9 +42,6 @@
   networking.hostName = "AlbertProP16";
   networking.networkmanager = {
     enable = true;
-    wifi = {
-      powersave = false;
-    };
   };
   networking.wireless.enable = false;
 
