@@ -29,10 +29,10 @@
   hardware.enableAllFirmware = true;
   hardware.sensor.iio.enable = true;
 
-  hardware.opentabletdriver = {
-    enable = true;
-    daemon.enable = true;
-  };
+  # hardware.opentabletdriver = {
+  #   enable = true;
+  #   daemon.enable = true;
+  # };
 
   hardware.bluetooth = {
     enable = true;
