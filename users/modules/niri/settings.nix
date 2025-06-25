@@ -21,9 +21,6 @@
       {
         command = [ "hypridle" ];
       }
-      {
-        command = [ "ignis" "init" ];
-      }
     ];
 
     input = {

@@ -11,13 +11,10 @@
     ./window-rules.nix
   ];
 
-  home.packages = with pkgs; [
-    brightnessctl
-    xwayland-satellite-unstable
-    waybar
-
-  ] ++ [
-    inputs.ignis.packages.${system}.ignis
+  home.packages = [
+    pkgs.brightnessctl
+    pkgs.xwayland-satellite-unstable
+    pkgs.waybar
   ];
 
   services.mako.enable = true;

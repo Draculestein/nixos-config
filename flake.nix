@@ -22,7 +22,7 @@
     stylix.url = "github:nix-community/stylix";
     swww.url = "github:LGFae/swww";
     ignis = {
-      url = "github:linkfrg/ignis";
+      url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
