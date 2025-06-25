@@ -5,6 +5,7 @@
     ../clipse.nix
     ../waybar
     ../gammastep.nix
+    ../swaync
     ./lockscreen.nix
     ./binds.nix
     ./settings.nix
@@ -17,6 +18,6 @@
     pkgs.waybar
   ];
 
-  services.mako.enable = true;
+  # services.mako.enable = true;
   programs.fuzzel.enable = true;
 }
