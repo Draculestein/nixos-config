@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       "positionX" = "right";
-      "positionY" = "bottom";
+      "positionY" = "top";
       "layer" = "overlay";
       "control-center-layer" = "top";
       "layer-shell" = true;
