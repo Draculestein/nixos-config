@@ -74,6 +74,7 @@
       "editor.accessibilitySupport" = "off";
       "workbench.startupEditor" = "welcomePage";
       "window.restoreWindows" = "none";
+      "amp.url" = "https://ampcode.com/";
     };
   };
 }
