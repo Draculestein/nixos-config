@@ -67,6 +67,11 @@ in
       action = toggle-keyboard-shortcuts-inhibit;
     };
 
+    # Open SwayNC
+    "Mod+N" = {
+      action.spawn = [ "swaync-client" "-t"];
+    };
+
     # Columns & Windows
     "Mod+Left".action = focus-column-left;
     "Mod+Right".action = focus-column-right;
