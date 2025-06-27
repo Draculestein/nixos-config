@@ -12,7 +12,7 @@
     enable = true;
     systemd = {
       enable = true;
-      enableDebug = true;
+      enableDebug = false;
     };
 
     settings = {
