@@ -75,6 +75,8 @@
       "workbench.startupEditor" = "welcomePage";
       "window.restoreWindows" = "none";
       "amp.url" = "https://ampcode.com/";
+      "docker.extension.enableComposeLanguageServer" = false;
+
     };
   };
 }
