@@ -59,6 +59,10 @@
       "[scss]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[dockerfile]" = {
+        "editor.defaultFormatter" = "ms-azuretools.vscode-containers";
+      };
+      
       "prettier.printWidth" = 100;
       "prettier.singleQuote" = true;
       "prettier.tabWidth" = 4;
