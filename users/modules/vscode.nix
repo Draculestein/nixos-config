@@ -82,6 +82,8 @@
       "docker.extension.enableComposeLanguageServer" = false;
       "chat.instructionsFilesLocations" = {
         ".github/instructions" = true;
+        "/tmp/postman-http-request-post-response.instructions.md" = true;
+        "/tmp/postman-http-request-pre-request.instructions.md" = true;
       };
     };
   };
