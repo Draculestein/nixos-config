@@ -62,7 +62,7 @@
       "[dockerfile]" = {
         "editor.defaultFormatter" = "ms-azuretools.vscode-containers";
       };
-      
+
       "prettier.printWidth" = 100;
       "prettier.singleQuote" = true;
       "prettier.tabWidth" = 4;
@@ -80,7 +80,9 @@
       "window.restoreWindows" = "none";
       "amp.url" = "https://ampcode.com/";
       "docker.extension.enableComposeLanguageServer" = false;
-
+      "chat.instructionsFilesLocations" = {
+        ".github/instructions" = true;
+      };
     };
   };
 }
