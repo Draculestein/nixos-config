@@ -13,6 +13,7 @@
     ../modules/devenv.nix
     ../modules/fastfetch.nix
     ../modules/fzf.nix
+    ../modules/foot.nix
     ../modules/ghostty.nix
     ../modules/vscode.nix
     ../modules/distrobox.nix
