@@ -61,6 +61,7 @@
       ];
     })
     libinklevel
+    popsicle
   ];
 
   programs.zed-editor.enable = true;
