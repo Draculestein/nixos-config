@@ -69,7 +69,8 @@ in
 
     # Open SwayNC
     "Mod+N" = {
-      action.spawn = [ "swaync-client" "-t"];
+      action.spawn = [ "swaync-client" "-t" ];
+      hotkey-overlay.title = "Open Notification Center (SwayNC)";
     };
 
     # Columns & Windows
@@ -100,7 +101,10 @@ in
     "Mod+Shift+Equal".action = set-window-height "+10%";
     "Mod+Shift+Minus".action = set-window-height "-10%";
 
-    "Mod+V".action.spawn = ["ghostty" "--class=com.savedra1.clipse" "--window-decoration=none" "-e" "clipse"];
+    "Mod+V" = {
+      action.spawn = [ "foot" "--app-id=com.savedra1.clipse" "clipse" ];
+      hotkey-overlay.title = "Open Clipboard Manager (Clipse)";
+    };
     "Mod+Shift+V".action = toggle-window-floating;
     "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
     "Mod+W".action = toggle-column-tabbed-display;
