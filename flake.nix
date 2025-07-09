@@ -42,6 +42,7 @@
     };
 
     ghostty.url = "github:ghostty-org/ghostty";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
