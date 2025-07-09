@@ -15,7 +15,7 @@
       "more" = "?";
       "nextPage" = "right";
       "prevPage" = "left";
-      "preview" = "space";
+      "preview" = "v";
       "quit" = "q";
       "remove" = "x";
       "selectDown" = "ctrl+down";
