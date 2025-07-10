@@ -5,6 +5,19 @@
     bluetui
   ];
 
+  home.file."${config.xdg.configHome}/waybar/style.css" = {
+    enable = true;
+    source = ./style.css;
+  };
+  home.file."${config.xdg.configHome}/waybar/animation.css" = {
+    enable = true;
+    source = ./animation.css;
+  };
+  home.file."${config.xdg.configHome}/waybar/theme.css" = {
+    enable = true;
+    source = ./theme.css;
+  };
+
   # For MPRIS
   services.playerctld.enable = true;
 
