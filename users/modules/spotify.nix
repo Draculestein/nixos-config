@@ -12,7 +12,7 @@
       enable = true;
 
       enabledExtensions = with spicetify-pkgs.extensions; [
-        fullAppDisplayMod
+        fullAppDisplay
       ];
     };
 }
