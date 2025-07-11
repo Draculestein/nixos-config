@@ -49,6 +49,7 @@
       hyprpaper.enable = true;
       rofi.enable = false;
       waybar.enable = false;
+      spicetify.enable = false;
     };
   };
 
