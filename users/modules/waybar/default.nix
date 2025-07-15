@@ -299,7 +299,7 @@
             "== {device_alias}= 󱊣 {device_battery_percentage}%";
 
           "on-click" = "~/.config/waybar/scripts/bluetooth-menu.sh";
-          "on-click-right" = "ghostty --title '󰂯  Bluetooth TUI' -e bluetui";
+          "on-click-right" = "ghostty --title='󰂯  Bluetooth TUI' -e bluetui";
           "interval" = 1;
           "min-length" = 1;
           "max-length" = 1;

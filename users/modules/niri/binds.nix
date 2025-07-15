@@ -52,7 +52,7 @@ in
     };
 
     "Mod+L".action.spawn = [ "loginctl" "lock-session" ];
-    "Mod+Space".action.spawn = "fuzzel";
+    "Mod+Space".action.spawn = "walker";
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
