@@ -50,6 +50,8 @@
       rofi.enable = false;
       waybar.enable = false;
       spicetify.enable = false;
+      kitty.enable = false;
+
     };
   };
 
