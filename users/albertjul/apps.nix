@@ -19,6 +19,7 @@
     ../modules/distrobox.nix
     ../modules/niri
     ../modules/spotify.nix
+    ../modules/wluma.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your

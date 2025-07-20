@@ -86,7 +86,7 @@
   users.users.albertjul = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" "video" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [ ]; # Apps are handled by home-manager
     shell = pkgs.zsh;
   };
