@@ -193,12 +193,12 @@ in
     # Screen brightness
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "+5%" ];
+      action.spawn = [ "brightnessctl" "set" "+5%" ];
     };
 
     "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "-d" "amdgpu_bl1" "set" "5%-" ];
+      action.spawn = [ "brightnessctl" "set" "5%-" ];
     };
 
     # Keyboard backlight
