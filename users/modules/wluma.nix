@@ -19,7 +19,7 @@
       output.backlight = [
         {
           name = "eDP-1";
-          path = "/sys/class/backlight/amdgpu_bl2";
+          path = "/sys/class/backlight/amdgpu_bl1";
           capturer = "wayland";
         }
       ];
