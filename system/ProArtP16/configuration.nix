@@ -102,16 +102,6 @@
   services.gvfs.enable = true;
   services.gnome.localsearch.enable = true;
 
-  services.udev.extraRules = ''
-    ENV{DMI_FAMILY}=="*ProArt*", GOTO="asusd_start"
-    GOTO="asusd_end"
-
-    LABEL="asusd_start"
-    ACTION=="add|change", DRIVER=="asus-nb-wmi", TAG+="systemd", ENV{SYSTEMD_WANTS}="asusd.service"
-
-    LABEL="asusd_end"
-  '';
-
   nix.settings = {
     substituters = [ "https://devenv.cachix.org" ];
     trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw= nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU=" ];
