@@ -8,8 +8,22 @@
     profiles.default.userSettings = {
       "editor.fontFamily" = "'Hasklug Nerd Font', 'monospace', monospace";
       "editor.tabSize" = 2;
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.inlineSuggest.suppressSuggestions" = true;
+      "editor.accessibilitySupport" = "off";
+      "workbench.iconTheme" = "catppuccin-macchiato";
+      "workbench.startupEditor" = "welcomePage";
+      "window.restoreWindows" = "none";
+
       "git.confirmSync" = false;
       "git.autofetch" = true;
+      "git.enableSmartCommit" = true;
+
+      "prettier.printWidth" = 100;
+      "prettier.singleQuote" = true;
+      "prettier.tabWidth" = 2;
+      "prettier.useTabs" = false;
+
       "nix.enableLanguageServer" = true;
       "nix.formatterPath" = "nixpkgs-fmt";
       "nix.serverPath" = "nixd";
@@ -28,47 +42,17 @@
           };
         };
       };
-      "git.enableSmartCommit" = true;
-      "workbench.iconTheme" = "catppuccin-macchiato";
-      "redhat.telemetry.enabled" = false;
 
       # Language formatter settings
-      "[javascript]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[jsonc]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[typescript]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[typescriptreact]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[javascriptreact]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[css]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[vue]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[scss]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
       "[dockerfile]" = {
         "editor.defaultFormatter" = "ms-azuretools.vscode-containers";
       };
+      "[nix]" = {
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
 
-      "prettier.printWidth" = 100;
-      "prettier.singleQuote" = true;
-      "prettier.tabWidth" = 4;
-      "prettier.useTabs" = true;
-      "editor.inlineSuggest.suppressSuggestions" = true;
+      "redhat.telemetry.enabled" = false;
+
       "cody.commandCodeLenses" = true;
       "cody.autocomplete.enabled" = false;
       "yaml.format.enable" = false;
@@ -76,11 +60,8 @@
       "typescript.updateImportsOnFileMove.enabled" = "always";
       "chat.commandCenter.enabled" = false;
       "cody.suggestions.mode" = "off";
-      "editor.accessibilitySupport" = "off";
-      "workbench.startupEditor" = "welcomePage";
-      "window.restoreWindows" = "none";
       "amp.url" = "https://ampcode.com/";
-      "docker.extension.enableComposeLanguageServer" = false;
+      "docker.extension.enableComposeLanguageServer" = true;
       "chat.instructionsFilesLocations" = {
         ".github/instructions" = true;
         "/tmp/postman-http-request-post-response.instructions.md" = true;
