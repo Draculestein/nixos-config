@@ -7,6 +7,7 @@
 
     profiles.default.userSettings = {
       "editor.fontFamily" = "'Hasklug Nerd Font', 'monospace', monospace";
+      "editor.tabSize" = 2;
       "git.confirmSync" = false;
       "git.autofetch" = true;
       "nix.enableLanguageServer" = true;
