@@ -16,7 +16,7 @@
 
     spawn-at-startup = [
       {
-        command = [ "swww" "restore" ];
+        command = [ "swww-randomize" "~/Pictures/Wallpapers" "1800" ];
       }
       {
         command = [ "hypridle" ];
