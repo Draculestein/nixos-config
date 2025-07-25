@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
   programs.niri.settings = {
     debug = {
-      render-drm-device = "/dev/dri/card2";
+      render-drm-device = "/dev/dri/renderD129";
     };
 
     environment = {
