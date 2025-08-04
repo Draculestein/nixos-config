@@ -43,7 +43,7 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    walker.url = "github:abenz1267/walker/v0.12.39";
+    walker.url = "github:abenz1267/walker";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -52,10 +52,10 @@
 
       lib = nixpkgs-unstable.lib;
 
-      pkgs = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      # pkgs = import nixpkgs-unstable {
+      #   inherit system;
+      #   config.allowUnfree = true;
+      # };
 
       home-manager = inputs.home-manager;
     in
