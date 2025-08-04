@@ -50,6 +50,9 @@
       "[nix]" = {
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
       };
+      "[erb]" = {
+        "editor.defaultFormatter" = "Shopify.ruby-lsp";
+      };
 
       "redhat.telemetry.enabled" = false;
 
