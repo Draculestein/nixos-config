@@ -63,6 +63,7 @@
     })
     libinklevel
     popsicle
+    kooha
   ];
 
   programs.zed-editor.enable = true;
