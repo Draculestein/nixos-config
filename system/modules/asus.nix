@@ -13,4 +13,7 @@
     enable = true;
     autoStart = true;
   };
+
+  services.power-profiles-daemon.enable = true;
+
 }
