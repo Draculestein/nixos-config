@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }: {
   programs.niri.settings = {
+    debug = {
+      render-drm-device = "/dev/dri/amd-igpu";
+    };
+
     environment = {
       GDK_BACKEND = "wayland,x11,*";
       SDL_VIDEODRIVER = "wayland";
