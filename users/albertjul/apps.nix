@@ -63,7 +63,7 @@
     })
     libinklevel
     popsicle
-    kooha
+    wf-recorder
   ];
 
   programs.zed-editor.enable = true;
