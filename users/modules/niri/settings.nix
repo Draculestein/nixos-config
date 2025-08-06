@@ -1,9 +1,5 @@
 { config, lib, pkgs, ... }: {
   programs.niri.settings = {
-    debug = {
-      render-drm-device = "/dev/dri/renderD129";
-    };
-
     environment = {
       GDK_BACKEND = "wayland,x11,*";
       SDL_VIDEODRIVER = "wayland";
@@ -16,7 +12,7 @@
 
     spawn-at-startup = [
       {
-        command = [ "swww-randomize" "~/Pictures/Wallpapers" "1800" ];
+        command = [ "swww" "restore" ];
       }
       {
         command = [ "hypridle" ];
