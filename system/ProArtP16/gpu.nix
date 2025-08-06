@@ -39,4 +39,12 @@
   };
 
   # boot.kernelParams = [ "mem_sleep_default=deep" ];
+  services.udev.extraRules = ''
+    KERNEL=="card*", \
+    KERNELS=="0000:65:00.0", \
+    SUBSYSTEM=="drm", \
+    SUBSYSTEMS=="pci", \
+    SYMLINK+="dri/amd-igpu"
+  '';
+
 }
