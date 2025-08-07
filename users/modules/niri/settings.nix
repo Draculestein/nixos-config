@@ -105,8 +105,8 @@
       };
 
       struts = {
-        left = 24;
-        right = 24;
+        left = 10;
+        right = 10;
         top = 2;
         bottom = 2;
       };
