@@ -103,8 +103,17 @@
   services.gnome.localsearch.enable = true;
 
   nix.settings = {
-    substituters = [ "https://devenv.cachix.org" ];
-    trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw= nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU=" ];
+    substituters = [
+      "https://devenv.cachix.org"
+      "https://walker.cachix.org"
+      "https://walker-git.cachix.org"
+    ];
+    trusted-public-keys = [
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU="
+      "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
+      "walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM="
+    ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
