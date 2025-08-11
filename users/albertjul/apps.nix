@@ -68,4 +68,14 @@
 
   programs.zed-editor.enable = true;
 
+  xdg.autostart = {
+    enable = true;
+    readOnly = false;
+    entries = [
+      "${pkgs.thunderbird}/share/applications/thunderbird.desktop"
+      "${pkgs.bitwarden-desktop}/share/applications/bitwarden.desktop"
+      "${pkgs.vesktop}/share/applications/vesktop.desktop"
+    ];
+  };
+
 }
