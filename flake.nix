@@ -18,7 +18,10 @@
     };
 
     ags.url = "github:Aylur/ags";
-    niri.url = "github:sodiboo/niri-flake";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     stylix.url = "github:nix-community/stylix";
     swww.url = "github:LGFae/swww";
     ignis = {
@@ -43,7 +46,7 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    walker.url = "github:abenz1267/walker";
+    walker.url = "github:abenz1267/walker/v0.13.26";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
