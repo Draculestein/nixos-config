@@ -20,13 +20,13 @@
       };
 
       serif = {
-        name = "Cantarell";
-        package = pkgs.cantarell-fonts;
+        name = "Adwaita Sans";
+        package = pkgs.adwaita-fonts;
       };
 
       sansSerif = {
-        name = "Cantarell";
-        package = pkgs.cantarell-fonts;
+        name = "Adwaita Sans";
+        package = pkgs.adwaita-fonts;
       };
 
       sizes = {

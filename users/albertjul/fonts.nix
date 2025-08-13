@@ -9,6 +9,10 @@
     source-code-pro
     source-sans
     hasklig
+    corefonts
+    vista-fonts
+    inter
+    adwaita-fonts
   ];
 
 }
