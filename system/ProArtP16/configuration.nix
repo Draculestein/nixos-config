@@ -18,7 +18,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_15;
+  boot.kernelPackages = pkgs.linuxPackages_6_16;
   boot.supportedFilesystems = {
     ntfs = true;
   };
