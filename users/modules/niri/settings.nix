@@ -97,6 +97,8 @@
     layout = {
       gaps = 10;
 
+      background-color = "transparent";
+
       focus-ring = {
         enable = true;
         width = 2;

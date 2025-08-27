@@ -17,17 +17,22 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    ags.url = "github:Aylur/ags";
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     stylix.url = "github:nix-community/stylix";
     swww.url = "github:LGFae/swww";
-    ignis = {
-      url = "github:ignis-sh/ignis";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
 
     sops-nix = {
       url = "github:Mic92/sops-nix";

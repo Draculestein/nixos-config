@@ -17,6 +17,8 @@
     pkgs.brightnessctl
     pkgs.xwayland-satellite-unstable
     pkgs.waybar
+    inputs.noctalia.packages.${pkgs.system}.default
+    inputs.quickshell.packages.${pkgs.system}.default
   ];
 
 }

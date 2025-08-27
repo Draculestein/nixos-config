@@ -3,10 +3,10 @@
     window-rules = [
       {
         geometry-corner-radius = {
-          bottom-left = 12.0;
-          bottom-right = 12.0;
-          top-left = 12.0;
-          top-right = 12.0;
+          bottom-left = 20.0;
+          bottom-right = 20.0;
+          top-left = 20.0;
+          top-right = 20.0;
         };
         clip-to-geometry = true;
       }
@@ -82,6 +82,22 @@
         ];
 
         default-column-width.proportion = 1.0;
+      }
+    ];
+
+    layer-rules = [
+      {
+        matches = [{ namespace = "^swww-daemon$"; }];
+        place-within-backdrop = true;
+      }
+
+      {
+        matches = [{ namespace = "^quickshell-wallpaper$"; }];
+      }
+
+      {
+        matches = [{ namespace = "^quickshell-overview$"; }];
+        place-within-backdrop = true;
       }
     ];
 
