@@ -2,11 +2,11 @@
 
   imports = [
     ../swww # For wallpaper
-    ../clipse.nix
-    ../waybar
+    # ../clipse.nix
+    # ../waybar
     ../gammastep.nix
-    ../swaync
-    ../walker.nix
+    # ../swaync
+    # ../walker.nix
     ./lockscreen.nix
     ./binds.nix
     ./settings.nix

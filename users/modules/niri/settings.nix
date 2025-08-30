@@ -24,6 +24,9 @@
       {
         command = [ "hypridle" ];
       }
+      {
+        command = [ "noctalia-shell" ];
+      }
     ];
 
     input = {
@@ -112,7 +115,7 @@
       struts = {
         left = 10;
         right = 10;
-        top = 2;
+        top = 0;
         bottom = 2;
       };
 

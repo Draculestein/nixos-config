@@ -47,12 +47,13 @@ in
     };
 
     "Mod+Alt+L" = {
-      action.spawn = "swaylock";
-      hotkey-overlay.title = "Lock the Screen: swaylock";
+      action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "toggle"];
+      hotkey-overlay.title = "Lock the Screen";
     };
 
     "Mod+L".action.spawn = [ "loginctl" "lock-session" ];
-    "Mod+Space".action.spawn = "walker";
+    "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+    "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "settings" "toggle"];
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
@@ -69,8 +70,8 @@ in
 
     # Open SwayNC
     "Mod+N" = {
-      action.spawn = [ "swaync-client" "-t" ];
-      hotkey-overlay.title = "Open Notification Center (SwayNC)";
+      action.spawn = ["noctalia-shell" "ipc" "call" "sidePanel" "toggle"];
+      hotkey-overlay.title = "Open Side Panel";
     };
 
     # Columns & Windows
@@ -102,7 +103,7 @@ in
     "Mod+Shift+Minus".action = set-window-height "-10%";
 
     "Mod+V" = {
-      action.spawn = [ "foot" "--app-id=com.savedra1.clipse" "clipse" ];
+      action.spawn =  ["noctalia-shell" "ipc" "call" "launcher" "clipboard"];
       hotkey-overlay.title = "Open Clipboard Manager (Clipse)";
     };
     "Mod+Shift+V".action = toggle-window-floating;
@@ -172,17 +173,17 @@ in
     # Audio
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "sh" "-c" "wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+ && ignis open-window OnScreenDisplay" ];
+      action.spawn = [ "sh" "-c" "wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+" ];
     };
 
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "sh" "-c" "wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 5%- && ignis open-window OnScreenDisplay" ];
+      action.spawn = [ "sh" "-c" "wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 5%-" ];
     };
 
     "XF86AudioMute" = {
       allow-when-locked = true;
-      action.spawn = [ "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ignis open-window OnScreenDisplay" ];
+      action.spawn = [ "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" ];
     };
 
     "XF86AudioMicMute" = {
@@ -193,12 +194,12 @@ in
     # Screen brightness
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "set" "+5%" ];
+      action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "increase"];
     };
 
     "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "brightnessctl" "set" "5%-" ];
+      action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "decrease"];
     };
 
     # Keyboard backlight
