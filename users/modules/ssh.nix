@@ -3,21 +3,30 @@
 {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    enableDefaultConfig = true;
 
     matchBlocks = {
+      "*" = {
+        forwardAgent = false;
+        addKeysToAgent = "no";
+        compression = false;
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        hashKnownHosts = false;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
+      };
+
       "git" = {
         host = "github.com";
         forwardAgent = true;
         identityFile = [
           "~/.ssh/github_draculestein"
         ];
-      };
-      "novHaku" = {
-        host = "haku.cs.utah.edu";
-        user = "novellaalvina";
-        port = 5522;
-        forwardAgent = true;
+
+        addKeysToAgent = "yes";
       };
 
       "cyrano_production" = {
@@ -26,6 +35,7 @@
         port = 4422;
         identityFile = [ "~/.ssh/cyrano_prod_server" ];
         forwardAgent = true;
+        addKeysToAgent = "yes";
       };
     };
   };
