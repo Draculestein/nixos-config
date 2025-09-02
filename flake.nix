@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     stylix.url = "github:nix-community/stylix";
-    swww.url = "github:LGFae/swww";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";

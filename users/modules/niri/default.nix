@@ -1,12 +1,7 @@
 { config, lib, pkgs, inputs, ... }: {
 
   imports = [
-    ../swww # For wallpaper
-    # ../clipse.nix
-    # ../waybar
     ../gammastep.nix
-    # ../swaync
-    # ../walker.nix
     ./lockscreen.nix
     ./binds.nix
     ./settings.nix
