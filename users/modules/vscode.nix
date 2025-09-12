@@ -74,6 +74,8 @@
         "/tmp/postman-folder-post-response.instructions.md" = true;
         "/tmp/postman-folder-pre-request.instructions.md" = true;
       };
+      "postman.mcp.notifications.postmanMCP" = false;
+
     };
   };
 }
