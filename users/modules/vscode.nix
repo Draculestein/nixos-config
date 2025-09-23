@@ -53,6 +53,7 @@
       "[erb]" = {
         "editor.defaultFormatter" = "Shopify.ruby-lsp";
       };
+      "python.analysis.typeCheckingMode" = "standard";
 
       "redhat.telemetry.enabled" = false;
 
