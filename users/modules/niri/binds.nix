@@ -47,13 +47,13 @@ in
     };
 
     "Mod+Alt+L" = {
-      action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "toggle"];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "toggle" ];
       hotkey-overlay.title = "Lock the Screen";
     };
 
     "Mod+L".action.spawn = [ "loginctl" "lock-session" ];
-    "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-    "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "settings" "toggle"];
+    "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
+    "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
     "Mod+Q".action = close-window;
     "Mod+Tab" = {
       repeat = false;
@@ -70,7 +70,7 @@ in
 
     # Open SwayNC
     "Mod+N" = {
-      action.spawn = ["noctalia-shell" "ipc" "call" "sidePanel" "toggle"];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "sidePanel" "toggle" ];
       hotkey-overlay.title = "Open Side Panel";
     };
 
@@ -103,7 +103,7 @@ in
     "Mod+Shift+Minus".action = set-window-height "-10%";
 
     "Mod+V" = {
-      action.spawn =  ["noctalia-shell" "ipc" "call" "launcher" "clipboard"];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
       hotkey-overlay.title = "Open Clipboard Manager (Clipse)";
     };
     "Mod+Shift+V".action = toggle-window-floating;
@@ -117,6 +117,14 @@ in
     "Mod+WheelScrollRight" = {
       cooldown-ms = 150;
       action = focus-column-right;
+    };
+
+    "Mod+Shift+WheelScrollUp" = {
+      action = focus-column-right;
+    };
+
+    "Mod+Shift+WheelScrollDown" = {
+      action = focus-column-left;
     };
 
     "Mod+WheelScrollLeft" = {
@@ -194,12 +202,12 @@ in
     # Screen brightness
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "increase"];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ];
     };
 
     "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "decrease"];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ];
     };
 
     # Keyboard backlight
