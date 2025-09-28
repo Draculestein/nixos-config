@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   stylix = {
-    enable = true;
+    enable = false;
     image = ./desktop.jpg;
 
     polarity = "dark";

@@ -11,9 +11,9 @@
     homeManagerIntegration.followSystem = false;
   };
 
-  home-manager.sharedModules = [
-    {
-      stylix.enable = true;
-    }
-  ];
+  # home-manager.sharedModules = [
+  #   {
+  #     stylix.enable = true;
+  #   }
+  # ];
 }
