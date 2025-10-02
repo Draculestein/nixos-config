@@ -34,7 +34,7 @@
           };
           "options" = {
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertFlowX13.options";
+              "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertProP16.options";
             };
             "home-manager" = {
               "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").homeConfigurations.albertjul.options";
@@ -56,14 +56,10 @@
       "python.analysis.typeCheckingMode" = "standard";
 
       "redhat.telemetry.enabled" = false;
-
-      "cody.commandCodeLenses" = true;
-      "cody.autocomplete.enabled" = false;
       "yaml.format.enable" = false;
       "explorer.confirmDelete" = false;
       "typescript.updateImportsOnFileMove.enabled" = "always";
       "chat.commandCenter.enabled" = false;
-      "cody.suggestions.mode" = "off";
       "amp.url" = "https://ampcode.com/";
       "docker.extension.enableComposeLanguageServer" = true;
       "chat.instructionsFilesLocations" = {
