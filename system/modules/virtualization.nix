@@ -29,7 +29,7 @@
 
       qemu = {
         swtpm.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
+        # ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
 
