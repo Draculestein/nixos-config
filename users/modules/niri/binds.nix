@@ -120,11 +120,11 @@ in
     };
 
     "Mod+Shift+WheelScrollUp" = {
-      action = focus-column-right;
+      action = focus-column-left;
     };
 
     "Mod+Shift+WheelScrollDown" = {
-      action = focus-column-left;
+      action = focus-column-right;
     };
 
     "Mod+WheelScrollLeft" = {
