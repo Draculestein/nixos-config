@@ -9,7 +9,7 @@
     ../modules/starship
     ../modules/ssh.nix
     ../modules/direnv.nix
-    ../modules/lutris.nix
+    # ../modules/lutris.nix
     ../modules/devenv.nix
     ../modules/fastfetch.nix
     ../modules/fzf.nix
