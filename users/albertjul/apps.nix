@@ -2,7 +2,7 @@
 {
   imports = [
     ../modules/gh.nix
-    ../modules/foot.nix
+    # ../modules/foot.nix
     ../modules/bash.nix
     ../modules/zsh
     ../modules/brave.nix
