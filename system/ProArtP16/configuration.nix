@@ -29,14 +29,8 @@
   hardware.enableAllFirmware = true;
   hardware.sensor.iio.enable = true;
 
-  # hardware.opentabletdriver = {
-  #   enable = true;
-  #   daemon.enable = true;
-  # };
-
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
   };
 
   networking.hostName = "AlbertProP16";
