@@ -72,8 +72,21 @@
         "/tmp/postman-folder-pre-request.instructions.md" = true;
       };
       "postman.mcp.notifications.postmanMCP" = false;
+      "chat.mcp.gallery.enabled" = true;
 
       # Amp settings
+      "amp.mcpServers" = {
+        "chrome-devtools" = {
+          "command" = "npx";
+          "args" = [
+            "chrome-devtools-mcp@latest"
+            "-e"
+            "/etc/profiles/per-user/albertjul/bin/google-chrome-stable"
+          ];
+          "env" = { };
+        };
+      };
+      
       "amp.permissions" = [
         {
           "tool" = "Bash";
