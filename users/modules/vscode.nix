@@ -53,6 +53,12 @@
       "[erb]" = {
         "editor.defaultFormatter" = "Shopify.ruby-lsp";
       };
+      "[toml]" = {
+        "editor.defaultFormatter" = "tamasfe.even-better-toml";
+      };
+      "[python]" = {
+        "editor.defaultFormatter" = "ms-python.black-formatter";
+      };
       "python.analysis.typeCheckingMode" = "standard";
 
       "redhat.telemetry.enabled" = false;
@@ -86,7 +92,7 @@
           "env" = { };
         };
       };
-      
+
       "amp.permissions" = [
         {
           "tool" = "Bash";
