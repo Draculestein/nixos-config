@@ -57,7 +57,7 @@
         "editor.defaultFormatter" = "tamasfe.even-better-toml";
       };
       "[python]" = {
-        "editor.defaultFormatter" = "ms-python.black-formatter";
+        "editor.defaultFormatter" = "charliermarsh.ruff";
       };
       "python.analysis.typeCheckingMode" = "standard";
 
