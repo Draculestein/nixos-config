@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   imports = [
     ../modules/gh.nix
@@ -29,6 +29,7 @@
     vesktop
     rnote
     gnome-disk-utility
+    bottles
     nautilus
     sushi
     image-roll
@@ -63,6 +64,11 @@
     libinklevel
     popsicle
     wf-recorder
+
+  ] ++ [
+    # Winboat
+    inputs.winboat.packages.x86_64-linux.winboat
+    freerdp
   ];
 
   programs.zed-editor.enable = true;

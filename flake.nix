@@ -49,9 +49,11 @@
       flake = false;
     };
 
-    ghostty.url = "github:ghostty-org/ghostty";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    walker.url = "github:abenz1267/walker/v0.13.26";
+    winboat = {
+      url = "github:TibixDev/winboat";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
