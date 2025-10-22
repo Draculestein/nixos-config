@@ -110,9 +110,15 @@ in
     "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
     "Mod+W".action = toggle-column-tabbed-display;
 
-    "Mod+Shift+S".action = screenshot { show-pointer = true; };
+    # "Mod+Shift+S".action = screenshot { show-pointer = true; };
     # "Ctrl+Mod+Shift+S".action = screenshot-screen;
-    "Alt+Mod+Shift+S".action = screenshot-window { write-to-disk = true; };
+    # "Alt+Mod+Shift+S".action = screenshot-window { write-to-disk = true; };
+
+    # Temporary fix as the niri-flake screenshot sugar bind is broken
+    "Mod+Shift+S".action.screenshot = [{ show-pointer = true; } ];
+    "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
+    "Alt+Mod+Shift+S".action.screenshot-window = [ { write-to-disk = true; }];
+
 
     "Mod+WheelScrollRight" = {
       cooldown-ms = 150;
