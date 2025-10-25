@@ -47,7 +47,7 @@ in
     };
 
     "Mod+Alt+L" = {
-      action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "toggle" ];
+      action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock" ];
       hotkey-overlay.title = "Lock the Screen";
     };
 
