@@ -14,4 +14,9 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.epsonscan2 ];
+  };
 }
