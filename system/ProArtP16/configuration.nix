@@ -18,7 +18,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_16;
+  boot.kernelPackages = pkgs.linuxPackages_6_17;
   boot.supportedFilesystems = {
     ntfs = true;
   };
@@ -71,7 +71,7 @@
   users.users.albertjul = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" "video" "dialout" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" "video" "dialout" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [ ]; # Apps are handled by home-manager
     shell = pkgs.zsh;
   };
