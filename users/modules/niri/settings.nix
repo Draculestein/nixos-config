@@ -2,6 +2,7 @@
   programs.niri.settings = {
     debug = {
       render-drm-device = "/dev/dri/amd-igpu";
+      honor-xdg-activation-with-invalid-serial = [];
     };
 
     environment = {
