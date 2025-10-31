@@ -35,7 +35,7 @@
     image-roll
     vlc
     firefox
-    onlyoffice-desktopeditors
+    onlyoffice-bin
     libreoffice
     kdePackages.okular
     desktop-file-utils
