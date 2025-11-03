@@ -50,10 +50,6 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    winboat = {
-      url = "github:TibixDev/winboat";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
