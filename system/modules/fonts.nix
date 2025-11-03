@@ -10,11 +10,10 @@
     nerd-fonts.dejavu-sans-mono
     nerd-fonts.ubuntu-mono
     corefonts
-    vistafonts
+    vista-fonts
     noto-fonts
     open-fonts
-    noto-fonts-emoji
-    noto-fonts-extra
+    noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji

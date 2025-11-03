@@ -35,14 +35,14 @@
     image-roll
     vlc
     firefox
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     libreoffice
     kdePackages.okular
     desktop-file-utils
     gnome-tweaks
     nixpkgs-fmt
     nixd
-    path-of-building
+    rusty-path-of-building
     bitwarden-desktop
     # mysql-workbench
     gnome-software
@@ -64,11 +64,7 @@
     libinklevel
     popsicle
     wf-recorder
-
-  ] ++ [
-    # Winboat
-    inputs.winboat.packages.x86_64-linux.winboat
-    freerdp
+    winboat
   ];
 
   programs.zed-editor.enable = true;

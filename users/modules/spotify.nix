@@ -6,7 +6,7 @@
 
   programs.spicetify =
     let
-      spicetify-pkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      spicetify-pkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     in
     {
       enable = true;
