@@ -16,7 +16,7 @@
       };
 
       wayland = {
-        output = "eDP-*";
+        output = "*DP-*";
       };
       
     };
