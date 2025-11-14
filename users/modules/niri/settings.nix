@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
   programs.niri.settings = {
     debug = {
-      render-drm-device = "/dev/dri/amd-igpu";
+      # render-drm-device = "/dev/dri/amd-igpu";
       honor-xdg-activation-with-invalid-serial = [];
     };
 
@@ -19,9 +19,6 @@
     };
 
     spawn-at-startup = [
-      {
-        command = [ "swww" "restore" ];
-      }
       {
         command = [ "hypridle" ];
       }
