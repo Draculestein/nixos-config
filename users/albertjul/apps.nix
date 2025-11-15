@@ -65,6 +65,7 @@
     popsicle
     wf-recorder
     winboat
+    zotero
   ];
 
   programs.zed-editor.enable = true;
