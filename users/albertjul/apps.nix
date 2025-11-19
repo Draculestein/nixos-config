@@ -64,7 +64,7 @@
     libinklevel
     popsicle
     wf-recorder
-    winboat
+    # winboat
     zotero
   ];
 
