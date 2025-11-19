@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 {
   services.desktopManager.gnome.enable = true;
-
+  systemd.user.services.orca.wantedBy = lib.mkForce [ ];
+  
   xdg.portal = {
     enable = true;
 
