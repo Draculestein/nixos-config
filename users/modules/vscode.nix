@@ -14,6 +14,7 @@
       "workbench.iconTheme" = "catppuccin-macchiato";
       "workbench.startupEditor" = "welcomePage";
       "window.restoreWindows" = "none";
+      "terminal.integrated.suggest.enabled" = false;
 
       "git.confirmSync" = false;
       "git.autofetch" = true;
