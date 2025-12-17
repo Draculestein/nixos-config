@@ -11,6 +11,7 @@
       inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
       inputs.nixos-hardware.nixosModules.common-pc-ssd
       inputs.nixos-hardware.nixosModules.common-pc-laptop
+      inputs.ucodenix.nixosModules.default
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
@@ -27,4 +28,8 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  services.ucodenix = {
+    enable = true;
+    cpuModelId = "00B20F40";
+  };
 }

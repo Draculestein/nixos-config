@@ -43,6 +43,8 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    ucodenix.url = "github:e-tho/ucodenix";
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
