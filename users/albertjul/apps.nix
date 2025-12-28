@@ -66,6 +66,7 @@
     wf-recorder
     # winboat
     zotero
+    slack
   ];
 
   programs.zed-editor.enable = true;
