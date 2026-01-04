@@ -2,6 +2,7 @@
   description = "Main flake for Draculestein's NixOS setup.";
 
   inputs = {
+    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixos-unstable-small.url = "github:NixOS/nixpkgs/nixos-unstable-small";
