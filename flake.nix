@@ -2,9 +2,9 @@
   description = "Main flake for Draculestein's NixOS setup.";
 
   inputs = {
+    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixos-unstable-small.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     disko = {
@@ -47,59 +47,36 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
-    let
-      system = "x86_64-linux";
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      flake =
+        let
+          lib = inputs.nixpkgs-unstable.lib;
+          home-manager = inputs.home-manager;
+        in
+        {
+          nixosConfigurations = {
+            AlbertProP16 = lib.nixosSystem {
+              system = "x86_64-linux";
+              specialArgs = {
+                inherit inputs;
+              };
 
-      lib = nixpkgs-unstable.lib;
-
-      # pkgs = import nixpkgs-unstable {
-      #   inherit system;
-      #   config.allowUnfree = true;
-      # };
-
-      home-manager = inputs.home-manager;
-    in
-    {
-      nixosConfigurations = {
-        AlbertFlowX13 = lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit inputs;
-            # inherit pkgs;
+              modules = [
+                ./system/ProArtP16
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.albertjul = import ./users/albertjul/home.nix;
+                  home-manager.extraSpecialArgs = { inherit inputs; };
+                  home-manager.backupFileExtension = "backup";
+                }
+              ];
+            };
           };
-          modules = [
-            ./system/FlowX13
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.albertjul = import ./users/albertjul/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-            }
-          ];
         };
-
-        AlbertProP16 = lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit inputs;
-            # inherit pkgs;
-          };
-
-          modules = [
-            ./system/ProArtP16
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.albertjul = import ./users/albertjul/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.backupFileExtension = "backup";
-            }
-          ];
-        };
-      };
     };
 }
 
