@@ -4,6 +4,8 @@ let
 in
 {
   flake.modules.nixos."${username}" = { pkgs, ... }: {
+    imports = [ inputs.home-manager.nixosModules.home-manager ];
+
     users.users.albertjul = {
       isNormalUser = true;
       uid = 1000;
@@ -17,5 +19,12 @@ in
       zsh
       bash
     ];
+
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+    home-manager.users.albertjul = ./home.nix;
+    home-manager.extraSpecialArgs = { inherit inputs; };
+    home-manager.backupFileExtension = "backup";
+
   };
 }
