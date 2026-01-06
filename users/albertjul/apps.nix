@@ -68,6 +68,7 @@
     # winboat
     zotero
     slack
+    zoom-us
   ];
 
   programs.zed-editor.enable = true;

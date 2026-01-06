@@ -1,19 +1,12 @@
 { config, lib, pkgs, ... }:
-let
-  epsonScan = pkgs.epsonscan2.override
-    {
-      withNonFreePlugins = true;
-      withGui = true;
-    };
-in
+
 {
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
     drivers = with pkgs;[
-      epson-escpr
-      epsonscan2
-    ] ++ [ epsonScan ];
+      epson-escpr2
+    ];
   };
 
   services.avahi = {
@@ -25,7 +18,7 @@ in
   hardware.sane = {
     enable = true;
     extraBackends = [
-      epsonScan
+      pkgs.epsonscan2
     ];
   };
 }
