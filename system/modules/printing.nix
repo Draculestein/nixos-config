@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, inputs, ... }:
+let
+  pkgsEpson = import inputs.nixpkgs-epson-fix {
+    system = "x86_64-linux";
+  };
+in
 {
   # Enable CUPS to print documents.
   services.printing = {
@@ -18,7 +22,7 @@
   hardware.sane = {
     enable = true;
     extraBackends = [
-      pkgs.epsonscan2
+      pkgsEpson.epsonscan2
     ];
   };
 }
