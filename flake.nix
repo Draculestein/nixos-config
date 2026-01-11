@@ -4,7 +4,6 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-epson-fix.url = "github:NixOS/nixpkgs/0f9825c84a8b2c9dbd98621b5af87bc19b25dd51";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
