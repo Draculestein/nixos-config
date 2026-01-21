@@ -15,6 +15,7 @@
       "workbench.startupEditor" = "welcomePage";
       "window.restoreWindows" = "none";
       "terminal.integrated.suggest.enabled" = false;
+      "terminal.integrated.initialHint" = false;
 
       "git.confirmSync" = false;
       "git.autofetch" = true;
