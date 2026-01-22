@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   programs.steam = {
@@ -21,7 +21,10 @@
           gamemode
         ];
     };
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
+    extraCompatPackages = [
+      pkgs.proton-ge-bin
+      inputs.dwproton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
+    ];
 
   };
 

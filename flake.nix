@@ -44,6 +44,7 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     ucodenix.url = "github:e-tho/ucodenix";
+    dwproton.url = "github:imaviso/dwproton-flake";
 
   };
 
