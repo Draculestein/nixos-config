@@ -37,6 +37,29 @@
         };
       };
     };
+
+    disk."home" = {
+      type = "disk";
+      device = "/dev/nvme0n1";
+      content = {
+        type = "gpt";
+        partitions = {
+          "btrfs" = {
+            start = "4MiB";
+            end = "100%";
+            content = {
+              type = "btrfs";
+              subvolumes = {
+                "@home" = {
+                  mountpoint = "/home";
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+
     # Volume group config
     lvm_vg = {
       root_vg = {
