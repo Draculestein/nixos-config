@@ -25,8 +25,6 @@
       extraModulePackages = [ ];
     };
 
-    networking.useDHCP = true;
-
     nixpkgs.config.allowUnfree = true;
 
     hardware.enableRedistributableFirmware = true;
