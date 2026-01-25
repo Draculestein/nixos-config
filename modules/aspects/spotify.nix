@@ -1,7 +1,9 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  flake-file.inputs.spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
   den.aspects.spotify = {
-    homeManager = { config, lib, pkgs, inputs, ... }: {
+    homeManager = { config, lib, pkgs, ... }: {
       imports = [
         inputs.spicetify-nix.homeManagerModules.default
       ];
