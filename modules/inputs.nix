@@ -9,12 +9,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    config-secrets = {
-      url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
-      flake = false;
-    };
     ucodenix.url = "github:e-tho/ucodenix";
-
   };
 
 }

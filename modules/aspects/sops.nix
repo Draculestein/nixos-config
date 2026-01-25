@@ -4,11 +4,21 @@ let
   secretsPath = "${secretsDir}/secrets.yaml";
 in
 {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
+  flake-file.inputs.sops-nix = {
+    url = "github:Mic92/sops-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  flake-file.inputs.config-secrets = {
+    url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
+    flake = false;
+  };
 
   den.aspects.sops.nixos = { config, pkgs, ... }: {
+    imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
     environment.systemPackages = with pkgs; [
       sops
     ];
