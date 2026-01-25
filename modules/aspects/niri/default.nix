@@ -1,7 +1,7 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
   den.aspects.niri = {
-    nixos = { lib, pkgs, inputs, ... }: {
+    nixos = { lib, pkgs, ... }: {
       imports = [
         inputs.niri.nixosModules.niri
       ];
@@ -14,7 +14,7 @@
       security.pam.services.hyprlock = { };
     };
 
-    homeManager = { config, lib, pkgs, inputs, ... }:
+    homeManager = { config, lib, pkgs, ... }:
       let
         cycle-keyboard-backlight = pkgs.writeShellApplication {
           name = "cycle-kbd-backlight";
@@ -67,7 +67,7 @@
         programs.niri.settings = {
           debug = {
             render-drm-device = "/dev/dri/amd-igpu";
-            honor-xdg-activation-with-invalid-serial = [];
+            honor-xdg-activation-with-invalid-serial = [ ];
           };
 
           environment = {
@@ -243,9 +243,9 @@
             "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
             "Mod+W".action = toggle-column-tabbed-display;
 
-            "Mod+Shift+S".action.screenshot = [{ show-pointer = true; } ];
+            "Mod+Shift+S".action.screenshot = [{ show-pointer = true; }];
             "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
-            "Alt+Mod+Shift+S".action.screenshot-window = [ { write-to-disk = true; }];
+            "Alt+Mod+Shift+S".action.screenshot-window = [{ write-to-disk = true; }];
 
             "Mod+WheelScrollRight" = {
               cooldown-ms = 150;
