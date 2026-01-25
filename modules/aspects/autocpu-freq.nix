@@ -1,10 +1,12 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
-  # NOTE: Requires adding auto-cpufreq input to flake.nix:
-  # auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq/v2.6.0";
-  # auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs";
+  flake-file.inputs."autocpu-freq" = {
+    url = "github:AdnanHodzic/auto-cpufreq";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects."autocpu-freq" = {
-    nixos = { lib, inputs, ... }: {
+    nixos = { lib, ... }: {
       imports = [
         inputs.auto-cpufreq.nixosModules.default
       ];
