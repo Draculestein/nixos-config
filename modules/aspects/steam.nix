@@ -1,7 +1,9 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  flake-file.inputs.dwproton.url = "github:imaviso/dwproton-flake";
+
   den.aspects.steam = {
-    nixos = { config, lib, pkgs, inputs, ... }: {
+    nixos = { config, lib, pkgs, ... }: {
       programs.steam = {
         enable = true;
         gamescopeSession.enable = true;
