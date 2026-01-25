@@ -1,7 +1,9 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  flake-file.inputs.stylix.url = "github:nix-community/stylix";
+
   den.aspects.stylix = {
-    nixos = { inputs, pkgs, ... }: {
+    nixos = { pkgs, ... }: {
       imports = [ inputs.stylix.nixosModules.stylix ];
 
       stylix = {
