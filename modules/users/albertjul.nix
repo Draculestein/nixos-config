@@ -21,7 +21,6 @@
 
       # Desktop/WM
       den.aspects.niri
-      den.aspects.stylix
     ];
 
     nixos = { pkgs, ... }: {
@@ -115,60 +114,59 @@
         ];
       };
 
-      homeManager = { pkgs, ... }: {
-        stylix = {
-          enable = true;
-          image = ./desktop.jpg;
+      stylix = {
+        enable = true;
+        image = ./desktop.jpg;
 
-          polarity = "dark";
+        polarity = "dark";
 
-          cursor = {
-            name = "Capitaine Cursors (Palenight)";
-            package = pkgs.capitaine-cursors-themed;
-            size = 16;
+        cursor = {
+          name = "Capitaine Cursors (Palenight)";
+          package = pkgs.capitaine-cursors-themed;
+          size = 16;
+        };
+
+        fonts = {
+          monospace = {
+            name = "Hasklig";
+            package = pkgs.hasklig;
           };
 
-          fonts = {
-            monospace = {
-              name = "Hasklig";
-              package = pkgs.hasklig;
-            };
-
-            serif = {
-              name = "Adwaita Sans";
-              package = pkgs.adwaita-fonts;
-            };
-
-            sansSerif = {
-              name = "Adwaita Sans";
-              package = pkgs.adwaita-fonts;
-            };
-
-            sizes = {
-              applications = 10;
-              desktop = 10;
-              popups = 10;
-              terminal = 12;
-            };
+          serif = {
+            name = "Adwaita Sans";
+            package = pkgs.adwaita-fonts;
           };
 
-          icons = {
-            enable = true;
-            package = pkgs.papirus-icon-theme;
-            dark = "Papirus";
-            light = "Papirus-Light";
+          sansSerif = {
+            name = "Adwaita Sans";
+            package = pkgs.adwaita-fonts;
           };
 
-          targets = {
-            vscode.enable = false;
-            hyprpaper.enable = true;
-            rofi.enable = false;
-            waybar.enable = false;
-            spicetify.enable = false;
-            kitty.enable = false;
+          sizes = {
+            applications = 10;
+            desktop = 10;
+            popups = 10;
+            terminal = 12;
           };
         };
+
+        icons = {
+          enable = true;
+          package = pkgs.papirus-icon-theme;
+          dark = "Papirus";
+          light = "Papirus-Light";
+        };
+
+        targets = {
+          vscode.enable = false;
+          hyprpaper.enable = true;
+          rofi.enable = false;
+          waybar.enable = false;
+          spicetify.enable = false;
+          kitty.enable = false;
+        };
       };
+
     };
   };
 }
