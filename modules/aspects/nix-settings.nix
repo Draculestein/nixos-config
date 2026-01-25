@@ -2,7 +2,7 @@
 {
   den.aspects.nix-settings.nixos = { ... }: {
     nix = {
-      nixPath = [ "nixpkgs=${inputs.nixpkgs-unstable}" ];
+      nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       settings = {
         experimental-features = [ "nix-command" "flakes" ];
         auto-optimise-store = true;
