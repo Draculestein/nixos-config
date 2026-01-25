@@ -29,6 +29,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-lib.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
+    ucodenix.url = "github:e-tho/ucodenix";
   };
 
 }

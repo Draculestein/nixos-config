@@ -18,6 +18,23 @@
         "url": "ssh://git@github.com/Draculestein/nixos-secrets.git"
       }
     },
+    "cpu-microcodes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766418802,
+        "narHash": "sha256-s3VRbTEAKDStcrwrbzgI9Aar0VV1vTc7JSzxqBvQ05s=",
+        "owner": "platomav",
+        "repo": "CPUMicrocodes",
+        "rev": "8bdf34aec2052ab12ae017eb21fe395f6329f6c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "platomav",
+        "repo": "CPUMicrocodes",
+        "rev": "8bdf34aec2052ab12ae017eb21fe395f6329f6c4",
+        "type": "github"
+      }
+    },
     "den": {
       "locked": {
         "lastModified": 1763707606,
@@ -186,7 +203,8 @@
         "nixpkgs-lib": [
           "nixpkgs"
         ],
-        "systems": "systems"
+        "systems": "systems",
+        "ucodenix": "ucodenix"
       }
     },
     "systems": {
@@ -201,6 +219,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "ucodenix": {
+      "inputs": {
+        "cpu-microcodes": "cpu-microcodes"
+      },
+      "locked": {
+        "lastModified": 1767037051,
+        "narHash": "sha256-GXD8yA1A0S+KH6f9D6jDE/G0/NUEtOAf/Z2c1ZWrsJk=",
+        "owner": "e-tho",
+        "repo": "ucodenix",
+        "rev": "8ea2a75e3e46c4268fc55dba197bfd95fd6c2896",
+        "type": "github"
+      },
+      "original": {
+        "owner": "e-tho",
+        "repo": "ucodenix",
         "type": "github"
       }
     }
