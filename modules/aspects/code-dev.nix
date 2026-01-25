@@ -1,6 +1,8 @@
-{ den, ... }: {
-
+{ den, ... }:
+{
   den.aspects.code-dev = {
+    includes = [ den.aspects.vscode ];
+
     nixos = {
       nix.settings = {
         substituters = [
