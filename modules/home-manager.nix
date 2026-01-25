@@ -5,8 +5,16 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.default.includes = [ den._.home-manager den.aspects.homeManager ];
+  den.default.includes = [
+    den._.home-manager
+    den.aspects.homeManager
+    den._.self'
+    den._.inputs'
+  ];
 
+  den.aspects.homeManager.nixos = {
+      home-manager.useGlobalPkgs = true;
+  };
   den.aspects.homeManager.homeManager = { config, ... }: {
     targets.genericLinux.enable = true;
     xdg.mime.enable = true;

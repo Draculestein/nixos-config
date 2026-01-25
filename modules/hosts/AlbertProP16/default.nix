@@ -10,7 +10,6 @@
     # Display Manager and DE
     den.aspects.gdm
     den.aspects.gnome
-    den.aspects.niri
 
     # Software & Services
     den.aspects.common
