@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
-  imports = [
-    (inputs.den.namespace "eg" true)
-  ];
+  # imports = [
+  #   # (inputs.den.namespace "eg" true)
+  # ];
 
 }
