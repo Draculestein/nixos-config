@@ -83,5 +83,22 @@
     programs.dconf.enable = true;
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+    environment.systemPackages = with pkgs; [
+      vim
+      wget
+      git
+      tree
+      btop
+      pciutils
+      usbutils
+      vulkan-tools
+      nvtopPackages.full
+      nix-output-monitor
+      nvd
+      libsForQt5.qtstyleplugin-kvantum
+    ];
+
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = [ ];
   };
 }
