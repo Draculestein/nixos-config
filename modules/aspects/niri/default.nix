@@ -51,7 +51,6 @@
         home.packages = [
           pkgs.brightnessctl
           pkgs.xwayland-satellite-unstable
-          pkgs.waybar
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
           pkgs.nerd-fonts.jetbrains-mono
           pkgs.inter
