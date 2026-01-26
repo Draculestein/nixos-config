@@ -4,14 +4,15 @@
     # Hardware
     den.aspects.asus
     den.aspects.zswap
-    den.aspects."power-profiles-daemon"
     den.aspects.blueman
 
     # Display Manager and DE
     den.aspects.gdm
     den.aspects.gnome
+    den.aspects.gnome-polkit
 
-    # Software & Services
+    # Software & 
+    den.aspects.power-profiles-daemon
     den.aspects.common
     den.aspects.fonts
     den.aspects.printing
@@ -26,5 +27,6 @@
     den.aspects.flatpak
     den.aspects.ssh
     den.aspects.stylix
+    den.aspects.xbox-controller
   ];
 }
