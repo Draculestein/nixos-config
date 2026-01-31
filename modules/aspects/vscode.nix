@@ -4,7 +4,7 @@
   den.aspects.vscode = {
     includes = [ (den._.unfree [ "vscode" ]) ];
 
-    homeManager = {
+    homeManager = { pkgs, ... }: {
       programs.vscode = {
         enable = true;
         profiles.default.enableUpdateCheck = false;
@@ -94,7 +94,7 @@
               "args" = [
                 "chrome-devtools-mcp@latest"
                 "-e"
-                "/etc/profiles/per-user/albertjul/bin/google-chrome-stable"
+                "${pkgs.google-chrome}/bin/google-chrome-stable"
               ];
               "env" = { };
             };
