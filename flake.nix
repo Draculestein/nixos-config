@@ -1,83 +1,54 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
-  description = "Main flake for Draculestein's NixOS setup.";
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    autocpu-freq = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:AdnanHodzic/auto-cpufreq";
     };
-
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    stylix.url = "github:nix-community/stylix";
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq/v2.6.0";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     config-secrets = {
-      url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
+      url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
     };
-
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    ucodenix.url = "github:e-tho/ucodenix";
+    den.url = "github:vic/den";
+    disko = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+    };
     dwproton.url = "github:imaviso/dwproton-flake";
-
+    flake-aspects.url = "github:vic/flake-aspects";
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      url = "github:hercules-ci/flake-parts";
+    };
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/master";
+    };
+    import-tree.url = "github:vic/import-tree";
+    niri = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
+    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-lib.follows = "nixpkgs";
+    noctalia = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/noctalia-shell";
+    };
+    sops-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Mic92/sops-nix";
+    };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    stylix.url = "github:nix-community/stylix";
+    systems.url = "github:nix-systems/default";
+    ucodenix.url = "github:e-tho/ucodenix";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      flake =
-        let
-          lib = inputs.nixpkgs-unstable.lib;
-          home-manager = inputs.home-manager;
-        in
-        {
-          nixosConfigurations = {
-            AlbertProP16 = lib.nixosSystem {
-              system = "x86_64-linux";
-              specialArgs = {
-                inherit inputs;
-              };
-
-              modules = [
-                ./system/ProArtP16
-                home-manager.nixosModules.home-manager
-                {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
-                  home-manager.users.albertjul = import ./users/albertjul/home.nix;
-                  home-manager.extraSpecialArgs = { inherit inputs; };
-                  home-manager.backupFileExtension = "backup";
-                }
-              ];
-            };
-          };
-        };
-    };
 }
-
