@@ -44,7 +44,7 @@
                   "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertProP16.options";
                 };
                 "home-manager" = {
-                  "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertProP16.options.home-manager.users.type.getSubOpt";
+                  "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").nixosConfigurations.AlbertProP16.options.home-manager.users.type.getSubOptions []";
                 };
                 "flake-parts" = {
                   "expr" = "(builtins.getFlake \"/home/albertjul/.dotfiles/flake.nix\").debug.options";
