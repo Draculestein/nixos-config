@@ -55,6 +55,7 @@
           pkgs.brightnessctl
           pkgs.xwayland-satellite-unstable
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+          pkgs.gpu-screen-recorder
           pkgs.nerd-fonts.jetbrains-mono
           pkgs.inter
         ] ++ lib.optionals hasAsusKbdBacklight [ cycle-keyboard-backlight ];
