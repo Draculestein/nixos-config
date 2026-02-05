@@ -134,7 +134,6 @@
           };
 
           spawn-at-startup = [
-            { command = [ "hypridle" ]; }
             { command = [ "noctalia-shell" ]; }
           ];
 
