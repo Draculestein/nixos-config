@@ -26,7 +26,7 @@
         };
         extraCompatPackages = [
           pkgs.proton-ge-bin
-          inputs.dwproton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton
+          inputs.dwproton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton.steamcompattool
         ];
       };
 
