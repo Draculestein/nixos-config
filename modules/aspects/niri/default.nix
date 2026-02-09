@@ -235,12 +235,11 @@
               hotkey-overlay.title = "Open a Editor: Visual Studio Code";
             };
 
-            "Mod+Alt+L" = {
-              action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock" ];
-              hotkey-overlay.title = "Lock the Screen";
-            };
 
-            "Mod+L".action.spawn = [ "loginctl" "lock-session" ];
+            "Mod+L" = {
+              action.spawn = [ "loginctl" "lock-session" ];
+              hotkey-overlay.title = "Lock session";
+            };
             "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
             "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
             "Mod+Q".action = close-window;
@@ -254,11 +253,6 @@
             "Mod+Escape" = {
               allow-inhibiting = false;
               action = toggle-keyboard-shortcuts-inhibit;
-            };
-
-            "Mod+N" = {
-              action.spawn = [ "noctalia-shell" "ipc" "call" "sidePanel" "toggle" ];
-              hotkey-overlay.title = "Open Side Panel";
             };
 
             "Mod+Left".action = focus-column-left;
@@ -277,7 +271,7 @@
             "Mod+Period".action = expel-window-from-column;
 
             "Mod+R".action = switch-preset-column-width;
-            "Mod+Shift+R".action = switch-preset-window-height;
+            "Mod+Ctrl+R".action = switch-preset-window-height;
 
             "Mod+F".action = maximize-column;
             "Mod+Shift+F".action = fullscreen-window;
@@ -290,13 +284,14 @@
 
             "Mod+V" = {
               action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
-              hotkey-overlay.title = "Open Clipboard Manager (Clipse)";
+              hotkey-overlay.title = "Open Clipboard Manager";
             };
             "Mod+Shift+V".action = toggle-window-floating;
             "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
             "Mod+W".action = toggle-column-tabbed-display;
 
             "Mod+Shift+S".action.screenshot = [{ show-pointer = true; }];
+            "Mod+Shift+R".action.spawn = [ "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "start" ];
             "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
             "Alt+Mod+Shift+S".action.screenshot-window = [{ write-to-disk = true; }];
 

@@ -1,7 +1,7 @@
 { den, ... }:
 {
   den.aspects.zsh = {
-    homeManager = { pkgs, ... }: {
+    homeManager = { pkgs, lib, config, ... }: {
       programs.zsh = {
         enable = true;
         autosuggestion.enable = true;
@@ -29,8 +29,8 @@
 
       programs.starship = {
         enable = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
+        enableZshIntegration = lib.mkIf config.programs.zsh.enable true;
+        enableBashIntegration = lib.mkIf config.programs.bash.enable true;
       };
 
       programs.bash = {

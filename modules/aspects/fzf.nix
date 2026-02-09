@@ -4,8 +4,8 @@
     homeManager = { config, lib, pkgs, ... }: {
       programs.fzf = {
         enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
+        enableBashIntegration = lib.mkIf config.programs.bash.enable true;
+        enableZshIntegration = lib.mkIf config.programs.zsh.enable true;
       };
     };
   };

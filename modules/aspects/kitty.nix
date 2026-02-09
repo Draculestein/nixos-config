@@ -1,12 +1,13 @@
 { den, ... }:
 {
   den.aspects.kitty = {
-    homeManager = { ... }: {
+    homeManager = { config, lib, ... }: {
       programs.kitty = {
         enable = true;
         enableGitIntegration = true;
         shellIntegration = {
-          enableZshIntegration = true;
+          enableZshIntegration = lib.mkIf config.programs.zsh.enable true;
+          enableBashIntegration = lib.mkIf config.programs.bash.enable true;
         };
       };
     };
