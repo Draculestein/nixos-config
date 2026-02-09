@@ -8,17 +8,12 @@
         enableCompletion = true;
         initContent = builtins.readFile ./.zshrc;
 
-        plugins = [
-          {
-            name = "fzf-tab";
-            src = pkgs.fetchFromGitHub {
-              owner = "Aloxaf";
-              repo = "fzf-tab";
-              rev = "6aced3f35def61c5edf9d790e945e8bb4fe7b305";
-              sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
-            };
-          }
-        ];
+        zplug = {
+          enable = true;
+          plugins = [
+            { name = "Aloxaf/fzf-tab"; }
+          ];
+        };
       };
 
       programs.lsd = {
