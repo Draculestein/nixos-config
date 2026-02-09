@@ -3,9 +3,6 @@
     includes = [
       # Development
       den.aspects.code-dev
-      den.aspects.gh
-      den.aspects.direnv
-      den.aspects.lazygit
       den.aspects.fzf
 
       # Shell & Terminals

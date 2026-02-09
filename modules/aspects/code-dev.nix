@@ -1,7 +1,12 @@
 { den, ... }:
 {
   den.aspects.code-dev = {
-    includes = [ den.aspects.vscode ];
+    includes = [
+      den.aspects.vscode
+      den.aspects.direnv
+      den.aspects.gh
+      den.aspects.lazygit
+    ];
 
     nixos = {
       nix.settings = {
