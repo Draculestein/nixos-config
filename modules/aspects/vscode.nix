@@ -11,6 +11,7 @@
         mutableExtensionsDir = true;
 
         profiles.default.userSettings = {
+          "chat.disableAIFeatures" = true;
           "editor.fontFamily" = "'Hasklug Nerd Font', 'monospace', monospace";
           "editor.tabSize" = 2;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
