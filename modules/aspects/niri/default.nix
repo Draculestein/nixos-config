@@ -203,6 +203,7 @@
             {
               matches = [{ app-id = "code"; }];
               default-column-width.proportion = 1.0;
+              open-maximized = true;
             }
           ];
 
