@@ -8,13 +8,13 @@
         enable = true;
         gamescopeSession.enable = true;
         package = pkgs.steam.override {
-          extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+          extraLibraries = pkgs: [ pkgs.libxcb ];
           extraPkgs = pkgs:
             with pkgs; [
-              xorg.libXcursor
-              xorg.libXi
-              xorg.libXinerama
-              xorg.libXScrnSaver
+              libXcursor
+              libXi
+              libXinerama
+              libXScrnSaver
               libpng
               libpulseaudio
               libvorbis
