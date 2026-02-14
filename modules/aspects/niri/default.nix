@@ -202,7 +202,7 @@
             }
             {
               matches = [{ app-id = "code"; }];
-              open-maximized = true;
+              open-fullscreen = true;
             }
           ];
 
