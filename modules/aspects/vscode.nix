@@ -2,7 +2,7 @@
 {
 
   den.aspects.vscode = {
-    includes = [ (den._.unfree [ "vscode" ]) ];
+    # includes = [ (den._.unfree [ "vscode" ]) ];
 
     homeManager = { pkgs, ... }: {
       programs.vscode = {

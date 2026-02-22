@@ -8,13 +8,13 @@
   den.default.includes = [
     den._.home-manager
     den.aspects.homeManager
+    den._.define-user
     den._.self'
     den._.inputs'
   ];
 
-  den.aspects.homeManager.nixos = {
-      home-manager.useGlobalPkgs = true;
-  };
+  den.ctx.hm-host.nixos.home-manager.useGlobalPkgs = true;
+
   den.aspects.homeManager.homeManager = { config, ... }: {
     targets.genericLinux.enable = true;
     xdg.mime.enable = true;
