@@ -101,6 +101,7 @@
         zotero
         slack
         zoom-us
+        amp-cli
       ];
 
       xdg.autostart = {
