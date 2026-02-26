@@ -126,7 +126,7 @@
 
           environment = {
             GDK_BACKEND = "wayland,x11,*";
-            SDL_VIDEODRIVER = "wayland";
+            SDL_VIDEODRIVER = "wayland,x11";
             CLUTTER_BACKEND = "wayland";
             QT_QPA_PLATFORM = "wayland;xcb";
             QT_AUTO_SCREEN_SCALE_FACTOR = "1";
