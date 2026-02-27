@@ -10,10 +10,15 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nfsm-flake = {
+      url = "github:gvolpe/nfsm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   den.aspects.niri = {
-    nixos = { lib, pkgs, ... }: {
+    nixos = { pkgs, ... }: {
       imports = [
         inputs.niri.nixosModules.niri
       ];
@@ -51,6 +56,8 @@
         kbdIdleTimeout = if hostname == "AlbertProP16" then 150 else 300;
       in
       {
+        imports = [ inputs.nfsm-flake.homeModules.default ];
+
         home.packages = [
           pkgs.brightnessctl
           pkgs.xwayland-satellite-unstable
@@ -116,6 +123,14 @@
             general = { adjustment-method = "wayland"; fade = 1; };
             wayland = { output = "*DP-*"; };
           };
+        };
+
+        services.nfsm = {
+          enable = true;
+          package = inputs.nfsm-flake.packages.${pkgs.stdenv.hostPlatform.system}.nfsm; # default
+          enableCli = true; # default
+          cliPackage = inputs.nfsm-flake.packages.${pkgs.stdenv.hostPlatform.system}.nfsm-cli; # default
+          socketPath = "/run/user/1000/nfsm.sock"; # default
         };
 
         programs.niri.settings = {

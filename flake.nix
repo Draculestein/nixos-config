@@ -30,6 +30,10 @@
       url = "github:nix-community/home-manager/master";
     };
     import-tree.url = "github:vic/import-tree";
+    nfsm-flake = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:gvolpe/nfsm";
+    };
     niri = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:sodiboo/niri-flake";
@@ -47,7 +51,6 @@
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     stylix.url = "github:nix-community/stylix";
-    systems.url = "github:nix-systems/default";
     ucodenix.url = "github:e-tho/ucodenix";
   };
 
