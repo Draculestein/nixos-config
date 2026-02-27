@@ -4,6 +4,7 @@
       # Development
       den.aspects.code-dev
       den.aspects.fzf
+      den.aspects.amp-cli
 
       # Shell & Terminals
       den.aspects.zsh
@@ -101,7 +102,6 @@
         zotero
         slack
         zoom-us
-        amp-cli
       ];
 
       xdg.autostart = {
