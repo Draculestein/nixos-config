@@ -289,7 +289,7 @@
             "Mod+Ctrl+R".action = switch-preset-window-height;
 
             "Mod+F".action = maximize-column;
-            "Mod+Shift+F".action = fullscreen-window;
+            "Mod+Shift+F".action. spawn = [ "nfsm-cli" ];
 
             "Mod+Equal".action = set-column-width "+5%";
             "Mod+Minus".action = set-column-width "-5%";
