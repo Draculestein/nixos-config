@@ -127,10 +127,6 @@
 
         services.nfsm = {
           enable = true;
-          package = inputs.nfsm-flake.packages.${pkgs.stdenv.hostPlatform.system}.nfsm; # default
-          enableCli = true; # default
-          cliPackage = inputs.nfsm-flake.packages.${pkgs.stdenv.hostPlatform.system}.nfsm-cli; # default
-          socketPath = "/run/user/1000/nfsm.sock"; # default
         };
 
         programs.niri.settings = {
