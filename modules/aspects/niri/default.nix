@@ -65,6 +65,8 @@
           pkgs.gpu-screen-recorder
           pkgs.nerd-fonts.jetbrains-mono
           pkgs.inter
+          pkgs.wl-clipboard
+          pkgs.satty
         ] ++ lib.optionals hasAsusKbdBacklight [ cycle-keyboard-backlight ];
 
         services.hypridle = {
@@ -302,6 +304,7 @@
             "Mod+W".action = toggle-column-tabbed-display;
 
             "Mod+Shift+S".action.screenshot = [{ show-pointer = true; }];
+            "Mod+Shift+A".action.spawn = [ "wl-paste" "|" "satty" "-f" "-" ];
             "Mod+Shift+R".action.spawn = [ "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "start" ];
             "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
             "Alt+Mod+Shift+S".action.screenshot-window = [{ write-to-disk = true; }];
