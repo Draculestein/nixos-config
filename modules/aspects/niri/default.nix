@@ -127,6 +127,11 @@
           };
         };
 
+        systemd.user.services.nfsm = {
+          Unit.PartOf = [ "niri.service" ];
+          Install.WantedBy = [ "niri.service" ];
+        };
+
         services.nfsm = {
           enable = true;
         };
