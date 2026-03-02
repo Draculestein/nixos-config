@@ -128,7 +128,11 @@
         };
 
         systemd.user.services.nfsm = {
-          Unit.PartOf = [ "niri.service" ];
+          Unit = {
+            PartOf = [ "niri.service" ];
+            After = [ "niri.service" ];
+            Requires = [ "niri.service" ];
+          };
           Install.WantedBy = [ "niri.service" ];
         };
 
