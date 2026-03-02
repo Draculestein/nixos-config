@@ -3,7 +3,6 @@
   den.aspects.asus.nixos = { lib, ... }: {
     services.asusd = {
       enable = true;
-      enableUserService = true;
     };
 
     services.supergfxd = {
