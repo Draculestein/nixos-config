@@ -8,10 +8,10 @@
         enableCompletion = true;
         initContent = builtins.readFile ./.zshrc;
 
-        zplug = {
+        antidote = {
           enable = true;
           plugins = [
-            { name = "Aloxaf/fzf-tab"; }
+            "Aloxaf/fzf-tab"
           ];
         };
       };
