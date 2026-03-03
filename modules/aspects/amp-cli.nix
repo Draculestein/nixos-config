@@ -14,7 +14,8 @@
               "github.com/heavyset-tech/heavyset-scripts": "private"
             },
             "amp.git.commit.ampThread.enabled": false,
-            "amp.git.commit.coauthor.enabled": false
+            "amp.git.commit.coauthor.enabled": false,
+            "amp.updates.mode": "disabled"
           }
 
         '';
