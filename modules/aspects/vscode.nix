@@ -94,6 +94,9 @@
           };
           "postman.mcp.notifications.postmanMCP" = false;
           "chat.mcp.gallery.enabled" = true;
+          "files.associations" = {
+            ".env*" = "dotenv";
+          };
 
           # Amp settings
           "amp.mcpServers" = {
