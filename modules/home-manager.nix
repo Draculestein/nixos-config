@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, lib, ... }:
 {
   flake-file.inputs.home-manager = {
     url = "github:nix-community/home-manager/master";
@@ -6,13 +6,13 @@
   };
 
   den.default.includes = [
-    den._.home-manager
     den.aspects.homeManager
     den._.define-user
     den._.self'
     den._.inputs'
   ];
 
+  den.base.user.classes = lib.mkDefault [ "homeManager" ];
   den.ctx.hm-host.nixos.home-manager.useGlobalPkgs = true;
 
   den.aspects.homeManager.homeManager = { config, ... }: {
