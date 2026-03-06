@@ -11,7 +11,6 @@
     };
 
     services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
-    boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
     hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
