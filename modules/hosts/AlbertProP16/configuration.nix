@@ -24,7 +24,7 @@
       kernelModules = [ "kvm-amd" ];
       extraModulePackages = [ ];
     };
-
+    boot.kernelParams = [ "microcode.amd_sha_check=off" ];
     nixpkgs.config.allowUnfree = true;
 
     hardware.enableRedistributableFirmware = true;

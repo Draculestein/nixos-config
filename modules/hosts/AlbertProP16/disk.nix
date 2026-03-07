@@ -5,6 +5,11 @@
       inputs.disko.nixosModules.default
     ];
 
+    services.btrfs.autoScrub = {
+      enable = true;
+      interval = "weekly";
+    };
+
     disko.devices = {
       disk.main = {
         type = "disk";
