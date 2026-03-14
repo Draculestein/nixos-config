@@ -219,8 +219,13 @@
               default-floating-position = { x = 25; y = 25; relative-to = "bottom-right"; };
             }
             {
-              matches = [{ app-id = "zoom"; } { app-id = "XEyes"; } { app-id = "org.kde.polkit-kde-authentication-agent-1"; } { app-id = "com.savedra1.clipse"; }];
+              matches = [{ app-id = "zoom"; } { app-id = "XEyes"; } { app-id = "org.kde.polkit-kde-authentication-agent-1"; }];
               open-floating = true;
+            }
+            {
+              matches = [{ app-id = "org.gnome.NautilusPreviewer"; }];
+              open-floating = true;
+              default-window-height.proportion = 1.00;
             }
             {
               matches = [{ app-id = "code"; }];
