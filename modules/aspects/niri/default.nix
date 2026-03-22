@@ -29,7 +29,8 @@
         enable = true;
         package = pkgs.niri-unstable;
       };
-      security.pam.services.hyprlock = { };
+      services.gnome.gnome-keyring.enable = true;
+
     };
 
     homeManager = { config, lib, pkgs, osConfig, ... }:
