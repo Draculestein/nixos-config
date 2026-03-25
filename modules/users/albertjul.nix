@@ -44,6 +44,8 @@
       xdg.systemDirs.data = [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
       xdg.userDirs.enable = true;
       xdg.userDirs.templates = "$HOME/Templates";
+      gtk.gtk4.theme = config.gtk.theme;
+      xdg.userDirs.setSessionVariables = true;
 
       programs.home-manager.enable = true;
 
