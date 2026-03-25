@@ -4,6 +4,9 @@
 
   den.aspects.steam = {
     nixos = { config, lib, pkgs, ... }: {
+
+      boot.kernelModules = [ "ntsync" ];
+
       programs.steam = {
         enable = true;
         gamescopeSession.enable = true;
