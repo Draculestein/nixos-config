@@ -54,7 +54,6 @@
               "SUPER, Space, exec, noctalia-shell ipc call launcher toggle"
               "SUPER, S, exec, noctalia-shell ipc call settings toggle"
               "SUPER, Q, killactive"
-              "SUPER, Tab, overview:toggle"
               "CTRL ALT, Delete, exit"
 
               # Focus
