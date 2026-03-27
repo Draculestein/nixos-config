@@ -1,4 +1,4 @@
-{ den, ... }: {
+{ den, inputs, ... }: {
   flake-file.inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -8,7 +8,7 @@
     };
   };
   den.aspects.hyprland = {
-    nixos = { inputs, pkgs, ... }: {
+    nixos = { pkgs, ... }: {
       programs.hyprland = {
         enable = true;
         # set the flake package
