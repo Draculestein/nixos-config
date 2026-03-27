@@ -28,7 +28,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland?tag=0.54.2";
     import-tree.url = "github:vic/import-tree";
     nfsm-flake = {
       url = "github:gvolpe/nfsm";

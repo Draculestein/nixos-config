@@ -1,6 +1,6 @@
 { den, inputs, ... }: {
   flake-file.inputs = {
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland?tag=0.54.2";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
