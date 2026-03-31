@@ -18,7 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dwproton.url = "github:imaviso/dwproton-flake";
-    flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -28,7 +27,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland?tag=0.54.2";
+    hyprland.url = "github:hyprwm/Hyprland?tag=v0.54.3";
     import-tree.url = "github:vic/import-tree";
     nfsm-flake = {
       url = "github:gvolpe/nfsm";
