@@ -16,6 +16,7 @@
       den.aspects.fastfetch
       den.aspects.distrobox
       den.aspects.ssh
+      den.aspects.neovim
 
       # Desktop/WM
       den.aspects.niri
