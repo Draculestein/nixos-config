@@ -141,6 +141,21 @@
           enable = true;
         };
 
+        xdg.portal = {
+          enable = lib.mkForce true;
+          extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            pkgs.xdg-desktop-portal-gnome
+            pkgs.gnome-keyring
+          ];
+          config.niri = {
+            default = [ "gnome" "gtk" ];
+            "org.freedesktop.impl.portal.Access" = [ "gtk" ];
+            "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
+            "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+          };
+        };
+
         programs.niri.settings = {
           debug = {
             render-drm-device = "/dev/dri/amd-igpu";
