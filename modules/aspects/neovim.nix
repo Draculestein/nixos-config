@@ -42,12 +42,12 @@
 
               format = {
                 enable = true;
-                type = "prettier";
+                type = [ "prettier" ];
               };
 
               lsp = {
                 enable = true;
-                servers = "ts_ls";
+                servers = [ "ts_ls" ];
               };
 
               treesitter.enable = true;
@@ -56,11 +56,11 @@
               enable = true;
               lsp = {
                 enable = true;
-                servers = "nixd";
+                servers = [ "nixd" ];
               };
               format = {
                 enable = true;
-                type = "nixfmt";
+                type = [ "nixfmt" ];
               };
 
               treesitter.enable = true;
