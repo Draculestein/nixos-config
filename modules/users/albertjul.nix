@@ -27,7 +27,7 @@
       users.users.albertjul = {
         isNormalUser = true;
         uid = 1000;
-        extraGroups = [ "wheel" "podman" "gamemode" "libvirtd" "video" "dialout" "scanner" "lp" ];
+        extraGroups = [ "wheel" "network" "podman" "gamemode" "libvirtd" "video" "dialout" "scanner" "lp" ];
         packages = [ ];
         shell = pkgs.zsh;
       };
