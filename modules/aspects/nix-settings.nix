@@ -1,6 +1,8 @@
 { den, inputs, ... }:
 {
-  den.aspects.nix-settings.nixos = { ... }: {
+  den.aspects.nix-settings.nixos = { pkgs, ... }: {
+    nix.package = pkgs.lixPackageSets.stable.lix;
+
     nix = {
       nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       settings = {
