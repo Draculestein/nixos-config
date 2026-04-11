@@ -127,6 +127,13 @@
               no_hardware_cursors = 0;
             };
 
+            scrolling = {
+              fullscreen_on_one_column = true;
+              column_width = 0.9;
+              direction = "right";
+              focus_fit_method = 1;
+            };
+
             layerrule = {
               name = "noctalia";
               "match:namespace" = "noctalia-background-.*$";
@@ -150,14 +157,14 @@
               "CTRL ALT, Delete, exit"
 
               # Focus
-              "SUPER, Left, movefocus, l"
-              "SUPER, Right, movefocus, r"
+              "SUPER, Left, layoutmsg, move -col"
+              "SUPER, Right, layoutmsg, move +col"
               "SUPER, Up, movefocus, u"
               "SUPER, Down, movefocus, d"
 
               # Move windows
-              "SUPER SHIFT, Left, movewindow, l"
-              "SUPER SHIFT, Right, movewindow, r"
+              "SUPER SHIFT, Left, layoutmsg, swapcol l"
+              "SUPER SHIFT, Right, layoutmsg, swapcol r"
               "SUPER SHIFT, Up, movewindow, u"
               "SUPER SHIFT, Down, movewindow, d"
 
