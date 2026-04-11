@@ -215,6 +215,11 @@
               "SUPER CTRL, mouse_down, workspace, e+1"
             ];
 
+            bindm = [
+              "SUPER, mouse:272, movewindow"
+              "SUPER, mouse:273, resizewindow"
+            ];
+
             bindle = [
               # Volume (works when locked)
               ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+"
