@@ -199,9 +199,7 @@
               "SUPER CTRL, Down, workspace, e+1"
               "SUPER SHIFT CTRL, Up, movetoworkspace, e-1"
               "SUPER SHIFT CTRL, Down, movetoworkspace, e+1"
-            ];
 
-            binde = [
               # Resize
               "SUPER, equal, resizeactive, 50 0"
               "SUPER, minus, resizeactive, -50 0"
@@ -217,7 +215,7 @@
               "SUPER CTRL, mouse_down, workspace, e+1"
             ];
 
-            bindl = [
+            bindle = [
               # Volume (works when locked)
               ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+"
               ", XF86AudioLowerVolume, exec, wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 5%-"
@@ -227,7 +225,9 @@
               # Brightness (works when locked)
               ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
               ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
+            ];
 
+            bindl = [
               # Keyboard backlight (works when locked)
               ", XF86KbdBrightnessUp, exec, brightnessctl -d asus::kbd_backlight set +1"
               ", XF86KbdBrightnessDown, exec, brightnessctl -d asus::kbd_backlight set 1-"
