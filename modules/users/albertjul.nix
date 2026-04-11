@@ -36,7 +36,7 @@
       services.gnome.localsearch.enable = true;
     };
 
-    homeManager = { config, pkgs, ... }: {
+    homeManager = { config, pkgs, lib, ... }: {
       home.username = "albertjul";
       home.homeDirectory = "/home/albertjul";
       home.stateVersion = "23.11";
@@ -163,7 +163,7 @@
 
         targets = {
           vscode.enable = false;
-          hyprpaper.enable = true;
+          hyprpaper.enable = lib.mkForce false;
           rofi.enable = false;
           waybar.enable = false;
           spicetify.enable = false;
