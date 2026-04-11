@@ -124,7 +124,7 @@
             };
 
             cursor = {
-              no_hardware_cursors = 1;
+              no_hardware_cursors = 0;
             };
 
             layerrule = {
