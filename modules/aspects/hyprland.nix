@@ -31,6 +31,31 @@
           pkgs.satty
         ];
 
+        services.gammastep = {
+          enable = true;
+          enableVerboseLogging = false;
+          provider = "geoclue2";
+          temperature = { day = 6500; night = 3000; };
+          settings = {
+            general = { adjustment-method = "wayland"; fade = 1; };
+            wayland = { output = "*DP-*"; };
+          };
+        };
+
+        xdg.portal = {
+          enable = lib.mkForce true;
+          extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
+            pkgs.gnome-keyring
+          ];
+          config.hyprland = {
+            default = [ "hyprland" "gtk" ];
+          };
+        };
+
+        services.hyprpaper.enable = lib.mkForce false; # Wallpaper handled by noctalia-shell
+
         wayland.windowManager.hyprland = {
           enable = true;
           package = null; # Follow the host-level defined package
@@ -38,9 +63,77 @@
           systemd.variables = [ "--all" ];
 
           settings = {
+            env = [
+              "AQ_DRM_DEVICES,/dev/dri/amd-igpu"
+              "GDK_BACKEND,wayland,x11,*"
+              "QT_QPA_PLATFORM,wayland;xcb"
+              "SDL_VIDEODRIVER,wayland,x11"
+              "CLUTTER_BACKEND,wayland"
+              "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+              "QT_QPA_PLATFORMTHEME,qt5ct"
+              "ELECTRON_OZONE_PLATFORM_HINT,auto"
+
+              "XDG_CURRENT_DESKTOP,Hyprland"
+              "XDG_SESSION_TYPE,wayland"
+              "XDG_SESSION_DESKTOP,Hyprland"
+            ];
+
             exec-once = [
               "noctalia-shell"
             ];
+
+            monitor = [
+              "eDP-1, 3840x2400@60.00, 1920x0, 2.0"
+              "desc:ASUSTek COMPUTER INC VG278 M3LMQS154329, 1920x1080@164.917, 0x0, 1.0"
+            ];
+
+            general = {
+              border_size = 4;
+              gaps_in = 5;
+              gaps_out = 10;
+              layout = "scrolling";
+              resize_on_border = true;
+              locale = "en_US";
+            };
+
+            decoration = {
+              rounding = 20;
+              rounding_power = 2;
+
+              shadow = {
+                enabled = true;
+                range = 4;
+                render_power = 3;
+              };
+
+              blur = {
+                enabled = true;
+                size = 3;
+                passes = 2;
+                vibrancy = 0.1696;
+              };
+            };
+
+            input = {
+              kb_layout = "us";
+
+              touchpad = {
+                natural_scroll = true;
+                clickfinger_behavior = true;
+              };
+            };
+
+            cursor = {
+              no_hardware_cursors = 1;
+            };
+
+            layerrule = {
+              name = "noctalia";
+              "match:namespace" = "noctalia-background-.*$";
+              ignore_alpha = 0.5;
+              blur = true;
+              blur_popups = true;
+            };
 
             bind = [
               # App launchers
