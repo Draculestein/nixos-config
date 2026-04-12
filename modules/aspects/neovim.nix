@@ -11,6 +11,10 @@
     homeManager = { pkgs, ... }: {
       imports = [ inputs.nvf.homeManagerModules.default ];
 
+      home.packages = with pkgs; [
+        ripgrep
+      ];
+
       programs.nvf = {
         enable = true;
         settings = {
