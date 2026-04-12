@@ -107,7 +107,8 @@ in
             After = [ deCfg.compositorService ];
           };
           Service = {
-            ExecStart = "${pkgs.hypridle}/bin/hypridle -c %h/.config/hypr/hypridle-${name}.conf";
+            ExecStartPre = "${pkgs.coreutils}/bin/ln -sf %h/.config/hypr/hypridle-${name}.conf %h/.config/hypr/hypridle.conf";
+            ExecStart = "${pkgs.hypridle}/bin/hypridle";
           };
           Install.WantedBy = [ deCfg.compositorService ];
         }
