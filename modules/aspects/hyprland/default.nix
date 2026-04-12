@@ -25,6 +25,15 @@
 
     homeManager = { config, lib, pkgs, osConfig, ... }:
       {
+        imports = [ ../_hypridle.nix ];
+
+        custom.hypridle.configs.hyprland = {
+          afterSleepCmd = "hyprctl dispatch dpms on";
+          dpmsOffCmd = "hyprctl dispatch dpms off";
+          dpmsOnCmd = "hyprctl dispatch dpms on";
+          compositorService = "hyprland-session.target";
+        };
+
         home.packages = [
           pkgs.brightnessctl
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -125,4 +134,5 @@
         };
       };
   };
+
 }

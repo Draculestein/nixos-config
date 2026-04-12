@@ -41,7 +41,10 @@
 
     homeManager = { config, lib, pkgs, osConfig, ... }:
       {
-        imports = [ inputs.nfsm-flake.homeModules.default ];
+        imports = [
+          inputs.nfsm-flake.homeModules.default
+          ../_hypridle.nix
+        ];
 
         home.packages = [
           pkgs.brightnessctl
