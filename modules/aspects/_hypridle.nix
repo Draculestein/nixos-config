@@ -103,8 +103,9 @@ in
         lib.nameValuePair "hypridle-${name}" {
           Unit = {
             Description = "Hypridle idle daemon (${name})";
-            PartOf = [ deCfg.compositorService ];
+            BindsTo = [ deCfg.compositorService ];
             After = [ deCfg.compositorService ];
+            Requisite = [ deCfg.compositorService ];
           };
           Service = {
             ExecStartPre = "${pkgs.coreutils}/bin/ln -sf %h/.config/hypr/hypridle-${name}.conf %h/.config/hypr/hypridle.conf";
