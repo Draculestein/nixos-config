@@ -55,6 +55,7 @@
           pkgs.inter
           pkgs.wl-clipboard
           pkgs.satty
+          pkgs.polkit_gnome
         ];
 
         services.gammastep = {
@@ -93,6 +94,22 @@
             "org.freedesktop.impl.portal.Access" = [ "gtk" ];
             "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
             "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+          };
+        };
+
+        systemd.user.services.niri-flake-polkit = {
+          Install.WantedBy = lib.mkForce [ "niri.service" ];
+          Unit = {
+            Description = lib.mkForce "PolicyKit Authentication Agent (polkit_gnome)";
+            After = lib.mkForce [ "graphical-session.target" ];
+            PartOf = lib.mkForce [ "graphical-session.target" ];
+          };
+          Service = {
+            Type = lib.mkForce "simple";
+            ExecStart = lib.mkForce "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+            Restart = lib.mkForce "on-failure";
+            RestartSec = lib.mkForce 1;
+            TimeoutStopSec = lib.mkForce 10;
           };
         };
 
