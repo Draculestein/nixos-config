@@ -48,7 +48,7 @@
     networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
     time.timeZone = lib.mkDefault "America/Denver";
-    services.automatic-timezoned.enable = true;
+    # services.automatic-timezoned.enable = true;
 
     services.geoclue2 = {
       enable = true;
