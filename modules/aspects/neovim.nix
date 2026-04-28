@@ -41,7 +41,7 @@
           };
 
           vim.languages = {
-            ts = {
+            typescript = {
               enable = true;
 
               format = {
@@ -51,7 +51,7 @@
 
               lsp = {
                 enable = true;
-                servers = [ "ts_ls" ];
+                servers = [ "typescript-language-server" ];
               };
 
               treesitter.enable = true;
