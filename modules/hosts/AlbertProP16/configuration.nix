@@ -94,7 +94,11 @@
       nix-output-monitor
       nvd
       libsForQt5.qtstyleplugin-kvantum
+      clamav
     ];
+
+    services.clamav.daemon.enable = true;
+    services.clamav.updater.enable = true;
 
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = [ ];
