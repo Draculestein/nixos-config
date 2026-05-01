@@ -122,6 +122,7 @@
         zotero
         slack
         zoom-us
+        awakened-poe-trade
       ];
 
       xdg.autostart = {
