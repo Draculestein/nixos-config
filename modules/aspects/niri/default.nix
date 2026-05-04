@@ -737,6 +737,24 @@
               wallpaperChangeMode = "random";
             };
           };
+          colors = lib.mkForce {
+            mError = "#ffb4ab";
+            mOnError = "#690005";
+            mOnPrimary = "#003350";
+            mOnSecondary = "#22323f";
+            mOnSurface = "#e2e2e5";
+            mOnSurfaceVariant = "#c1c7ce";
+            mOnTertiary = "#372b4a";
+            mOnHover = "#372b4a";
+            mOutline = "#42474d";
+            mPrimary = "#90cdff";
+            mSecondary = "#b8c8d9";
+            mShadow = "#000000";
+            mSurface = "#111416";
+            mHover = "#d0bfe7";
+            mSurfaceVariant = "#1e2022";
+            mTertiary = "#d0bfe7";
+          };
           plugins = {
             sources = [
               {
