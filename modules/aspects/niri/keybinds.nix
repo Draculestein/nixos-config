@@ -48,11 +48,11 @@
             hotkey-overlay.title = "Open a Editor: Visual Studio Code";
           };
 
-
           "Mod+L" = {
             action.spawn = [ "loginctl" "lock-session" ];
             hotkey-overlay.title = "Lock session";
           };
+
           "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
           "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
           "Mod+Q".action = close-window;
@@ -99,6 +99,7 @@
             action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
             hotkey-overlay.title = "Open Clipboard Manager";
           };
+
           "Mod+Shift+V".action = toggle-window-floating;
           "Alt+Mod+V".action = switch-focus-between-floating-and-tiling;
           "Mod+W".action = toggle-column-tabbed-display;
