@@ -138,6 +138,7 @@
             action = focus-window-down;
           };
 
+          # Workspace
           "Mod+1".action = focus-workspace 1;
           "Mod+2".action = focus-workspace 2;
           "Mod+3".action = focus-workspace 3;
@@ -147,6 +148,15 @@
           "Mod+7".action = focus-workspace 7;
           "Mod+8".action = focus-workspace 8;
           "Mod+9".action = focus-workspace 9;
+          "Mod+Shift+1".action.move-window-to-workspace = [{ focus = true; } 1];
+          "Mod+Shift+2".action.move-window-to-workspace = [{ focus = true; } 2];
+          "Mod+Shift+3".action.move-window-to-workspace = [{ focus = true; } 3];
+          "Mod+Shift+4".action.move-window-to-workspace = [{ focus = true; } 4];
+          "Mod+Shift+5".action.move-window-to-workspace = [{ focus = true; } 5];
+          "Mod+Shift+6".action.move-window-to-workspace = [{ focus = true; } 6];
+          "Mod+Shift+7".action.move-window-to-workspace = [{ focus = true; } 7];
+          "Mod+Shift+8".action.move-window-to-workspace = [{ focus = true; } 8];
+          "Mod+Shift+9".action.move-window-to-workspace = [{ focus = true; } 9];
 
           "Mod+Ctrl+WheelScrollUp" = {
             cooldown-ms = 150;
