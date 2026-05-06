@@ -34,6 +34,10 @@
             matches = [{ app-id = "code"; }];
             open-maximized = true;
           }
+          {
+            matches = [{ app-id = "spotify"; }];
+            open-on-workspace = "media";
+          }
         ];
 
         layer-rules = [

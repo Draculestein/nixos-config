@@ -839,6 +839,10 @@
             tab-indicator = { place-within-column = true; };
           };
 
+          workspaces = {
+            "media" = { };
+          };
+
           animations = { enable = true; slowdown = 0.9; };
           clipboard.disable-primary = true;
           cursor.hide-when-typing = true;
