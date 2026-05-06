@@ -20,7 +20,6 @@
 
       # Desktop/WM
       den.aspects.niri
-      den.aspects.hyprland
     ];
 
     nixos = { pkgs, ... }: {
