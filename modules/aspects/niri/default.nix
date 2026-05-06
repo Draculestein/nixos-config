@@ -61,7 +61,10 @@
         services.gammastep = {
           enable = true;
           enableVerboseLogging = false;
-          provider = "geoclue2";
+          # provider = "geoclue2";
+          provider = "manual";
+          dawnTime = "05:30";
+          duskTime = "18:00";
           temperature = { day = 6500; night = 3000; };
           settings = {
             general = { adjustment-method = "wayland"; fade = 1; };
