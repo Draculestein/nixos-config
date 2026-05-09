@@ -12,7 +12,7 @@
       url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
-    den.url = "github:vic/den";
+    den.url = "github:vic/den?ref=v0.16.0";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +27,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland?ref=v0.54.3";
+    hyprland.url = "github:hyprwm/Hyprland?ref=v0.55.0";
     import-tree.url = "github:vic/import-tree";
     nfsm-flake = {
       url = "github:gvolpe/nfsm";
