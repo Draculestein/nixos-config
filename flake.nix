@@ -29,6 +29,7 @@
     };
     hyprland.url = "github:hyprwm/Hyprland?ref=v0.55.0";
     import-tree.url = "github:vic/import-tree";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     nfsm-flake = {
       url = "github:gvolpe/nfsm";
       inputs.nixpkgs.follows = "nixpkgs";
