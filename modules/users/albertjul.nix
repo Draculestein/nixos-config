@@ -4,7 +4,7 @@
       # Development
       den.aspects.code-dev
       den.aspects.fzf
-      den.aspects.amp-cli
+      den.aspects.ai.provides.amp-cli
 
       # Shell & Terminals
       den.aspects.zsh

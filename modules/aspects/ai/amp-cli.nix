@@ -1,5 +1,5 @@
 { den, ... }: {
-  den.aspects.amp-cli = {
+  den.aspects.ai.provides.amp-cli = {
     homeManager = { pkgs, ... }: {
       home.packages = [ pkgs.amp-cli ];
 
