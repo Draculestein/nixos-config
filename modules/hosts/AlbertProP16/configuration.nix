@@ -95,6 +95,7 @@
       nvd
       libsForQt5.qtstyleplugin-kvantum
       clamav
+      smartmontools
     ];
 
     services.clamav.daemon.enable = true;
