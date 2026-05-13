@@ -17,7 +17,7 @@
       den.aspects.distrobox
       den.aspects.ssh
       den.aspects.neovim
-      den.aspects.ai.provides.pi
+      # den.aspects.ai.provides.pi
 
       # Desktop/WM
       den.aspects.niri

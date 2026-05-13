@@ -28,6 +28,6 @@
     den.aspects.ssh
     den.aspects.stylix
     den.aspects.xbox-controller
-    den.aspects.ai.provides.lemonade
+    # den.aspects.ai.provides.lemonade
   ];
 }
