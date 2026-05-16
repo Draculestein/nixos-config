@@ -14,7 +14,11 @@ in
     flake = false;
   };
 
-  den.aspects.sops.nixos = { config, pkgs, ... }: {
+  # Infrastructure-only aspect: wires up sops-nix and points it at the
+  # encrypted secrets file. Services/aspects that need individual secrets
+  # should `include` this aspect and declare their own `sops.secrets.*`
+  # entries (see e.g. system/restic.nix).
+  den.aspects.secrets.nixos = { pkgs, ... }: {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];
@@ -29,18 +33,6 @@ in
       validateSopsFiles = false;
 
       age.keyFile = "/var/lib/sops-nix/keys.txt";
-
-      secrets = {
-        "restic/environment" = {
-          owner = config.users.users.albertjul.name;
-        };
-        "restic/repository" = {
-          owner = config.users.users.albertjul.name;
-        };
-        "restic/password" = {
-          owner = config.users.users.albertjul.name;
-        };
-      };
     };
   };
 }

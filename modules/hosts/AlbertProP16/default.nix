@@ -11,7 +11,7 @@
     den.aspects.gnome
     den.aspects.gnome-polkit
 
-    # Software & 
+    # Software
     den.aspects.power-profiles-daemon
     den.aspects.common
     den.aspects.fonts
@@ -21,13 +21,12 @@
     den.aspects."nix-settings"
     den.aspects.virtualization
     den.aspects.restic
-    den.aspects.sops
+    den.aspects.secrets
     den.aspects.sound
     den.aspects.steam
     den.aspects.flatpak
     den.aspects.ssh
     den.aspects.stylix
     den.aspects.xbox-controller
-    # den.aspects.ai.provides.lemonade
   ];
 }
