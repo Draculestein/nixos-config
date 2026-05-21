@@ -65,7 +65,7 @@
           provider = "manual";
           dawnTime = "05:30";
           duskTime = "18:00";
-          temperature = { day = 6500; night = 3000; };
+          temperature = { day = 6500; night = 3500; };
           settings = {
             general = { adjustment-method = "wayland"; fade = 1; };
             wayland = { output = "*DP-*"; };
@@ -840,7 +840,11 @@
           };
 
           workspaces = {
-            "media" = { };
+            "media" = { open-on-output = "eDP-1"; };
+            "work-monitor" = {
+              open-on-output = "ASUSTek COMPUTER INC VG278 M3LMQS154329";
+            };
+            "work-secondary" = { open-on-output = "eDP-1"; };
           };
 
           animations = { enable = true; slowdown = 0.9; };
