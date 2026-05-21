@@ -132,6 +132,8 @@
         ];
       };
 
+      services.mpris-proxy.enable = true; # Enable headset buttons for pause/play or to skip to the next track
+
       stylix = {
         enable = true;
         image = ./desktop.jpg;
