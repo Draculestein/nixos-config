@@ -1,7 +1,5 @@
 { den, inputs, ... }:
 {
-  flake-file.inputs.dwproton.url = "github:imaviso/dwproton-flake";
-
   den.aspects.steam = {
     nixos = { config, lib, pkgs, ... }: {
 
@@ -29,7 +27,7 @@
         };
         extraCompatPackages = [
           pkgs.proton-ge-bin
-          inputs.dwproton.packages.${pkgs.stdenv.hostPlatform.system}.dw-proton.steamcompattool
+          pkgs.dwproton-bin
         ];
       };
 
