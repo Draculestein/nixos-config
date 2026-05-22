@@ -21,7 +21,7 @@
       blacklistedKernelModules = [ "ucsi_acpi" ];
       initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       initrd.kernelModules = [ "dm-snapshot" ];
-      kernelModules = [ "kvm-amd" ];
+      kernelModules = [ "kvm-amd" "uinput" ];
       extraModulePackages = [ ];
       kernelParams = [ "microcode.amd_sha_check=off" ];
 
@@ -48,6 +48,7 @@
       powerOnBoot = true;
 
     };
+
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     services.ucodenix = {
       enable = true;
@@ -59,6 +60,8 @@
       enable = true;
     };
 
+    hardware.opentabletdriver.enable = true;
+    hardware.uinput.enable = true;
     networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
     time.timeZone = lib.mkDefault "America/Denver";
