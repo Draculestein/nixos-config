@@ -25,16 +25,6 @@
       extraModulePackages = [ ];
       kernelParams = [ "microcode.amd_sha_check=off" ];
 
-      # TODO: Remove this after patch is merged upstream. This is for kernel 7.0.8
-      kernelPatches = [
-        {
-          name = "Bluetooth: btmtk: accept too short WMT FUNC_CTRL events";
-          patch = pkgs.fetchurl {
-            url = "https://git.kernel.org/pub/scm/linux/kernel/git/bluetooth/bluetooth-next.git/patch/?id=162b1adeb057d28ad84fd8a03f3c50cf08db5c62";
-            hash = "sha256-ij0hQmC0U++AdXWQy6nycnDe6z4yaMoQIrSiLal5DHc=";
-          };
-        }
-      ];
     };
 
     nixpkgs.config.allowUnfree = true;
@@ -58,7 +48,8 @@
     networking.networkmanager = {
       enable = true;
     };
-
+    hardware.opentabletdriver.enable = true;
+    hardware.uinput.enable = true;
     networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
     time.timeZone = lib.mkDefault "America/Denver";
