@@ -7,7 +7,7 @@
     den.aspects.blueman
 
     # Display Manager and DE
-    den.aspects.gdm
+    # den.aspects.gdm
     den.aspects.gnome
     den.aspects.gnome-polkit
 

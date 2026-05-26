@@ -105,5 +105,10 @@
 
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = [ ];
+
+    services.displayManager.dms-greeter = {
+      enable = true;
+      compositor.name = "niri"; # Or "hyprland" or "sway"
+    };
   };
 }
