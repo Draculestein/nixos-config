@@ -96,7 +96,7 @@
           "Mod+Shift+Minus".action = set-window-height "-10%";
 
           "Mod+V" = {
-            action.spawn = [ "noctalia" "ipc" "call" "launcher" "clipboard" ];
+            action.spawn = [ "noctalia" "msg" "panel-toggle" "clipboard" ];
             hotkey-overlay.title = "Open Clipboard Manager";
           };
 
@@ -106,7 +106,6 @@
 
           "Mod+Shift+S".action.screenshot = [{ show-pointer = true; }];
           "Mod+Shift+A".action.spawn = [ "sh" "-c" "wl-paste | satty -f -" ];
-          "Mod+Shift+R".action.spawn = [ "noctalia" "ipc" "call" "plugin:screen-recorder" "start" ];
           "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
           "Alt+Mod+Shift+S".action.screenshot-window = [{ write-to-disk = true; }];
 
