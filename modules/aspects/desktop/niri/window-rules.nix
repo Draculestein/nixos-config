@@ -41,7 +41,7 @@
             open-maximized = true;
           }
           {
-            matches = [{ app-id = "spotify"; }];
+            matches = [{ app-id = "Spotify"; }];
             open-on-workspace = "media";
           }
         ];
