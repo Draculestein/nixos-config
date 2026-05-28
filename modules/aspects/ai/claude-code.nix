@@ -3,11 +3,6 @@
     homeManager = {
       programs.claude-code = {
         enable = true;
-        settings = {
-          enabledPlugins = { };
-          extraKnownMarketplaces = { };
-          effortLevel = "high";
-        };
       };
     };
   };
