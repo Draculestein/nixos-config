@@ -53,8 +53,8 @@
             hotkey-overlay.title = "Lock session";
           };
 
-          "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
-          "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
+          "Mod+Space".action.spawn = [ "noctalia" "msg" "panel-toggle" "launcher" ];
+          "Mod+S".action.spawn = [ "noctalia" "msg" "settings-toggle" ];
           "Mod+Q".action = close-window;
           "Mod+Tab" = {
             repeat = false;
@@ -96,7 +96,7 @@
           "Mod+Shift+Minus".action = set-window-height "-10%";
 
           "Mod+V" = {
-            action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
+            action.spawn = [ "noctalia" "ipc" "call" "launcher" "clipboard" ];
             hotkey-overlay.title = "Open Clipboard Manager";
           };
 
@@ -106,7 +106,7 @@
 
           "Mod+Shift+S".action.screenshot = [{ show-pointer = true; }];
           "Mod+Shift+A".action.spawn = [ "sh" "-c" "wl-paste | satty -f -" ];
-          "Mod+Shift+R".action.spawn = [ "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "start" ];
+          "Mod+Shift+R".action.spawn = [ "noctalia" "ipc" "call" "plugin:screen-recorder" "start" ];
           "Ctrl+Mod+Shift+S".action.screenshot-screen = [ ];
           "Alt+Mod+Shift+S".action.screenshot-window = [{ write-to-disk = true; }];
 
@@ -195,12 +195,12 @@
 
           "XF86MonBrightnessUp" = {
             allow-when-locked = true;
-            action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ];
+            action.spawn = [ "noctalia" "msg" "brightness-up" ];
           };
 
           "XF86MonBrightnessDown" = {
             allow-when-locked = true;
-            action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ];
+            action.spawn = [ "noctalia" "msg" "brightness-down" ];
           };
 
           "XF86KbdBrightnessUp" = {

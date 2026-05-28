@@ -9,6 +9,12 @@
             clip-to-geometry = true;
           }
           {
+            matches = [{ app-id = "dev.noctalia.Noctalia.Settings"; }];
+            open-floating = true;
+            default-column-width.fixed = 1080;
+            default-window-height.fixed = 920;
+          }
+          {
             matches = [{ app-id = "r#\"firefox$\"#"; title = "^Picture-in-Picture$"; }];
             open-floating = true;
           }
@@ -41,9 +47,13 @@
         ];
 
         layer-rules = [
-          { matches = [{ namespace = "^swww-daemon$"; }]; place-within-backdrop = true; }
-          { matches = [{ namespace = "^noctalia-wallpaper*"; }]; }
-          { matches = [{ namespace = "^noctalia-overview*"; }]; place-within-backdrop = true; }
+          { matches = [{ namespace = "^noctalia-backdrop*"; }]; place-within-backdrop = true; }
+          # {
+          #   matches = [{ namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel)$"; }];
+          #   background-effect = {
+          #     xray = false;
+          #   };
+          # }
         ];
       };
     };
