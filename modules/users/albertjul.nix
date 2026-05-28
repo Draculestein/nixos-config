@@ -5,6 +5,7 @@
       den.aspects.code-dev
       den.aspects.fzf
       den.aspects.ai.provides.amp-cli
+      den.aspects.ai.provides.claude-code
 
       # Shell & Terminals
       den.aspects.zsh
