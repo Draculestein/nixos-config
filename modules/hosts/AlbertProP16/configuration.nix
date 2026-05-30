@@ -106,36 +106,5 @@
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = [ ];
 
-    services.displayManager.dms-greeter = {
-      enable = true;
-      compositor = {
-        name = "niri";
-        customConfig = ''
-          hotkey-overlay {
-              skip-at-startup
-          }
-
-          environment {
-              DMS_RUN_GREETER "1"
-          }
-
-          gestures {
-            hot-corners {
-              off
-            }
-          }
-
-          layout {
-            background-color "#000000"
-          }
-
-        '';
-      };
-
-      logs = {
-        save = true;
-        path = "/tmp/dms-greeter.log";
-      };
-    };
   };
 }
