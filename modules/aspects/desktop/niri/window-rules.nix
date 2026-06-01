@@ -44,6 +44,13 @@
             matches = [{ app-id = "Spotify"; }];
             open-on-workspace = "media";
           }
+          {
+            matches = [{
+              app-id = "thunderbird";
+            }];
+
+            open-on-workspace = "personal-monitor";
+          }
         ];
 
         layer-rules = [
