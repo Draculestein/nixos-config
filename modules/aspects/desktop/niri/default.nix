@@ -197,6 +197,10 @@
 
           workspaces = {
             "media" = { open-on-output = "eDP-1"; };
+            "personal-monitor" = {
+              open-on-output = "ASUSTek COMPUTER INC VG278 M3LMQS154329";
+            };
+            "personal-secondary" = { open-on-output = "eDP-1"; };
             "work-monitor" = {
               open-on-output = "ASUSTek COMPUTER INC VG278 M3LMQS154329";
             };
