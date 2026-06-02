@@ -100,7 +100,7 @@
         nixpkgs-fmt
         nixd
         rusty-path-of-building
-        bitwarden-desktop
+        # bitwarden-desktop
         gnome-software
         gnome-font-viewer
         gnomeExtensions.system-monitor
