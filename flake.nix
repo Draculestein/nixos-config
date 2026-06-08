@@ -49,7 +49,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    stylix.url = "github:nix-community/stylix";
     ucodenix.url = "github:e-tho/ucodenix";
   };
 }

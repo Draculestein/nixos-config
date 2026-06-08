@@ -46,12 +46,18 @@
       xdg.systemDirs.data = [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
       xdg.userDirs.enable = true;
       xdg.userDirs.templates = "$HOME/Templates";
-      gtk.gtk4.theme = config.gtk.theme;
+      gtk.gtk4.theme = null;
       xdg.userDirs.setSessionVariables = true;
 
       programs.home-manager.enable = true;
 
       fonts.fontconfig.enable = true;
+      fonts.fontconfig.defaultFonts = {
+        monospace = [ "Hasklig" ];
+        sansSerif = [ "Adwaita Sans" ];
+        serif = [ "Adwaita Sans" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
 
       home.packages = with pkgs; [
         # Fonts
@@ -120,59 +126,51 @@
 
       services.mpris-proxy.enable = true; # Enable headset buttons for pause/play or to skip to the next track
 
-      stylix = {
+      home.pointerCursor = {
         enable = true;
-        image = ./desktop.jpg;
+        name = "Capitaine Cursors (Palenight)";
+        package = pkgs.capitaine-cursors-themed;
+        size = 16;
+        gtk.enable = true;
+        x11.enable = true;
+      };
 
-        polarity = "dark";
+      gtk = {
+        enable = true;
 
-        cursor = {
+        font = {
+          name = "Adwaita Sans";
+          package = pkgs.adwaita-fonts;
+          size = 10;
+        };
+
+        theme = {
+          name = "Adwaita-dark";
+          package = pkgs.gnome-themes-extra;
+        };
+
+        iconTheme = {
+          name = "Papirus-Dark";
+          package = pkgs.papirus-icon-theme;
+        };
+
+        cursorTheme = {
           name = "Capitaine Cursors (Palenight)";
           package = pkgs.capitaine-cursors-themed;
           size = 16;
         };
 
-        fonts = {
-          monospace = {
-            name = "Hasklig";
-            package = pkgs.hasklig;
-          };
+        # gtk3.extraConfig = {
+        #   gtk-application-prefer-dark-theme = true;
+        # };
 
-          serif = {
-            name = "Adwaita Sans";
-            package = pkgs.adwaita-fonts;
-          };
-
-          sansSerif = {
-            name = "Adwaita Sans";
-            package = pkgs.adwaita-fonts;
-          };
-
-          sizes = {
-            applications = 10;
-            desktop = 10;
-            popups = 10;
-            terminal = 12;
-          };
-        };
-
-        icons = {
-          enable = true;
-          package = pkgs.papirus-icon-theme;
-          dark = "Papirus";
-          light = "Papirus-Light";
-        };
-
-        targets = {
-          vscode.enable = false;
-          hyprpaper.enable = lib.mkForce false;
-          rofi.enable = false;
-          waybar.enable = false;
-          spicetify.enable = false;
-          kitty.enable = false;
-        };
+        # gtk4 = {
+        #   theme = config.gtk.theme;
+        #   extraConfig = {
+        #     gtk-application-prefer-dark-theme = true;
+        #   };
+        # };
       };
-
     };
   };
 }

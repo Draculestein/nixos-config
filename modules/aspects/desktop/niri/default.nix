@@ -209,7 +209,11 @@
 
           animations = { enable = true; slowdown = 0.9; };
           clipboard.disable-primary = true;
-          cursor.hide-when-typing = true;
+          cursor = {
+            theme = "Capitaine Cursors (Palenight)";
+            size = 16;
+            hide-when-typing = true;
+          };
           hotkey-overlay.skip-at-startup = true;
         };
       };

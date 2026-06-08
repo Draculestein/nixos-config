@@ -26,7 +26,6 @@
     den.aspects.steam
     den.aspects.flatpak
     den.aspects.ssh
-    den.aspects.stylix
     den.aspects.xbox-controller
   ];
 }
