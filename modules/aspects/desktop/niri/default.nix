@@ -184,6 +184,13 @@
               mode = { width = 1920; height = 1080; refresh = 164.917; };
               position = { x = 0; y = 0; };
             };
+
+            "HP Inc. HP M24h 3CM3120S60" = {
+              enable = true;
+              scale = 1.0;
+              mode = { width = 1920; height = 1080; refresh = 60.000; };
+              position = { x = -1920; y = 0; };
+            };
           };
 
           layout = {
