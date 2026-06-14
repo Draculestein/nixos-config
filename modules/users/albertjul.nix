@@ -34,6 +34,12 @@
 
       services.gvfs.enable = true;
       services.gnome.localsearch.enable = true;
+
+      qt = {
+        enable = true;
+        platformTheme = "qt5ct";
+        style = "kvantum";
+      };
     };
 
     homeManager = { config, pkgs, lib, ... }: {
@@ -163,7 +169,43 @@
 
       qt = {
         enable = true;
-        platformTheme = "qtct";
+        platformTheme.name = "qtct";
+        # No QT_STYLE_OVERRIDE: let qt5ct/qt6ct pick the style (Fusion) so the
+        # noctalia color scheme is actually applied. Kvantum would ignore it
+        # since noctalia generates no Kvantum theme.
+        style.name = "kvantum";
+
+        # noctalia only writes ~/.config/qt{5,6}ct/colors/noctalia.conf but
+        # never the main qt{5,6}ct.conf, so the palette is never selected.
+        # These point qt5ct/qt6ct at that scheme + Fusion (which honors the
+        # custom palette, unlike Kvantum). noctalia keeps re-rendering
+        # colors/noctalia.conf on theme changes, so this stays dynamic.
+        qt5ctSettings = {
+          Appearance = {
+            style = "Fusion";
+            icon_theme = "Papirus-Dark";
+            custom_palette = true;
+            color_scheme_path = "${config.home.homeDirectory}/.config/qt5ct/colors/noctalia.conf";
+            standard_dialogs = "default";
+          };
+          Fonts = {
+            general = ''"Adwaita Sans,10"'';
+            fixed = ''"Hasklig,10"'';
+          };
+        };
+        qt6ctSettings = {
+          Appearance = {
+            style = "Fusion";
+            icon_theme = "Papirus-Dark";
+            custom_palette = true;
+            color_scheme_path = "${config.home.homeDirectory}/.config/qt6ct/colors/noctalia.conf";
+            standard_dialogs = "default";
+          };
+          Fonts = {
+            general = ''"Adwaita Sans,10"'';
+            fixed = ''"Hasklig,10"'';
+          };
+        };
       };
     };
   };

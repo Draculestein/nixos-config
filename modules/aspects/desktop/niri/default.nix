@@ -152,7 +152,7 @@
             CLUTTER_BACKEND = "wayland";
             QT_QPA_PLATFORM = "wayland;xcb";
             QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-            QT_QPA_PLATFORMTHEME = "qt5ct";
+            QT_QPA_PLATFORMTHEME = "qt6ct;qt5ct";
             ELECTRON_OZONE_PLATFORM_HINT = "auto";
           };
 
