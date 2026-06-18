@@ -120,6 +120,7 @@
         slack
         zoom-us
         awakened-poe-trade
+        winboat
       ];
 
       xdg.autostart = {
