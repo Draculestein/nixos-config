@@ -13,7 +13,9 @@
   ];
 
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
-  den.schema.hm-host.nixos.home-manager.useGlobalPkgs = true;
+  den.schema.hm-host.includes = [
+    { nixos.home-manager.useGlobalPkgs = true; }
+  ];
 
   den.aspects.homeManager.homeManager = { config, ... }: {
     targets.genericLinux.enable = true;
