@@ -27,5 +27,6 @@
     den.aspects.flatpak
     den.aspects.ssh
     den.aspects.xbox-controller
+    den.aspects.ai.provides.lemonade
   ];
 }
