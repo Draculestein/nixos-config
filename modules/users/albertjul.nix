@@ -21,6 +21,8 @@
 
       # Desktop/WM
       den.aspects.niri
+
+      (den.batteries.unfree [ "helvetica-neue-lt-std" "corefonts" "vista-fonts" "obsidian" "google-chrome" "slack" "zoom" ])
     ];
 
     nixos = { pkgs, ... }: {

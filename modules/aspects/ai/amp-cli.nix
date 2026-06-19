@@ -1,5 +1,7 @@
 { den, ... }: {
   den.aspects.ai.provides.amp-cli = {
+    includes = [ (den.batteries.unfree [ "amp-cli" ]) ];
+
     homeManager = { pkgs, ... }: {
       home.packages = [ pkgs.amp-cli ];
 

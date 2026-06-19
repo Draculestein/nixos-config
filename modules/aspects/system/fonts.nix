@@ -1,6 +1,7 @@
 { den, ... }:
 {
   den.aspects.fonts = {
+    includes = [ (den.batteries.unfree [ "corefonts" "vista-fonts" ]) ];
     nixos = { config, lib, pkgs, ... }: {
       fonts.packages = with pkgs; [
         cantarell-fonts

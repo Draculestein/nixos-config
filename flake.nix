@@ -12,7 +12,7 @@
       url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
-    den.url = "github:vic/den?ref=v0.16.0";
+    den.url = "github:vic/den?ref=v0.17.0";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
