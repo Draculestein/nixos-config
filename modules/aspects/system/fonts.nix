@@ -4,7 +4,7 @@
     includes = [ (den.batteries.unfree [ "corefonts" "vista-fonts" ]) ];
     nixos = { config, lib, pkgs, ... }: {
       fonts.packages = with pkgs; [
-        cantarell-fonts
+        # cantarell-fonts
         nerd-fonts.hasklug
         nerd-fonts.fira-code
         nerd-fonts.roboto-mono
