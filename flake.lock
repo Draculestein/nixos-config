@@ -601,6 +601,22 @@
     },
     "nixpkgs_6": {
       "locked": {
+        "lastModified": 1774709303,
+        "narHash": "sha256-D3Q07BbIA2KnTcSXIqqu9P586uWxN74zNoCH3h2ESHg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "8110df5ad7abf5d4c0f6fb0f8f978390e77f9685",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_7": {
+      "locked": {
         "lastModified": 1781577229,
         "narHash": "sha256-rcUHdUtJEvMdNEl2Wq+YpHraHKfcer3KsBscpZEF2Yg=",
         "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
@@ -654,6 +670,24 @@
         "type": "github"
       }
     },
+    "omp-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1781618766,
+        "narHash": "sha256-4PFt9cI8ZeBTwd0vOmf6NGES+AwkEcigjbWq3TgjtdY=",
+        "ref": "refs/heads/main",
+        "rev": "cb27b28f71d5c86d950b055fa12037beab343423",
+        "revCount": 187,
+        "type": "git",
+        "url": "https://git.molez.org/mandlm/omp-nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.molez.org/mandlm/omp-nix"
+      }
+    },
     "root": {
       "inputs": {
         "autocpu-freq": "autocpu-freq",
@@ -672,6 +706,7 @@
         "nixpkgs": "nixpkgs_4",
         "noctalia": "noctalia",
         "nvf": "nvf",
+        "omp-nix": "omp-nix",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "ucodenix": "ucodenix"
@@ -699,7 +734,7 @@
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6",
+        "nixpkgs": "nixpkgs_7",
         "systems": "systems_4"
       },
       "locked": {
