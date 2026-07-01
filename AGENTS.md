@@ -73,13 +73,10 @@ There's no CI in this repo. Validate changes locally before considering them don
 ```
 nix flake check                                   # evaluates the flake
 sudo nixos-rebuild build --flake .#<HostName>      # build without switching (e.g. AlbertProP16)
-sudo nixos-rebuild switch --flake .#<HostName>     # apply
-home-manager build --flake .#<user>@<HostName>     # HM-only build, if needed
 ```
 
-Prefer `build` over `switch` when just verifying a change compiles/evaluates
-— only `switch` if asked to actually apply the system change on this
-machine.
+You are only allowed to run `build`, never `switch` when just verifying a change compiles/evaluates.
+Always ask the user to run `switch` or `boot`.
 
 ## Secrets
 
@@ -92,6 +89,8 @@ values themselves belong in the secrets repo, not here.
 
 ## Conventions
 
+- Never commits. Only the user can commit any changes. User must review all changes before they are
+  commited and pushed.
 - Formatting: this is nixpkgs-style Nix; match the surrounding file's style
   (2-space indent, `pkgs.foo.override`-style attrsets already in use).
 - Keep one concern per aspect file — don't fold multiple unrelated
