@@ -72,7 +72,7 @@
         # Fonts
         helvetica-neue-lt-std
         roboto
-        # cantarell-fonts
+        cantarell-fonts
         source-code-pro
         source-sans
         hasklig
