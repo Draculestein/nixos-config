@@ -1,0 +1,81 @@
+// Niri window and layer rules
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// Global: rounded corners on all windows
+window-rule {
+    geometry-corner-radius 20.0 20.0 20.0 20.0
+    clip-to-geometry true
+}
+
+// Noctalia settings panel: floating, fixed size
+window-rule {
+    match app-id="dev.noctalia.Noctalia.Settings"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Firefox PiP: floating
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Google Meet PiP and call window: floating, top-right
+window-rule {
+    match title="^Meet - [a-z]{3}-[a-z]{4}-[a-z]{3}$"
+    match title="^(Picture in picture)$"
+    open-floating true
+    default-floating-position x=0 y=0 relative-to="top-right"
+}
+
+// Steam notifications: bottom-right
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=25 y=25 relative-to="bottom-right"
+}
+
+// Zoom, XEyes, polkit: floating
+window-rule {
+    match app-id="zoom"
+    match app-id="XEyes"
+    match app-id="org.kde.polkit-kde-authentication-agent-1"
+    open-floating true
+}
+
+// Nautilus Previewer (sushi): floating, full height
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    open-floating true
+    default-window-height { proportion 1.0; }
+}
+
+// VS Code: open maximized
+window-rule {
+    match app-id="code"
+    open-maximized true
+}
+
+// Slack: dedicated workspace
+window-rule {
+    match app-id="slack"
+    open-on-workspace "work-secondary"
+}
+
+// Spotify: media workspace
+window-rule {
+    match app-id="Spotify"
+    open-on-workspace "media"
+}
+
+// Thunderbird: personal monitor workspace
+window-rule {
+    match app-id="thunderbird"
+    open-on-workspace "personal-monitor"
+}
+
+// Noctalia backdrop: render behind everything else
+layer-rule {
+    match namespace="^noctalia-backdrop*"
+    place-within-backdrop true
+}

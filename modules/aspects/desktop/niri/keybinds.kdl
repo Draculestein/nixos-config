@@ -1,0 +1,115 @@
+// Niri key bindings
+// https://niri-wm.github.io/niri/Configuration:-Key-Bindings
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
+    Mod+B hotkey-overlay-title="Open a Browser: Brave" { spawn "brave"; }
+    Mod+E hotkey-overlay-title="Open a File Explorer: Nautilus" { spawn "nautilus"; }
+    Mod+C hotkey-overlay-title="Open a Editor: Visual Studio Code" { spawn "code"; }
+    Mod+L hotkey-overlay-title="Lock session" { spawn "loginctl" "lock-session"; }
+
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+S { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+Q { close-window; }
+    Mod+Tab repeat=false { toggle-overview; }
+
+    Ctrl+Alt+Delete { quit; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Focus
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up { focus-window-up; }
+    Mod+Down { focus-window-down; }
+
+    // Move
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up { move-window-up; }
+    Mod+Shift+Down { move-window-down; }
+
+    // Column management
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // Sizing
+    Mod+R { switch-preset-column-width; }
+    Mod+Ctrl+R { switch-preset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { spawn "nfsm-cli"; }
+
+    Mod+Equal { set-column-width "+5%"; }
+    Mod+Minus { set-column-width "-5%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+
+    // Floating / tabbed
+    Mod+V hotkey-overlay-title="Open Clipboard Manager" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Mod+Shift+V { toggle-window-floating; }
+    Alt+Mod+V { switch-focus-between-floating-and-tiling; }
+    Mod+W { toggle-column-tabbed-display; }
+
+    // Screenshots
+    Mod+Shift+S { screenshot show-pointer=true; }
+    Mod+Shift+A { spawn-sh "wl-paste | satty -f -"; }
+    Ctrl+Mod+Shift+S { screenshot-screen; }
+    Alt+Mod+Shift+S { screenshot-window write-to-disk=true; }
+
+    // Mouse wheel
+    Mod+WheelScrollRight cooldown-ms=150 { focus-column-right; }
+    Mod+WheelScrollLeft cooldown-ms=150 { focus-column-left; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-window-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-window-down; }
+    Mod+Shift+WheelScrollUp { focus-column-left; }
+    Mod+Shift+WheelScrollDown { focus-column-right; }
+
+    // Workspaces - focus
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // Workspaces - move window
+    Mod+Shift+1 { move-window-to-workspace 1 focus=true; }
+    Mod+Shift+2 { move-window-to-workspace 2 focus=true; }
+    Mod+Shift+3 { move-window-to-workspace 3 focus=true; }
+    Mod+Shift+4 { move-window-to-workspace 4 focus=true; }
+    Mod+Shift+5 { move-window-to-workspace 5 focus=true; }
+    Mod+Shift+6 { move-window-to-workspace 6 focus=true; }
+    Mod+Shift+7 { move-window-to-workspace 7 focus=true; }
+    Mod+Shift+8 { move-window-to-workspace 8 focus=true; }
+    Mod+Shift+9 { move-window-to-workspace 9 focus=true; }
+
+    // Workspaces - scroll navigation
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+Ctrl+Up { focus-workspace-up; }
+    Mod+Ctrl+Down { focus-workspace-down; }
+    Mod+Shift+Ctrl+Up { move-column-to-workspace-up; }
+    Mod+Shift+Ctrl+Down { move-column-to-workspace-down; }
+
+    // Audio
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.1 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    // Brightness
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
+
+    // Keyboard backlight (ASUS only)
+    XF86KbdBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-d" "asus::kbd_backlight" "set" "+1"; }
+    XF86KbdBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-d" "asus::kbd_backlight" "set" "1-"; }
+    XF86KbdLightOnOff allow-when-locked=true { spawn "cycle-kbd-backlight"; }
+}
