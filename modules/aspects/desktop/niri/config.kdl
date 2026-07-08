@@ -3,6 +3,7 @@
 
 include "keybinds.kdl"
 include "window-rules.kdl"
+include "noctalia.kdl"
 
 debug {
     render-drm-device "/dev/dri/amd-igpu"
@@ -131,5 +132,3 @@ cursor {
 hotkey-overlay {
     skip-at-startup
 }
-
-include "noctalia.kdl"

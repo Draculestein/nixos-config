@@ -5,6 +5,10 @@
 window-rule {
     geometry-corner-radius 20.0 20.0 20.0 20.0
     clip-to-geometry true
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 // Noctalia settings panel: floating, fixed size
@@ -72,6 +76,14 @@ window-rule {
 window-rule {
     match app-id="thunderbird"
     open-on-workspace "personal-monitor"
+}
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
 }
 
 // Noctalia backdrop: render behind everything else
