@@ -69,6 +69,7 @@ window-rule {
 // Spotify: media workspace
 window-rule {
     match app-id="Spotify"
+    match app-id="spotify"
     open-on-workspace "media"
 }
 
