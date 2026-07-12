@@ -119,7 +119,6 @@
         libinklevel
         popsicle
         wf-recorder
-        zotero
         slack
         zoom-us
         awakened-poe-trade
