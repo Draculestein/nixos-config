@@ -73,6 +73,9 @@
           "[python]" = {
             "editor.defaultFormatter" = "charliermarsh.ruff";
           };
+          "[cpp]" = {
+            "editor.defaultFormatter" = "ms-vscode.cpptools";
+          };
           "python.analysis.typeCheckingMode" = "standard";
 
           "redhat.telemetry.enabled" = false;
