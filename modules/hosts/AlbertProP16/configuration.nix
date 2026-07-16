@@ -27,6 +27,9 @@
     };
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-40.10.5"
+    ];
 
     hardware.enableRedistributableFirmware = true;
     hardware.enableAllFirmware = true;
