@@ -30,7 +30,7 @@
       users.users.albertjul = {
         isNormalUser = true;
         uid = 1000;
-        extraGroups = [ "wheel" "network" "podman" "gamemode" "libvirtd" "video" "dialout" "scanner" "lp" "disk" ];
+        extraGroups = [ "wheel" "network" "podman" "gamemode" "libvirtd" "video" "dialout" "scanner" "lp" "disk" "i2c" ];
         packages = [ ];
         shell = pkgs.zsh;
       };

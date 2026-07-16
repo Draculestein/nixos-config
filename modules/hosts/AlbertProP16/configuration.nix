@@ -34,6 +34,7 @@
     hardware.enableRedistributableFirmware = true;
     hardware.enableAllFirmware = true;
     hardware.sensor.iio.enable = true;
+    hardware.i2c.enable = true;
 
     hardware.bluetooth = {
       enable = true;
