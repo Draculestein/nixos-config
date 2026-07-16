@@ -20,8 +20,8 @@
 
       initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       initrd.kernelModules = [ "dm-snapshot" ];
-      kernelModules = [ "kvm-amd" ];
-      extraModulePackages = [ ];
+      kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
+      extraModulePackages = with config.boot.kernelPackages; [ ddcci-driver ];
       kernelParams = [ "microcode.amd_sha_check=off" ];
 
     };
