@@ -18,6 +18,7 @@
       kernelPackages = pkgs.linuxPackages_7_1;
       supportedFilesystems.ntfs = true;
 
+      blacklistedKernelModules = [ "ucsi_acpi" ];
       initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       initrd.kernelModules = [ "dm-snapshot" ];
       kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
