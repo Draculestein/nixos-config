@@ -28,6 +28,10 @@
     };
     import-tree.url = "github:vic/import-tree";
     llm-agents.url = "github:numtide/llm-agents.nix";
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nfsm-flake = {
       url = "github:gvolpe/nfsm";
       inputs.nixpkgs.follows = "nixpkgs";
