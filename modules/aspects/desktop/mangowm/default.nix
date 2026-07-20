@@ -55,6 +55,8 @@
           pkgs.inter
           pkgs.wl-clipboard
           pkgs.satty
+          pkgs.grim
+          pkgs.slurp
         ] ++ lib.optionals hasAsusKbdBacklight [ cycle-keyboard-backlight ];
 
 
@@ -81,8 +83,22 @@
             variables = [ "--all" ];
           };
 
+          # Keep the Noctalia color include last so it overrides base colors.
+          bottomPrefixes = [ "source" ];
+
+          # Comment carries a literal `source=...noctalia.conf` so Noctalia's
+          # apply.sh grep matches and skips appending to the read-only
+          # (nix-managed) config.conf, letting it still dispatch reload_config.
+          # The real include below is `source-optional`, which mango treats as
+          # non-fatal when the file is absent (e.g. during the build-time
+          # `mango -c ... -p` validation, before Noctalia has generated it).
+          extraConfig = ''
+            # noctalia theme include (declarative): source=~/.config/mango/noctalia.conf
+          '';
+
           settings = {
             exec-once = [ "noctalia" ];
+            source-optional = "~/.config/mango/noctalia.conf";
             env = [
               "GDK_BACKEND,wayland,x11,*"
               "SDL_VIDEODRIVER,wayland,x11"
@@ -96,7 +112,7 @@
 
             monitorrule = [
               "model:HP M24h,width:1920,height:1080,refresh:60.00,x:0,y:0,scale:1.0,rr:1"
-              "model:VG278,width:1920,height:1080,refresh:164.917,x:1080,y:0,scale:1.0,rr:0"
+              "model:VG278,width:1920,height:1080,refresh:164.917,x:1080,y:0,scale:1.0,rr:0,vrr:1"
               "name:^eDP-1$,width:3840,height:2400,refresh:60.00,x:3000,y:0,scale:2.0,rr:0"
             ];
 
