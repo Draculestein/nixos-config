@@ -10,7 +10,6 @@
     den.aspects.gdm
     den.aspects.gnome
     den.aspects.gnome-polkit
-    den.aspects.mangowm
 
     # Software
     den.aspects.power-profiles-daemon

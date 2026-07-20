@@ -95,8 +95,8 @@
             ];
 
             monitorrule = [
-              "model:HP M24h,width:1920,height:1080,refresh:60.00,x:0,y:0,scales:1.0,rr:1"
-              "model:VG278,width:1920,height:1080,refresh:164.917,x:1080,y:0,scales:1.0,rr:0"
+              "model:HP M24h,width:1920,height:1080,refresh:60.00,x:0,y:0,scale:1.0,rr:1"
+              "model:VG278,width:1920,height:1080,refresh:164.917,x:1080,y:0,scale:1.0,rr:0"
               "name:^eDP-1$,width:3840,height:2400,refresh:60.00,x:3000,y:0,scale:2.0,rr:0"
             ];
 
