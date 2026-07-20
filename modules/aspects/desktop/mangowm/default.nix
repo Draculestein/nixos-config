@@ -88,8 +88,9 @@
               "SDL_VIDEODRIVER,wayland,x11"
               "CLUTTER_BACKEND,wayland"
               "QT_QPA_PLATFORM,wayland;xcb"
-              "QP_AUTO_SCREEN_SCALE_FACTOR,1"
+              "QT_AUTO_SCREEN_SCALE_FACTOR,1"
               "QT_QPA_PLATFORM_THEME,qt6ct;qt5ct"
+              "QT5_QPA_PLATFORMTHEME,qt5ct"
               "ELECTRON_OZONE_PLATFORM_HINT,auto"
             ];
 
