@@ -13,7 +13,7 @@
     services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
 
     hardware.nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
       nvidiaSettings = true;
 
@@ -36,7 +36,7 @@
 
     hardware.nvidia-container-toolkit.enable = true;
 
-    # boot.kernelParams = [ "mem_sleep_default=deep" ];
+    boot.kernelParams = [ "nvidia.NVreg_TemporaryFilePath=/var/tmp" ];
     services.udev.extraRules = ''
       KERNEL=="card*", \
       KERNELS=="0000:66:00.0", \
