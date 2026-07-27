@@ -13,12 +13,11 @@
   };
 
   den.aspects.mangowm = {
-    nixos = {
-      imports = [
-        inputs.mango.nixosModules.mango
-      ];
-
-      programs.mango.enable = true;
+    nixos = { pkgs, ... }: {
+      programs.mango = {
+        enable = true;
+        package = inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.mango;
+      };
     };
 
     homeManager = { pkgs, lib, osConfig, ... }:
