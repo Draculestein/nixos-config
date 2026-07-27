@@ -6,6 +6,16 @@
   };
 
   den.aspects.ai.provides.pi = {
+    nixos = {
+      nix.settings = {
+        extra-substituters = [ "https://cache.numtide.com" ];
+        extra-trusted-public-keys = [
+          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+        ];
+      };
+    };
+
+
     homeManager = { pkgs, ... }: {
       imports = [ inputs.omp-nix.homeManagerModules.omp ];
       oh-my-pi = {
