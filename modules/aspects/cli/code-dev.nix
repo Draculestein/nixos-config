@@ -22,9 +22,13 @@
     };
 
     homeManager = { pkgs, ... }: {
-      home.packages = [
-        pkgs.devenv
-      ];
+      programs.devenv = {
+        enable = true;
+        package = pkgs.devenv;
+
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
     };
   };
 }
