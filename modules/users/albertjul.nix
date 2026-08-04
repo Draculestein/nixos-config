@@ -5,7 +5,7 @@
       den.aspects.code-dev
       den.aspects.fzf
       # den.aspects.ai.provides.amp-cli
-      den.aspects.ai.provides.claude-code
+      # den.aspects.ai.provides.claude-code
       den.aspects.ai.provides.pi
 
       # Shell & Terminals
