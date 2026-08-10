@@ -40,26 +40,19 @@
     services.udev.extraRules = ''
       SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="NVIDIA i2c adapter*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
       SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM aux*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
-      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM i2c*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
     '';
 
     systemd.services."ddcci@" = {
       scriptArgs = "%i";
       after = [ "graphical.target" ];
-      path = [
-        pkgs.i2c-tools
-      ];
       script = ''
         echo "Trying to attach ddcci to $1"
-        id=$(echo $1 | cut -d "-" -f 2)
-        echo "id: $id"
-
-        if ! i2cdetect -y $id 0x37 0x37 | grep -q 37; then
-          echo "Cannot find 0x37 device"
-          exit 0
-        fi
-
-        echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device && echo "Successfully attached ddcci to $1" || echo "Failed to attach"
+        # Let the ddcci driver's own probe decide: it binds on buses that
+        # speak DDC/CI (incl. DP AUX buses) and fails harmlessly (-ENODEV)
+        # elsewhere. Do NOT gate on i2cdetect -- it can't probe I2C-over-AUX
+        # (misses real DP monitors) and false-positives on amdgpu hw-i2c lines.
+        echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device \
+          && echo "Attached ddcci to $1" || echo "Failed to attach to $1"
       '';
 
       serviceConfig = {
