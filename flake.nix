@@ -59,5 +59,6 @@
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     ucodenix.url = "github:e-tho/ucodenix";
+    wluma.url = "github:max-baz/wluma";
   };
 }

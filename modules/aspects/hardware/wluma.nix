@@ -1,14 +1,16 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  flake-file.inputs.wluma.url = "github:max-baz/wluma";
+
   den.aspects.wluma = {
     homeManager = { config, lib, pkgs, ... }: {
       services.wluma = {
         enable = true;
         systemd.enable = true;
+        package = inputs.wluma.defaultPackage.${pkgs.stdenv.hostPlatform.system};
 
         settings = {
           als.iio = {
-            path = "/sys/bus/iio/devices";
             thresholds = {
               "0" = "night";
               "20" = "dark";
@@ -18,20 +20,16 @@
               "800" = "outdoors";
             };
           };
-
-          output.backlight = [
-            {
-              name = "eDP-1";
-              path = "/sys/class/backlight/amdgpu_bl1";
-              capturer = "wayland";
-            }
-          ];
         };
       };
 
       systemd.user.services."wluma" = {
         Unit = {
-          ConditionEnvironment = lib.mkForce [ "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri" ];
+          ConditionEnvironment = lib.mkForce [
+            "WAYLAND_DISPLAY"
+            "|XDG_CURRENT_DESKTOP=niri"
+            "|XDG_CURRENT_DESKTOP=mango"
+          ];
         };
       };
     };
