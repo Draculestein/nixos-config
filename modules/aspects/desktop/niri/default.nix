@@ -6,6 +6,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri-source = {
+      url = "github:niri-wm/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
     };
@@ -42,7 +47,8 @@
 
       programs.niri = {
         enable = true;
-        package = pkgs.niri-unstable;
+        # package = pkgs.niri-unstable;
+        package = inputs.niri-source.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
       services.gnome.gnome-keyring.enable = true;
 
