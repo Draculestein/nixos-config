@@ -39,7 +39,7 @@
     services.ddccontrol.enable = true;
     services.udev.extraRules = ''
       SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="NVIDIA i2c adapter*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
-      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM aux*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM i2c hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
     '';
 
     systemd.services."ddcci@" = {
@@ -47,10 +47,13 @@
       after = [ "graphical.target" ];
       script = ''
         echo "Trying to attach ddcci to $1"
-        # Let the ddcci driver's own probe decide: it binds on buses that
-        # speak DDC/CI (incl. DP AUX buses) and fails harmlessly (-ENODEV)
-        # elsewhere. Do NOT gate on i2cdetect -- it can't probe I2C-over-AUX
-        # (misses real DP monitors) and false-positives on amdgpu hw-i2c lines.
+        # amdgpu routes every connector's DDC over its "AMDGPU DM i2c hw bus N"
+        # adapter (check: /sys/class/drm/card*-*/ddc -> that bus), NOT the
+        # "AMDGPU DM aux" adapter, so we match the hw-i2c family by name (not
+        # bus number, which renumbers across reboots). e.g. DP-3/VG278 is on
+        # "AMDGPU DM i2c hw bus 2". The ddcci probe self-gates: it binds where
+        # a monitor speaks DDC/CI and fails harmlessly (-ENODEV) elsewhere, so
+        # matching all hw-i2c buses (incl. disconnected ports) is safe.
         echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device \
           && echo "Attached ddcci to $1" || echo "Failed to attach to $1"
       '';
