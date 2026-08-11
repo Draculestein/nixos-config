@@ -40,20 +40,27 @@
     services.udev.extraRules = ''
       SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="NVIDIA i2c adapter*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
       SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM i2c hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM aux hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
     '';
 
     systemd.services."ddcci@" = {
       scriptArgs = "%i";
       after = [ "graphical.target" ];
       script = ''
+        # Instantiate a DDC/CI client at 0x37 on this i2c bus. The write only
+        # creates the i2c client; the ddcci probe then binds ONLY if the
+        # monitor answers identification+capabilities cleanly. It self-gates
+        # (-ENODEV where nothing speaks DDC/CI), so probing every matched bus
+        # -- NVIDIA i2c adapters, amdgpu "i2c hw bus N" and "aux hw bus N",
+        # incl. disconnected ports -- is safe.
+        #
+        # NOTE: this reliably binds the HDMI monitor on the NVIDIA adapter
+        # (ddcci10 / M24h). It does NOT reliably bind DP monitors on amdgpu:
+        # the ddcci driver's capability read desyncs over amdgpu's DP-AUX DDC
+        # transport (probe fails -ENODEV), even though ddcutil talks to the
+        # same monitor fine. The DP monitor (VG278) is therefore controlled by
+        # wluma via the ddcutil CLI instead (see aspects/hardware/wluma.nix).
         echo "Trying to attach ddcci to $1"
-        # amdgpu routes every connector's DDC over its "AMDGPU DM i2c hw bus N"
-        # adapter (check: /sys/class/drm/card*-*/ddc -> that bus), NOT the
-        # "AMDGPU DM aux" adapter, so we match the hw-i2c family by name (not
-        # bus number, which renumbers across reboots). e.g. DP-3/VG278 is on
-        # "AMDGPU DM i2c hw bus 2". The ddcci probe self-gates: it binds where
-        # a monitor speaks DDC/CI and fails harmlessly (-ENODEV) elsewhere, so
-        # matching all hw-i2c buses (incl. disconnected ports) is safe.
         echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device \
           && echo "Attached ddcci to $1" || echo "Failed to attach to $1"
       '';

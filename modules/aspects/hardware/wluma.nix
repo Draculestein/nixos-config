@@ -4,6 +4,13 @@
 
   den.aspects.wluma = {
     homeManager = { config, lib, pkgs, ... }: {
+      # wluma drives external DDC monitors (e.g. the VG278 on DisplayPort)
+      # by shelling out to the `ddcutil` CLI (its direct ddc_hi path is
+      # unreliable over amdgpu DP-AUX). Without ddcutil on PATH it spams
+      # "Unable to execute ddcutil detect". This lands in
+      # /etc/profiles/per-user/$USER/bin, which is on the wluma service PATH.
+      home.packages = [ pkgs.ddcutil ];
+
       services.wluma = {
         enable = true;
         systemd.enable = true;
