@@ -48,7 +48,6 @@
 
         home.packages = [
           pkgs.brightnessctl
-          pkgs.xwayland-satellite-unstable
           pkgs.gpu-screen-recorder
           pkgs.nerd-fonts.jetbrains-mono
           pkgs.inter
