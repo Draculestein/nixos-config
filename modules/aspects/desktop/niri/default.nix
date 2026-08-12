@@ -1,16 +1,6 @@
 { den, inputs, ... }:
 {
   flake-file.inputs = {
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-source = {
-      url = "github:niri-wm/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
     };
@@ -27,28 +17,9 @@
     ];
 
     nixos = { pkgs, ... }: {
-      imports = [
-        inputs.niri.nixosModules.niri
-      ];
-
-      # Workaround for niri-flake#1851: nixpkgs removed `libdisplay-info_0_2`
-      # (2026-08-04; `libdisplay-info` is now 0.4.0), but niri-flake's make-niri
-      # still asserts `libdisplay-info_0_2.version == "0.2.0"`. Feed it the 0.3
-      # successor nixpkgs recommends (and that niri upstream uses), with the
-      # eval-level `version` masked to satisfy the stale assert. `//` (not
-      # overrideAttrs) avoids a rebuild: niri links the real cached 0.3 lib.
-      # Remove once upstream fixes the assert (issue #1851).
-      nixpkgs.overlays = [
-        (final: _prev: {
-          libdisplay-info_0_2 = final.libdisplay-info_0_3 // { version = "0.2.0"; };
-        })
-        inputs.niri.overlays.niri
-      ];
-
       programs.niri = {
         enable = true;
-        # package = pkgs.niri-unstable;
-        package = inputs.niri-source.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        package = pkgs.niri;
       };
       services.gnome.gnome-keyring.enable = true;
 
@@ -90,7 +61,7 @@
 
         home.packages = [
           pkgs.brightnessctl
-          pkgs.xwayland-satellite-unstable
+          pkgs.xwayland-satellite
           pkgs.gpu-screen-recorder
           pkgs.nerd-fonts.jetbrains-mono
           pkgs.inter
