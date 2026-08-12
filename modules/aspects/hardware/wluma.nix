@@ -27,6 +27,16 @@
               "800" = "outdoors";
             };
           };
+
+          output = {
+            ddcutil = [
+              { name = "DP-3"; capturer = "none"; } # VG278 (M3LMQS154329)
+              { name = "HDMI-A-1"; capturer = "none"; } # (3CM3120S60)
+            ];
+            backlight = [
+              { name = "eDP-1"; capturer = "none"; } # internal panel (amdgpu_bl2)
+            ];
+          };
         };
       };
 
