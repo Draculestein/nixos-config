@@ -120,7 +120,6 @@
         })
         libinklevel
         popsicle
-        wf-recorder
         slack
         zoom-us
         awakened-poe-trade
