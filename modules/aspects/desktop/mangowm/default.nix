@@ -116,7 +116,7 @@
 
             xkb_rules_layout = "us";
             trackpad_natural_scrolling = 1;
-            click_method = 2; # Double tap for right click
+            trackpad_click_method = 2; # Double tap for right click
             xwayland_persistence = 1;
 
             blur = 1;
