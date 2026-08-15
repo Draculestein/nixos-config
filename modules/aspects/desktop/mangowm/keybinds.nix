@@ -60,8 +60,6 @@
             # Sizing
             "SUPER,r,switch_proportion_preset"
             "SUPER,f,togglemaximizescreen"
-            # niri spawns nfsm-cli (a niri-only floating scratchpad manager); mango's
-            # native scratchpad is the closest built-in equivalent.
             "SUPER+SHIFT,f,togglefakefullscreen"
 
             "SUPER,equal,setmfact,+0.05"
