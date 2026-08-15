@@ -118,6 +118,7 @@
             trackpad_natural_scrolling = 1;
             trackpad_click_method = 2; # Double tap for right click
             xwayland_persistence = 1;
+            drag_tile_to_tile = 1;
 
             blur = 1;
             blur_layer = 0;
