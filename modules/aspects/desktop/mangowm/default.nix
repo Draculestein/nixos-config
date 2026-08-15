@@ -118,6 +118,32 @@
             trackpad_natural_scrolling = 1;
             click_method = 2; # Double tap for right click
             xwayland_persistence = 1;
+
+            blur = 1;
+            blur_layer = 0;
+            blur_optimized = 1;
+            blur_params_num_passes = 2;
+            blur_params_radius = 5;
+            blur_params_noise = 0.02;
+            blur_params_brightness = 0.9;
+            blur_params_contrast = 0.9;
+            blur_params_saturation = 1.0;
+            layer_animations = 0;
+
+            animations = 1;
+            animation_type_open = "slide";
+            animation_type_close = "slide";
+            animation_duration_open = 400;
+            animation_duration_close = 800;
+
+            shadows = 1;
+            layer_shadows = 0;
+            shadow_only_floating = 0;
+            shadows_size = 4;
+            shadows_blur = 12;
+            shadows_position_x = 2;
+            shadows_position_y = 2;
+            shadowscolor = "0x000000ff";
           };
         };
       };
