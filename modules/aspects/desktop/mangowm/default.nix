@@ -114,6 +114,11 @@
               "name:^eDP-1$,width:3840,height:2400,refresh:60.00,x:3000,y:0,scale:2.0,rr:0"
             ];
 
+            tagrule = [
+              "id:*,layout_name:scroller"
+              # "id:*,monitor_model:HP M24h,layout_name:dwindle"
+            ];
+
             xkb_rules_layout = "us";
             trackpad_natural_scrolling = 1;
             trackpad_click_method = 2; # Double tap for right click
