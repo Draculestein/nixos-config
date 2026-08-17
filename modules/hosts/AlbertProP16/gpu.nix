@@ -36,7 +36,10 @@
 
     hardware.nvidia-container-toolkit.enable = true;
 
-    boot.kernelParams = [ "nvidia.NVreg_TemporaryFilePath=/var/tmp" ];
+    # amdgpu PSR-SU (Panel Self Refresh) on Strix Point / DCN 3.5 freezes the
+    # internal eDP-1 panel (screen sticks on a stale frame; niri logs
+    # "missing surface in vblank callback"). 0x10 = DC_DISABLE_PSR.
+    boot.kernelParams = [ "nvidia.NVreg_TemporaryFilePath=/var/tmp" "amdgpu.dcdebugmask=0x10" ];
     services.udev.extraRules = ''
       KERNEL=="card*", \
       KERNELS=="0000:66:00.0", \
