@@ -17,11 +17,15 @@
 
 
     homeManager = { pkgs, ... }: {
-      imports = [ inputs.omp-nix.homeManagerModules.omp ];
-      oh-my-pi = {
-        enable = true;
-        package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.omp;
-      };
+      # imports = [ inputs.omp-nix.homeManagerModules.omp ];
+      # oh-my-pi = {
+      #   enable = true;
+      #   package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.omp;
+      # };
+
+      home.packages = [
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.omp
+      ];
     };
   };
 }
