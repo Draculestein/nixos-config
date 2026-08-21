@@ -11,7 +11,7 @@
 
     programs.rog-control-center = {
       enable = true;
-      autoStart = true;
+      # autoStart = true;
     };
 
     services.power-profiles-daemon.enable = lib.mkForce true;
