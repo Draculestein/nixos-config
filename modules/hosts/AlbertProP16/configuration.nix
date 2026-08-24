@@ -15,14 +15,14 @@
       loader.systemd-boot.enable = true;
       loader.efi.canTouchEfiVariables = true;
       loader.timeout = 0;
-      kernelPackages = pkgs.linuxPackages_7_1;
+      kernelPackages = pkgs.linuxPackages_7_2;
       supportedFilesystems.ntfs = true;
 
       blacklistedKernelModules = [ "ucsi_acpi" ];
       initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       initrd.kernelModules = [ "dm-snapshot" ];
       kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
-      extraModulePackages = with config.boot.kernelPackages; [ ddcci-driver ];
+      # extraModulePackages = with config.boot.kernelPackages; [ ddcci-driver ];
       kernelParams = [ "microcode.amd_sha_check=off" ];
 
     };
@@ -36,40 +36,40 @@
     hardware.enableAllFirmware = true;
     hardware.sensor.iio.enable = true;
 
-    services.ddccontrol.enable = true;
-    services.udev.extraRules = ''
-      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="NVIDIA i2c adapter*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
-      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM i2c hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
-      SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM aux hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
-    '';
+    # services.ddccontrol.enable = true;
+    # services.udev.extraRules = ''
+    #   SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="NVIDIA i2c adapter*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+    #   SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM i2c hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+    #   SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="AMDGPU DM aux hw bus*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+    # '';
 
-    systemd.services."ddcci@" = {
-      scriptArgs = "%i";
-      after = [ "graphical.target" ];
-      script = ''
-        # Instantiate a DDC/CI client at 0x37 on this i2c bus. The write only
-        # creates the i2c client; the ddcci probe then binds ONLY if the
-        # monitor answers identification+capabilities cleanly. It self-gates
-        # (-ENODEV where nothing speaks DDC/CI), so probing every matched bus
-        # -- NVIDIA i2c adapters, amdgpu "i2c hw bus N" and "aux hw bus N",
-        # incl. disconnected ports -- is safe.
-        #
-        # NOTE: this reliably binds the HDMI monitor on the NVIDIA adapter
-        # (ddcci10 / M24h). It does NOT reliably bind DP monitors on amdgpu:
-        # the ddcci driver's capability read desyncs over amdgpu's DP-AUX DDC
-        # transport (probe fails -ENODEV), even though ddcutil talks to the
-        # same monitor fine. The DP monitor (VG278) is therefore controlled by
-        # wluma via the ddcutil CLI instead (see aspects/hardware/wluma.nix).
-        echo "Trying to attach ddcci to $1"
-        echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device \
-          && echo "Attached ddcci to $1" || echo "Failed to attach to $1"
-      '';
+    # systemd.services."ddcci@" = {
+    #   scriptArgs = "%i";
+    #   after = [ "graphical.target" ];
+    #   script = ''
+    #     # Instantiate a DDC/CI client at 0x37 on this i2c bus. The write only
+    #     # creates the i2c client; the ddcci probe then binds ONLY if the
+    #     # monitor answers identification+capabilities cleanly. It self-gates
+    #     # (-ENODEV where nothing speaks DDC/CI), so probing every matched bus
+    #     # -- NVIDIA i2c adapters, amdgpu "i2c hw bus N" and "aux hw bus N",
+    #     # incl. disconnected ports -- is safe.
+    #     #
+    #     # NOTE: this reliably binds the HDMI monitor on the NVIDIA adapter
+    #     # (ddcci10 / M24h). It does NOT reliably bind DP monitors on amdgpu:
+    #     # the ddcci driver's capability read desyncs over amdgpu's DP-AUX DDC
+    #     # transport (probe fails -ENODEV), even though ddcutil talks to the
+    #     # same monitor fine. The DP monitor (VG278) is therefore controlled by
+    #     # wluma via the ddcutil CLI instead (see aspects/hardware/wluma.nix).
+    #     echo "Trying to attach ddcci to $1"
+    #     echo "ddcci 0x37" > /sys/bus/i2c/devices/$1/new_device \
+    #       && echo "Attached ddcci to $1" || echo "Failed to attach to $1"
+    #   '';
 
-      serviceConfig = {
-        Type = "oneshot";
-        Restart = "no";
-      };
-    };
+    #   serviceConfig = {
+    #     Type = "oneshot";
+    #     Restart = "no";
+    #   };
+    # };
 
     hardware.bluetooth = {
       enable = true;
