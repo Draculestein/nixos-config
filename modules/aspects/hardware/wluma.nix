@@ -3,6 +3,10 @@
   flake-file.inputs.wluma.url = "github:max-baz/wluma";
 
   den.aspects.wluma = {
+    nixos = {
+      hardware.i2c.enable = true;
+    };
+
     homeManager = { config, lib, pkgs, ... }: {
       # wluma drives external DDC monitors (e.g. the VG278 on DisplayPort)
       # by shelling out to the `ddcutil` CLI (its direct ddc_hi path is
@@ -30,8 +34,8 @@
 
           output = {
             ddcutil = [
-              { name = "DP-3"; capturer = "none"; } # VG278 (M3LMQS154329)
-              { name = "HDMI-A-1"; capturer = "none"; } # (3CM3120S60)
+              { name = "M3LMQS154329"; capturer = "none"; }
+              { name = "3CM3120S60"; capturer = "none"; }
             ];
             backlight = [
               { name = "eDP-1"; capturer = "none"; } # internal panel (amdgpu_bl2)
