@@ -23,7 +23,6 @@
       # Desktop/WM
       den.aspects.niri
       den.aspects.mangowm
-      den.aspects.wluma
 
       (den.batteries.unfree [ "helvetica-neue-lt-std" "corefonts" "vista-fonts" "obsidian" "google-chrome" "slack" "zoom" ])
     ];
