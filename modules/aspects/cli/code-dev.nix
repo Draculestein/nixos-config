@@ -1,5 +1,10 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  flake-file.inputs.herdr = {
+    url = "github:herdrdev/herdr/v0.8.2";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.code-dev = {
     includes = [
       den.aspects.vscode
@@ -29,6 +34,10 @@
         enableBashIntegration = true;
         enableZshIntegration = true;
       };
+
+      home.packages = [
+        inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
+      ];
     };
   };
 }
