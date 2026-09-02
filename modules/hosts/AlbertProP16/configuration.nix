@@ -85,6 +85,7 @@
     networking.hostName = "AlbertProP16";
     networking.networkmanager = {
       enable = true;
+      wifi.powersave = false;
     };
     hardware.opentabletdriver.enable = true;
     hardware.uinput.enable = true;
