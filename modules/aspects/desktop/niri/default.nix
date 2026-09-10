@@ -2,7 +2,7 @@
 {
   flake-file.inputs = {
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell/v5.1.0";
     };
 
     nfsm-flake = {
