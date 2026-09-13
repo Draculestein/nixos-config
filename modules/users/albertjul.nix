@@ -123,6 +123,8 @@
         zoom-us
         awakened-poe-trade
         winboat
+        orca-slicer
+        freecad
       ];
 
       xdg.autostart = {
