@@ -1,6 +1,9 @@
 { den, inputs, ... }:
 {
   flake-file.inputs = {
+    niri = {
+      url = "github:epireyn/niri-flake";
+    };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v5.1.0";
     };
@@ -17,9 +20,10 @@
     ];
 
     nixos = { pkgs, ... }: {
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       programs.niri = {
         enable = true;
-        package = pkgs.niri;
+        package = pkgs.niri-unstable;
       };
       services.gnome.gnome-keyring.enable = true;
 

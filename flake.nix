@@ -40,6 +40,7 @@
       url = "github:gvolpe/nfsm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri.url = "github:epireyn/niri-flake";
     nix-amd-ai.url = "github:noamsto/nix-amd-ai";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
