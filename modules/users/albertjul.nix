@@ -124,7 +124,7 @@
         awakened-poe-trade
         winboat
         orca-slicer
-        freecad
+        # freecad
       ];
 
       xdg.autostart = {
