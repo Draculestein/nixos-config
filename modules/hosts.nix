@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   den.hosts.x86_64-linux = {
     AlbertProP16 = {
@@ -6,6 +7,7 @@
     };
     heimdall = {
       description = "Lenovo Thinkcentre M720Q Tiny";
+      instantiate = inputs.nixpkgs-stable.lib.nixosSystem;
       users.heimdall = { };
     };
   };
