@@ -5,6 +5,11 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  flake-file.inputs.home-manager-stable = {
+    url = "github:nix-community/home-manager/release-26.05";
+    inputs.nixpkgs.follows = "nixpkgs-stable";
+  };
+
   den.default.includes = [
     den.aspects.homeManager
     den._.define-user

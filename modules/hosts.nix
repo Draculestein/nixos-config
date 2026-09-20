@@ -8,6 +8,7 @@
     heimdall = {
       description = "Lenovo Thinkcentre M720Q Tiny";
       instantiate = inputs.nixpkgs-stable.lib.nixosSystem;
+      home-manager.module = inputs.home-manager-stable.nixosModules.home-manager;
       users.heimdall = { };
     };
   };
