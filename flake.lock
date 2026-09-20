@@ -609,6 +609,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable_2": {
+      "locked": {
+        "lastModified": 1789749394,
+        "narHash": "sha256-cFTsMQz8Hzn8MT49oaeLSHg62tE86NykugCWkeM2ypk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "cf9d2fb3e50fa1cd5114c47505ea9177f7ff5f49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1789785513,
@@ -789,6 +805,7 @@
         "nix-amd-ai": "nix-amd-ai",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_5",
+        "nixpkgs-stable": "nixpkgs-stable_2",
         "noctalia": "noctalia",
         "nvf": "nvf",
         "omp-nix": "omp-nix",
