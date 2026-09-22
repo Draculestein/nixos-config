@@ -4,7 +4,7 @@
     includes = [
       den._.hostname
       den.aspects.openssh-server
-      den.aspects.incus
+      den.aspects.opnsense
     ];
 
     nixos =
