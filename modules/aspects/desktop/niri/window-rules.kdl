@@ -9,6 +9,7 @@ window-rule {
         blur true
         xray false
     }
+    open-maximized true
 }
 
 // Noctalia settings panel: floating, fixed size
