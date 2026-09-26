@@ -15,7 +15,7 @@ auto-imported — there is no manual import list to maintain.
   - `modules/inputs.nix`, `modules/home-manager.nix` — shared flake inputs / base HM config.
   - `modules/hosts.nix` — declares hosts (`den.hosts.<system>.<hostname>`).
   - `modules/hosts/<HostName>/` — per-host aspect wiring + hardware config (disk layout, GPU, etc).
-  - `modules/users/<username>.nix` — per-user aspect wiring + HM config.
+  - `modules/users/<username>/default.nix` — per-user aspect wiring + HM config; user-specific assets live alongside it.
   - `modules/aspects/<category>/<name>.nix` — one feature/app/service per file, declared as
     `den.aspects.<name>` (or `den.aspects.<category>.provides.<name>` for a namespaced variant,
     e.g. `den.aspects.ai.provides.claude-code`).
@@ -48,7 +48,7 @@ Each aspect module is scoped and declares only what it owns:
 
 - An aspect is enabled on a host/user by adding it to that host's/user's
   `includes` list (see `modules/hosts/AlbertProP16/default.nix`,
-  `modules/users/albertjul.nix`) — never by importing the file directly.
+  `modules/users/albertjul/default.nix`) — never by importing the file directly.
 - Unfree packages go through `den.batteries.unfree [ "pkg-name" ]` inside
   `includes`, not `nixpkgs.config.allowUnfree`.
 - New flake inputs are declared with `flake-file.inputs.<name>` in the same

@@ -153,7 +153,7 @@
             # honored by KDE apps such as Okular, so this is what actually themes
             # them. The static parts (the SVG, the kvantum.kvconfig selector and
             # this template input) are provisioned via home-manager in
-            # users/albertjul.nix.
+            # users/albertjul/default.nix.
             theme.templates.user.kvantum = {
               input_path = "${config.home.homeDirectory}/.config/noctalia/templates/Noctalia.kvconfig";
               output_path = "${config.home.homeDirectory}/.config/Kvantum/Noctalia/Noctalia.kvconfig";
