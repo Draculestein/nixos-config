@@ -49,7 +49,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    noctalia.url = "github:noctalia-dev/noctalia-shell/v5.1.0";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell/v5.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

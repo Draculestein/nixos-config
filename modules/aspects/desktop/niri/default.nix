@@ -5,7 +5,8 @@
       url = "github:epireyn/niri-flake";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5.1.0";
+      url = "github:noctalia-dev/noctalia-shell/v5.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nfsm-flake = {
@@ -57,6 +58,8 @@
         hasAsusKbdBacklight = osConfig.networking.hostName == "AlbertProP16";
       in
       {
+        # Noctalia v5.1.0 disables the old Home Manager module path, not this one.
+        disabledModules = [ "programs/noctalia" ];
         imports = [
           inputs.nfsm-flake.homeModules.default
           inputs.noctalia.homeModules.default
