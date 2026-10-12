@@ -26,6 +26,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="mpv"
+    open-maximized-to-edges true
+}
+
 // Google Meet PiP and call window: floating, top-right
 window-rule {
     match title="^Meet - [a-z]{3}-[a-z]{4}-[a-z]{3}$"
