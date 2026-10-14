@@ -23,7 +23,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     herdr = {
-      url = "github:herdrdev/herdr/v0.9.3";
+      url = "github:herdrdev/herdr/v0.9.4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
