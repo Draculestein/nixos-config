@@ -124,6 +124,7 @@
         winboat
         orca-slicer
         # freecad
+        chatgpt
       ];
 
       xdg.autostart = {
