@@ -9,6 +9,10 @@
       description = "Lenovo Thinkcentre M720Q Tiny";
       instantiate = inputs.nixpkgs-stable.lib.nixosSystem;
       home-manager.module = inputs.home-manager-stable.nixosModules.home-manager;
+      incus.storagePool = {
+        driver = "zfs";
+        config.source = "zroot/incus";
+      };
       users.albertjul = {
         aspect = den.aspects.heimdall-admin;
         classes = [ "user" ];
