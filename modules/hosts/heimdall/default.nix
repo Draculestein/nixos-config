@@ -37,11 +37,17 @@
           initrd.kernelModules = [ ];
           kernelModules = [ "kvm-intel" ];
           extraModulePackages = [ ];
+          # Nixpkgs' default follows the stable LTS kernel, not linuxPackages_latest.
+          kernelPackages = pkgs.linuxPackages;
+          zfs.forceImportRoot = false;
         };
 
         nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
         hardware.enableRedistributableFirmware = true;
+        # Stable, unique ZFS identity; keep this across reinstalls.
+        networking.hostId = "8425e349";
+        services.zfs.autoScrub.enable = true;
         networking.networkmanager.enable = true;
       };
   };
