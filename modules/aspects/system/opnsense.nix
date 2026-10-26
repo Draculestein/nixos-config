@@ -4,12 +4,11 @@
     includes = [ den.aspects.incus ];
 
     nixos =
-      { config, lib, pkgs, ... }:
+      { config, pkgs, ... }:
       let
         version = "26.7";
         instanceName = "opnsense";
         installerVolume = "opnsense-${version}-installer";
-        installFromIso = true;
         yaml = pkgs.formats.yaml { };
         lanConfig = yaml.generate "opnsense-lan.yaml" {
           description = "Isolated OPNsense LAN";
@@ -22,7 +21,6 @@
           description = "OPNsense virtual machine";
           config = {
             "boot.autostart" = "true";
-            "image.os" = "FreeBSD";
             "limits.cpu" = "4";
             "limits.memory" = "8GiB";
             "security.csm" = "false";
@@ -75,36 +73,20 @@
             fi
             incus profile edit opnsense < ${profileConfig}
 
-            ${lib.optionalString installFromIso ''
+            if ! incus info ${instanceName} >/dev/null 2>&1; then
               if ! incus storage volume show default ${installerVolume} >/dev/null 2>&1; then
                 incus storage volume import default ${installer} ${installerVolume} --type=iso
               fi
-            ''}
-
-            if ! incus info ${instanceName} >/dev/null 2>&1; then
               incus init ${instanceName} --empty --vm --profile opnsense
+              incus config device add ${instanceName} installer disk \
+                pool=default \
+                source=${installerVolume} \
+                boot.priority=10
             else
+              # Preserve operator-controlled media attachments after initial creation.
               incus profile assign ${instanceName} opnsense
             fi
-
-            ${lib.optionalString installFromIso ''
-              if ! incus config device get ${instanceName} installer type >/dev/null 2>&1; then
-                incus config device add ${instanceName} installer disk \
-                  pool=default \
-                  source=${installerVolume} \
-                  boot.priority=10
-              else
-                incus config device set ${instanceName} installer \
-                  pool=default \
-                  source=${installerVolume} \
-                  boot.priority=10
-              fi
-            ''}
-            ${lib.optionalString (!installFromIso) ''
-              if incus config device get ${instanceName} installer type >/dev/null 2>&1; then
-                incus config device remove ${instanceName} installer
-              fi
-            ''}
+            incus config set ${instanceName} image.os=FreeBSD
 
             if [ "$(incus list ${instanceName} --format csv -c s)" != "RUNNING" ]; then
               incus start ${instanceName}
