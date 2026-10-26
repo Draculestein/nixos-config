@@ -45,6 +45,7 @@
         nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
         hardware.enableRedistributableFirmware = true;
+        nix.settings.experimental-features = [ "nix-command" "flakes" ];
         # Stable, unique ZFS identity; keep this across reinstalls.
         networking.hostId = "8425e349";
         services.zfs.autoScrub.enable = true;
