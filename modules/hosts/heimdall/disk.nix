@@ -28,11 +28,46 @@
           root = {
             size = "100%";
             content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
+              type = "zfs";
+              pool = "zroot";
             };
           };
+        };
+      };
+    };
+
+    disko.devices.zpool.zroot = {
+      type = "zpool";
+      options = {
+        ashift = "12";
+        autotrim = "on";
+      };
+      rootFsOptions = {
+        compression = "zstd";
+        atime = "off";
+        mountpoint = "none";
+      };
+      datasets = {
+        root = {
+          type = "zfs_fs";
+          mountpoint = "/";
+        };
+        nix = {
+          type = "zfs_fs";
+          mountpoint = "/nix";
+        };
+        home = {
+          type = "zfs_fs";
+          mountpoint = "/home";
+        };
+        var = {
+          type = "zfs_fs";
+          mountpoint = "/var";
+        };
+        # Incus owns all children of this dataset, not the host datasets.
+        incus = {
+          type = "zfs_fs";
+          options.mountpoint = "none";
         };
       };
     };
