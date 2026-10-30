@@ -8,9 +8,7 @@
           "incus-admin"
           "wheel"
         ];
-        openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBptV0OoHkw9GkXw5pyuO7lWtXjvEnpbjPtaeIZUtOWX"
-        ];
+        # Provision ~/.ssh/authorized_keys on the host, not in the Nix store.
       };
 
       security.sudo.wheelNeedsPassword = false;

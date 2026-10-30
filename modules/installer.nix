@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
-  # Keep live-media networking and users separate from the installed host.
-  flake.nixosConfigurations.heimdall-installer = inputs.nixpkgs-stable.lib.nixosSystem {
+  # Live media is independent of installed hosts, disks, and secrets.
+  flake.nixosConfigurations.installer = inputs.nixpkgs-stable.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
       (
@@ -9,13 +9,9 @@
         {
           imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
 
-          networking.hostName = "heimdall-installer";
+          networking.hostName = "nixos-installer";
           networking.networkmanager.enable = true;
           hardware.enableRedistributableFirmware = true;
-
-          # Reuse the installed admin's public keys; never embed a private key.
-          users.users.nixos.openssh.authorizedKeys.keys =
-            inputs.self.nixosConfigurations.heimdall.config.users.users.albertjul.openssh.authorizedKeys.keys;
 
           # Public live-media password: nixos. Never reuse it on an installed host.
           users.users.nixos.initialHashedPassword = lib.mkForce
@@ -25,10 +21,10 @@
             enable = true;
             openFirewall = true;
             settings = {
-              AllowUsers = [ "nixos" ];
+              AllowUsers = [ "nixos" "root" ];
               PasswordAuthentication = true;
               KbdInteractiveAuthentication = false;
-              PermitRootLogin = "no";
+              PermitRootLogin = "prohibit-password";
             };
           };
 
@@ -38,6 +34,6 @@
     ];
   };
 
-  flake.packages.x86_64-linux.heimdall-installer =
-    inputs.self.nixosConfigurations.heimdall-installer.config.system.build.isoImage;
+  flake.packages.x86_64-linux.installer =
+    inputs.self.nixosConfigurations.installer.config.system.build.isoImage;
 }
