@@ -22,7 +22,6 @@
 
       # Desktop/WM
       den.aspects.niri
-      den.aspects.mangowm
 
       (den.batteries.unfree [ "helvetica-neue-lt-std" "corefonts" "vista-fonts" "obsidian" "google-chrome" "slack" "zoom" ])
     ];
@@ -125,6 +124,7 @@
         winboat
         orca-slicer
         # freecad
+        chatgpt
       ];
 
       xdg.autostart = {

@@ -4,21 +4,21 @@
     nixos = { config, lib, pkgs, ... }: {
       virtualisation.containers.enable = true;
       virtualisation = {
-        # docker = {
-        #   enable = true;
-        #   storageDriver = "btrfs";
-
-        #   rootless = {
-        #     enable = true;
-        #     setSocketVariable = true;
-        #   };
-        # };
-
-        podman = {
+        docker = {
           enable = true;
-          dockerCompat = true;
-          defaultNetwork.settings.dns_enabled = true;
+          storageDriver = "btrfs";
+
+          # rootless = {
+          #   enable = true;
+          #   setSocketVariable = true;
+          # };
         };
+
+        # podman = {
+        #   enable = true;
+        #   dockerCompat = true;
+        #   defaultNetwork.settings.dns_enabled = true;
+        # };
 
         libvirtd = {
           enable = true;

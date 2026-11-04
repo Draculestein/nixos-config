@@ -15,7 +15,7 @@
       loader.systemd-boot.enable = true;
       loader.efi.canTouchEfiVariables = true;
       loader.timeout = 0;
-      kernelPackages = pkgs.linuxPackages_7_2;
+      kernelPackages = pkgs.linuxPackages_7_3;
       supportedFilesystems.ntfs = true;
 
       blacklistedKernelModules = [ "ucsi_acpi" ];

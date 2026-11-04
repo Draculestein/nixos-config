@@ -13,7 +13,7 @@
     services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
 
     hardware.nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
       nvidiaSettings = true;
 

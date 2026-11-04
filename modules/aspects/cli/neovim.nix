@@ -8,6 +8,23 @@
   };
 
   den.aspects.neovim = {
+    nixos = {
+      nixpkgs.overlays = [
+        (_: prev: {
+          # nixos-unstable: https://github.com/NixOS/nixpkgs/pull/572951
+          typescript-language-server =
+            if prev.typescript-language-server.version == "6.0.2" && prev.typescript-language-server ? pnpmDeps then
+              prev.typescript-language-server.overrideAttrs (old: {
+                pnpmDeps = old.pnpmDeps.override {
+                  hash = "sha256-xR/EF60lVBsITKgH7wCM2wHM46PFQevD51KfCENSUH4=";
+                };
+              })
+            else
+              prev.typescript-language-server;
+        })
+      ];
+    };
+
     homeManager = { pkgs, ... }: {
       imports = [ inputs.nvf.homeManagerModules.default ];
 

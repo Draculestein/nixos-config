@@ -1,7 +1,7 @@
 { den, inputs, ... }:
 {
   flake-file.inputs.herdr = {
-    url = "github:herdrdev/herdr/v0.8.2";
+    url = "github:herdrdev/herdr/v0.9.5";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 

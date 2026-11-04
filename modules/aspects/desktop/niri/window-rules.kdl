@@ -9,6 +9,7 @@ window-rule {
         blur true
         xray false
     }
+    open-maximized true
 }
 
 // Noctalia settings panel: floating, fixed size
@@ -23,6 +24,11 @@ window-rule {
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    match app-id="mpv"
+    open-maximized-to-edges true
 }
 
 // Google Meet PiP and call window: floating, top-right

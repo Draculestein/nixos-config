@@ -23,19 +23,19 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     herdr = {
-      url = "github:herdrdev/herdr/v0.8.2";
+      url = "github:herdrdev/herdr/v0.9.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     import-tree.url = "github:denful/import-tree";
     llm-agents.url = "github:numtide/llm-agents.nix";
-    mango = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nfsm-flake = {
       url = "github:gvolpe/nfsm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +44,11 @@
     nix-amd-ai.url = "github:noamsto/nix-amd-ai";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    noctalia.url = "github:noctalia-dev/noctalia-shell/v5.1.0";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell/v5.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -5,7 +5,8 @@
       url = "github:epireyn/niri-flake";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5.1.0";
+      url = "github:noctalia-dev/noctalia-shell/v5.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nfsm-flake = {
@@ -57,6 +58,8 @@
         hasAsusKbdBacklight = osConfig.networking.hostName == "AlbertProP16";
       in
       {
+        # Noctalia v5.1.0 disables the old Home Manager module path, not this one.
+        disabledModules = [ "programs/noctalia" ];
         imports = [
           inputs.nfsm-flake.homeModules.default
           inputs.noctalia.homeModules.default
@@ -153,7 +156,7 @@
             # honored by KDE apps such as Okular, so this is what actually themes
             # them. The static parts (the SVG, the kvantum.kvconfig selector and
             # this template input) are provisioned via home-manager in
-            # users/albertjul.nix.
+            # users/albertjul/default.nix.
             theme.templates.user.kvantum = {
               input_path = "${config.home.homeDirectory}/.config/noctalia/templates/Noctalia.kvconfig";
               output_path = "${config.home.homeDirectory}/.config/Kvantum/Noctalia/Noctalia.kvconfig";
