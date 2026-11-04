@@ -12,7 +12,11 @@
       url = "git+ssh://git@github.com/Draculestein/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
-    den.url = "github:vic/den?ref=v0.18.0";
+    den.url = "github:denful/den?ref=v0.19.0";
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
