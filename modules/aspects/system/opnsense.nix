@@ -4,13 +4,15 @@
     includes = [ den.aspects.incus ];
 
     nixos =
-      { config, pkgs, ... }:
+      { config, lib, pkgs, ... }:
       let
         version = "26.7";
         instanceName = "opnsense";
         installerVolume = "opnsense-${version}-installer";
         wanInterface = "enp6s0";
         lanInterface = "enp5s0";
+        # 10 DMZ, 20 USER, 30 IOT, 40 GUEST, 50 SERVERS.
+        trunkVlans = [ 10 20 30 40 50 ];
         wanConfig = yaml.generate "opnsense-wan.yaml" {
           description = "OPNsense physical WAN";
           config = {
@@ -62,7 +64,7 @@
             lan = {
               hwaddr = "02:00:00:00:00:02";
               network = "opnsense-lan";
-              "vlan.tagged" = "10,20,30,40";
+              "vlan.tagged" = lib.concatMapStringsSep "," toString trunkVlans;
               type = "nic";
             };
           };
@@ -128,7 +130,7 @@
               incus network create opnsense-lan --type=bridge ipv4.address=none ipv6.address=none
             fi
             incus network edit opnsense-lan < ${lanConfig}
-            for vlan in 10 20 30 40; do
+            for vlan in ${lib.concatMapStringsSep " " toString trunkVlans}; do
               bridge vlan add dev ${lanInterface} vid "$vlan"
             done
 

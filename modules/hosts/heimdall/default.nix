@@ -19,6 +19,7 @@
       den._.hostname
       den.aspects.openssh-server
       den.aspects.opnsense
+      den.aspects.technitium
     ];
 
     nixos =
