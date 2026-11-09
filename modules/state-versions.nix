@@ -1,4 +1,4 @@
-{ den, ... }:
+{ lib, ... }:
 {
   den.default = {
     nixos = {
@@ -18,7 +18,8 @@
       # and migrated your data accordingly.
       #
       # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-      system.stateVersion = "23.11"; # Did you read the comment?    
+      # Hosts installed later set their own value.
+      system.stateVersion = lib.mkDefault "23.11"; # Did you read the comment?
     };
 
     homeManager = {

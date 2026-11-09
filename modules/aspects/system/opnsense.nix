@@ -1,18 +1,34 @@
-{ den, ... }:
+{ den, lib, ... }:
 {
   den.aspects.opnsense = {
     includes = [ den.aspects.incus ];
 
+    settings = {
+      wanInterface = lib.mkOption {
+        type = lib.types.str;
+        description = "Physical NIC bridged to the OPNsense WAN.";
+      };
+      lanInterface = lib.mkOption {
+        type = lib.types.str;
+        description = "Physical NIC carrying the tagged OPNsense LAN trunk.";
+      };
+      lanVlans = lib.mkOption {
+        type = lib.types.listOf (lib.types.ints.between 2 4094);
+        description = "VLANs tagged on the LAN trunk and passed to OPNsense.";
+      };
+    };
+
     nixos =
-      { config, lib, pkgs, ... }:
+      { config, host, pkgs, ... }:
       let
+        cfg = host.settings.opnsense;
         version = "26.7";
         instanceName = "opnsense";
         installerVolume = "opnsense-${version}-installer";
-        wanInterface = "enp6s0";
-        lanInterface = "enp5s0";
-        # 10 DMZ, 20 USER, 30 IOT, 40 GUEST, 50 SERVERS.
-        trunkVlans = [ 10 20 30 40 50 ];
+        inherit (cfg) wanInterface lanInterface;
+        trunkVlans = cfg.lanVlans;
+        # MicroVM guests plugged into the OPNsense LAN bridge.
+        lanGuests = lib.filter (vm: vm.settings.microvm-guest.bridge == "opnsense-lan") (host.microvm.guests or [ ]);
         wanConfig = yaml.generate "opnsense-wan.yaml" {
           description = "OPNsense physical WAN";
           config = {
@@ -78,6 +94,26 @@
         '';
       in
       {
+        assertions = map (vm: {
+          assertion = lib.elem vm.settings.microvm-guest.vlan trunkVlans;
+          message = "microvm guest ${vm.name} uses VLAN ${toString vm.settings.microvm-guest.vlan}, which is not in settings.opnsense.lanVlans.";
+        }) lanGuests;
+
+        # The LAN bridge and its VLAN filtering are provisioned with the VM.
+        imports = [
+          {
+            systemd.services = lib.mergeAttrsList (
+              map (vm: {
+                "microvm-bridge-${vm.name}" = {
+                  after = [ "opnsense-vm.service" ];
+                  requires = [ "opnsense-vm.service" ];
+                  partOf = [ "opnsense-vm.service" ];
+                };
+              }) lanGuests
+            );
+          }
+        ];
+
         # Incus owns these unnumbered router links, not NetworkManager.
         networking.networkmanager.unmanaged = [
           "interface-name:${wanInterface}"

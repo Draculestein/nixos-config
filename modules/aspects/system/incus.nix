@@ -1,14 +1,19 @@
-{ den, ... }:
+{ lib, ... }:
 {
-  den.aspects.incus = { host, ... }: {
+  den.aspects.incus = {
+    settings.storagePool = lib.mkOption {
+      type = lib.types.attrsOf lib.types.anything;
+      default = {
+        driver = "dir";
+        config.source = "/var/lib/incus/storage-pools/default";
+      };
+      description = "Preseeded `default` storage pool (without `name`).";
+    };
+
     nixos =
-      { config, pkgs, ... }:
+      { config, host, pkgs, ... }:
       let
-        storagePool =
-          host.incus.storagePool or {
-            driver = "dir";
-            config.source = "/var/lib/incus/storage-pools/default";
-          };
+        inherit (host.settings.incus) storagePool;
         yaml = pkgs.formats.yaml { };
         bridgeConfig = yaml.generate "incusbr0.yaml" {
           description = "Default Incus bridge";
