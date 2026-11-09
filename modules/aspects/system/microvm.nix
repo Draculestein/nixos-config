@@ -176,12 +176,14 @@ in
       };
   };
 
-  # Host side, included by `host-to-microvm-host`.
+  # Host side, included by `host-to-microvm-host`. Guests attach only to
+  # bridges published on the `bridges` quirk.
   den.aspects.microvm-host.nixos =
-    { host, pkgs, utils, ... }:
+    { host, bridges, pkgs, utils, ... }:
     let
       guests = host.microvm.guests;
       distinct = f: lib.allUnique (map f guests);
+      bridgeOf = vm: lib.findFirst (b: b.name == (guestCfg vm).bridge) null bridges;
     in
     {
       imports = [ inputs.microvm.nixosModules.host ];
@@ -199,7 +201,28 @@ in
           assertion = distinct tapOf;
           message = "microvm guests of ${host.name} need distinct tap names.";
         }
-      ];
+        {
+          assertion = lib.allUnique (map (b: b.name) bridges);
+          message = "Bridges published twice on ${host.name}: ${toString (map (b: b.name) bridges)}.";
+        }
+      ]
+      ++ lib.concatMap (
+        vm:
+        let
+          cfg = guestCfg vm;
+          bridge = bridgeOf vm;
+        in
+        [
+          {
+            assertion = bridge != null;
+            message = "microvm guest ${vm.name} attaches to bridge ${cfg.bridge}, which no aspect on ${host.name} publishes.";
+          }
+          {
+            assertion = bridge == null || cfg.vlan == null || lib.elem cfg.vlan (bridge.vlans or [ ]);
+            message = "microvm guest ${vm.name} uses VLAN ${toString cfg.vlan}, which bridge ${cfg.bridge} does not carry.";
+          }
+        ]
+      ) guests;
 
       # Taps are bridge ports; the host has no address on guest networks.
       networking.networkmanager.unmanaged = map (vm: "interface-name:${tapOf vm}") guests;
@@ -211,6 +234,8 @@ in
             cfg = guestCfg vm;
             tap = tapOf vm;
             bridgeDevice = "sys-subsystem-net-devices-${utils.escapeSystemdPath cfg.bridge}.device";
+            # Unit that creates/configures the bridge, e.g. its VLAN filtering.
+            bridgeUnit = lib.optional ((bridgeOf vm).unit or null != null) (bridgeOf vm).unit;
           in
           {
             "microvm-bridge-${vm.name}" = {
@@ -218,12 +243,13 @@ in
               after = [
                 "microvm-tap-interfaces@${vm.name}.service"
                 bridgeDevice
-              ];
-              requires = [ "microvm-tap-interfaces@${vm.name}.service" ];
+              ]
+              ++ bridgeUnit;
+              requires = [ "microvm-tap-interfaces@${vm.name}.service" ] ++ bridgeUnit;
               bindsTo = [ bridgeDevice ];
               before = [ "microvm@${vm.name}.service" ];
               requiredBy = [ "microvm@${vm.name}.service" ];
-              partOf = [ "microvm@${vm.name}.service" ];
+              partOf = [ "microvm@${vm.name}.service" ] ++ bridgeUnit;
               path = [ pkgs.iproute2 ];
               script =
                 lib.optionalString (cfg.vlan != null) ''

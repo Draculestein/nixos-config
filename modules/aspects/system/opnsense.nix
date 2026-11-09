@@ -18,6 +18,15 @@
       };
     };
 
+    # The LAN trunk bridge exists once the OPNsense VM is reconciled.
+    bridges =
+      { host, ... }:
+      {
+        name = "opnsense-lan";
+        unit = "opnsense-vm.service";
+        vlans = host.settings.opnsense.lanVlans;
+      };
+
     nixos =
       { config, host, pkgs, ... }:
       let
@@ -27,8 +36,6 @@
         installerVolume = "opnsense-${version}-installer";
         inherit (cfg) wanInterface lanInterface;
         trunkVlans = cfg.lanVlans;
-        # MicroVM guests plugged into the OPNsense LAN bridge.
-        lanGuests = lib.filter (vm: vm.settings.microvm-guest.bridge == "opnsense-lan") (host.microvm.guests or [ ]);
         wanConfig = yaml.generate "opnsense-wan.yaml" {
           description = "OPNsense physical WAN";
           config = {
@@ -94,26 +101,6 @@
         '';
       in
       {
-        assertions = map (vm: {
-          assertion = lib.elem vm.settings.microvm-guest.vlan trunkVlans;
-          message = "microvm guest ${vm.name} uses VLAN ${toString vm.settings.microvm-guest.vlan}, which is not in settings.opnsense.lanVlans.";
-        }) lanGuests;
-
-        # The LAN bridge and its VLAN filtering are provisioned with the VM.
-        imports = [
-          {
-            systemd.services = lib.mergeAttrsList (
-              map (vm: {
-                "microvm-bridge-${vm.name}" = {
-                  after = [ "opnsense-vm.service" ];
-                  requires = [ "opnsense-vm.service" ];
-                  partOf = [ "opnsense-vm.service" ];
-                };
-              }) lanGuests
-            );
-          }
-        ];
-
         # Incus owns these unnumbered router links, not NetworkManager.
         networking.networkmanager.unmanaged = [
           "interface-name:${wanInterface}"
