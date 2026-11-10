@@ -8,8 +8,8 @@
         type = lib.types.str;
         description = ''
           File holding the initial `admin` password, read on first start.
-          On a microVM guest use a generated secret:
-          `/run/credentials/@system/<name>`.
+          On a microVM guest pass a SOPS secret through
+          `microvm-guest.secrets`: `/run/credentials/@system/<name>`.
         '';
       };
       webPort = lib.mkOption {

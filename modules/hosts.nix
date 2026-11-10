@@ -46,7 +46,7 @@
           mac = "02:00:00:00:50:53";
           mem = 1024;
           varSize = 4096;
-          generatedSecrets = [ "technitium-admin-password" ];
+          secrets.technitium-admin-password = "technitium/admin-password";
         };
         technitium.adminPasswordFile = "/run/credentials/@system/technitium-admin-password";
       };

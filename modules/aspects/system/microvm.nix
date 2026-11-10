@@ -13,7 +13,6 @@ let
 
   guestCfg = vm: vm.settings.microvm-guest;
   tapOf = vm: let tap = (guestCfg vm).tap; in if tap != null then tap else "vm-${vm.name}";
-  secretsDir = vm: "/var/lib/microvms/${vm.name}/secrets";
 in
 {
   flake-file.inputs.microvm = {
@@ -117,13 +116,16 @@ in
         type = lib.types.ints.positive;
         description = "Size in MiB of the persistent /var volume.";
       };
-      generatedSecrets = lib.mkOption {
-        type = lib.types.listOf (lib.types.strMatching "[A-Za-z0-9_.-]+");
-        default = [ ];
+      secrets = lib.mkOption {
+        type = lib.types.attrsOf lib.types.str;
+        default = { };
+        example = {
+          technitium-admin-password = "technitium/admin-password";
+        };
         description = ''
-          Random secrets generated once on the host under
-          `/var/lib/microvms/<guest>/secrets/` and passed in as systemd
-          credentials, readable in the guest at `/run/credentials/@system/<name>`.
+          SOPS keys decrypted on the host and passed in as systemd credentials,
+          keyed by credential name. Readable in the guest at
+          `/run/credentials/@system/<name>`.
         '';
       };
     };
@@ -152,7 +154,7 @@ in
               size = cfg.varSize;
             }
           ];
-          credentialFiles = lib.genAttrs cfg.generatedSecrets (name: "${secretsDir host}/${name}");
+          # `credentialFiles` is set by the host, which owns the decrypted SOPS secrets.
         };
         # Mount persistent state before stage 2 so journald and services never
         # start against the ephemeral tmpfs root.
@@ -177,9 +179,10 @@ in
   };
 
   # Host side, included by `host-to-microvm-host`. Guests attach only to
-  # bridges published on the `bridges` quirk.
+  # bridges published on the `bridges` quirk. Guest secrets come from SOPS.
+  den.aspects.microvm-host.includes = [ den.aspects.secrets ];
   den.aspects.microvm-host.nixos =
-    { host, bridges, pkgs, utils, ... }:
+    { config, host, bridges, pkgs, utils, ... }:
     let
       guests = host.microvm.guests;
       distinct = f: lib.allUnique (map f guests);
@@ -272,33 +275,23 @@ in
               };
             };
           }
-          // lib.optionalAttrs (cfg.generatedSecrets != [ ]) {
+        ) guests
+      );
+
+      sops.secrets = lib.mergeAttrsList (
+        map (
+          vm: lib.mapAttrs' (_: key: lib.nameValuePair key { owner = "microvm"; }) (guestCfg vm).secrets
+        ) guests
+      );
+
+      microvm.vms = lib.listToAttrs (
+        map (
+          vm:
+          lib.nameValuePair vm.name {
             # qemu reads credential files as the `microvm` user at VM start.
-            "microvm-secrets-${vm.name}" = {
-              description = "Generate secrets for MicroVM '${vm.name}'";
-              before = [ "microvm@${vm.name}.service" ];
-              requiredBy = [ "microvm@${vm.name}.service" ];
-              path = [
-                pkgs.coreutils
-                pkgs.openssl
-              ];
-              script = ''
-                install -d -m 0700 -o microvm ${secretsDir vm}
-                umask 0077
-                for name in ${lib.escapeShellArgs cfg.generatedSecrets}; do
-                  file=${secretsDir vm}/$name
-                  if [ ! -s "$file" ]; then
-                    openssl rand -base64 24 > "$file"
-                  fi
-                  chown microvm "$file"
-                  chmod 0400 "$file"
-                done
-              '';
-              serviceConfig = {
-                Type = "oneshot";
-                RemainAfterExit = true;
-              };
-            };
+            config.microvm.credentialFiles = lib.mapAttrs (
+              _: key: config.sops.secrets.${key}.path
+            ) (guestCfg vm).secrets;
           }
         ) guests
       );
