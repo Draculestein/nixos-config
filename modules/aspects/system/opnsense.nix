@@ -1,16 +1,41 @@
-{ den, ... }:
+{ den, lib, ... }:
 {
   den.aspects.opnsense = {
     includes = [ den.aspects.incus ];
 
+    settings = {
+      wanInterface = lib.mkOption {
+        type = lib.types.str;
+        description = "Physical NIC bridged to the OPNsense WAN.";
+      };
+      lanInterface = lib.mkOption {
+        type = lib.types.str;
+        description = "Physical NIC carrying the tagged OPNsense LAN trunk.";
+      };
+      lanVlans = lib.mkOption {
+        type = lib.types.listOf (lib.types.ints.between 2 4094);
+        description = "VLANs tagged on the LAN trunk and passed to OPNsense.";
+      };
+    };
+
+    # The LAN trunk bridge exists once the OPNsense VM is reconciled.
+    bridges =
+      { host, ... }:
+      {
+        name = "opnsense-lan";
+        unit = "opnsense-vm.service";
+        vlans = host.settings.opnsense.lanVlans;
+      };
+
     nixos =
-      { config, pkgs, ... }:
+      { config, host, pkgs, ... }:
       let
+        cfg = host.settings.opnsense;
         version = "26.7";
         instanceName = "opnsense";
         installerVolume = "opnsense-${version}-installer";
-        wanInterface = "enp6s0";
-        lanInterface = "enp5s0";
+        inherit (cfg) wanInterface lanInterface;
+        trunkVlans = cfg.lanVlans;
         wanConfig = yaml.generate "opnsense-wan.yaml" {
           description = "OPNsense physical WAN";
           config = {
@@ -62,7 +87,7 @@
             lan = {
               hwaddr = "02:00:00:00:00:02";
               network = "opnsense-lan";
-              "vlan.tagged" = "10,20,30,40";
+              "vlan.tagged" = lib.concatMapStringsSep "," toString trunkVlans;
               type = "nic";
             };
           };
@@ -128,7 +153,7 @@
               incus network create opnsense-lan --type=bridge ipv4.address=none ipv6.address=none
             fi
             incus network edit opnsense-lan < ${lanConfig}
-            for vlan in 10 20 30 40; do
+            for vlan in ${lib.concatMapStringsSep " " toString trunkVlans}; do
               bridge vlan add dev ${lanInterface} vid "$vlan"
             done
 
