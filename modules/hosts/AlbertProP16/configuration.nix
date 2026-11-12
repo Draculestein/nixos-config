@@ -24,6 +24,8 @@
       kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
       # extraModulePackages = with config.boot.kernelPackages; [ ddcci-driver ];
       kernelParams = [ "microcode.amd_sha_check=off" ];
+      # MT7925 Wi-Fi: PCIe ASPM L1 substates cause heavy TX retries/loss.
+      extraModprobeConfig = "options mt7925e disable_aspm=1";
 
     };
 
