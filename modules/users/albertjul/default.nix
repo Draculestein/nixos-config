@@ -35,6 +35,18 @@
         shell = pkgs.zsh;
       };
 
+      nixpkgs.overlays = [
+        (final: prev: {
+          # cargoUseSystemLibs exports ZSTD_SYS_USE_PKG_CONFIG / AWS_LC_SYS_USE_SYSTEM,
+          # but the locked recipe lacks zstd and aws-lc. Fixed on nixpkgs master;
+          # drop once the lock includes it (the filter makes this a no-op then).
+          rusty-path-of-building = prev.rusty-path-of-building.overrideAttrs (old: {
+            buildInputs = old.buildInputs
+              ++ builtins.filter (p: !builtins.elem p old.buildInputs) [ final.zstd final.aws-lc ];
+          });
+        })
+      ];
+
       services.gvfs.enable = true;
       services.gnome.localsearch.enable = true;
 
@@ -124,7 +136,6 @@
         winboat
         orca-slicer
         # freecad
-        chatgpt
       ];
 
       xdg.autostart = {
