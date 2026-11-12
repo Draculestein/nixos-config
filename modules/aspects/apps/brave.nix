@@ -1,10 +1,14 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
+  # brave was removed from nixpkgs and re-added in NixOS/nixpkgs#584534, which has only
+  # reached nixos-unstable-small so far. Drop this input once it lands in nixos-unstable.
+  flake-file.inputs.nixpkgs-unstable-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+
   den.aspects.brave = {
     homeManager = { config, lib, pkgs, ... }: {
       programs.brave = {
         enable = true;
-        package = pkgs.brave;
+        package = inputs.nixpkgs-unstable-small.legacyPackages.${pkgs.stdenv.hostPlatform.system}.brave;
 
         commandLineArgs = [
           "--password-store=detect"
